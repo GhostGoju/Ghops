@@ -4,17 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Home</title>
+    <title>HOME</title>
 </head>
 
 <body>
 
+    <!-- MONTAR SERVIDOR PARA THREE.JS   npx vite -->
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="#"><img src="img/Logos/marca (5).png" alt="ghops"></a>
+            </div>
+            <div class="search-bar">
+                <input type="search" name="search-bar" id="search-bar">
+                <span><ion-icon name="search-outline"></ion-icon></span>
+                <label for="search-bar">buscar</label>
+            </div>
+            <div class="navegation">
+                <a href="#">
+                    <spam><ion-icon name="heart-outline"></ion-icon></spam>
+                </a>
+                <a href="#">
+                    <spam><ion-icon name="bag-handle-outline"></ion-icon></spam>
+                </a>
+                <a href="#">
+                    <spam><ion-icon name="person-circle-outline"></ion-icon></spam>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <header class="header2">
+        <nav class="nav2">
+            <div class="navegation2">
+                <a href="#">
+                    <span>mugs</span>
+                </a>
+                <a href="#">
+                    <span>camisetas</span>
+                </a>
+                <a href="#">
+                    <span>otros</span>
+                </a>
+                <a href="#">
+                    <span>nosotros</span>
+                </a>
+            </div>
+        </nav>
+    </header>
 
 
+    <div class="contenido-principal">
+        <div class="nombre">
+            <h1>ghops</h1>
+        </div>
+        <div class="logo">
+            <img src="img/Logos/marca (4).png" alt="">
+        </div>
+    </div>
 
 
-    <script src="main.js"></script>
+    <script type="module" src="js/three.js"></script>
+    <script src="js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

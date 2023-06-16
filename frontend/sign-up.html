@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>sign up</title>
+</head>
+
+<body>
+    <script type="module" src="js/three.js"></script>
+    <!-- MONTAR SERVIDOR PARA THREE.JS   npx vite -->
+
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="#"><img src="img/Logos/marca (5).png" alt="ghops"></a>
+            </div>
+            <div class="navegation">
+                <a href="#">
+                    <spam><ion-icon name="heart-outline"></ion-icon></spam>
+                </a>
+                <a href="#">
+                    <spam><ion-icon name="bag-handle-outline"></ion-icon></spam>
+                </a>
+                <a href="#">
+                    <spam><ion-icon name="person-circle-outline"></ion-icon></spam>
+                </a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="contenido-principal">
+        <div class="tarjeta">
+            <div class="form-box login">
+                <h2>registrate gratis</h2>
+                <form action="#">
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="text" name="" id="myInput">
+                        <label for="myInput" id="myLabel">nombre</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="email" name="" id="myInput">
+                        <label for="myInput" id="myLabel">correo</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <input type="password" name="" id="myInput">
+                        <label for="myInput" id="myLabel">contraseña</label>
+                    </div>
+                    <button type="submit" value="enviar" class="btn"><span>registrate</span></button>
+                    <div class="login-register">
+                        <p>ya tines una cuenta?<a href="login.html" class="login-link"> iniciar</a></p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
