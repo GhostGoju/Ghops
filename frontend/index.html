@@ -17,11 +17,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
     <header class="header">
         <nav class="nav">
             <div class="logo">
-                <a href="#"><img src="img/Logos/marca (5).png" alt="ghops"></a>
+                <a href="index.html"><img src="img/Logos/marca (5).png" alt="ghops"></a>
             </div>
             <div class="search-bar">
                 <input type="search" name="search-bar" id="search-bar">
@@ -36,7 +38,7 @@
                     <spam><ion-icon name="bag-handle-outline"></ion-icon></spam>
                 </a>
                 <a href="#">
-                    <spam><ion-icon name="person-circle-outline"></ion-icon></spam>
+                    <spam class="user"><ion-icon name="person-circle-outline"></ion-icon></spam>
                 </a>
             </div>
         </nav>
@@ -45,22 +47,21 @@
     <header class="header2">
         <nav class="nav2">
             <div class="navegation2">
-                <a href="#">
+                <a href="productos-mugs.html">
                     <span>mugs</span>
                 </a>
-                <a href="#">
+                <a href="productos-camisetas.html">
                     <span>camisetas</span>
                 </a>
-                <a href="#">
+                <a href="otros.html">
                     <span>otros</span>
                 </a>
-                <a href="#">
+                <a href="nosotros.html">
                     <span>nosotros</span>
                 </a>
             </div>
         </nav>
     </header>
-
 
     <div class="contenido-principal">
         <div class="nombre">
@@ -70,6 +71,32 @@
             <img src="img/Logos/marca (4).png" alt="">
         </div>
     </div>
+
+
+    <ul class="elementos">
+        <li><a href="">selector1</a></li>
+        <li><a href="">selector2</a></li>
+        <li><a href="">selector3</a>
+            <ul class="drop-down">
+                <li><a href="">drop1</a></li>
+                <li><a href="">drop2</a></li>
+                <li><a href="">drop3</a></li>
+            </ul>
+        </li>
+        <li><a href="">selector4</a></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <script type="module" src="js/three.js"></script>
