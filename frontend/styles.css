@@ -10,7 +10,7 @@ body {
     background-image: url(img/fondos/Sand\ to\ Blue.jpg);
     background-attachment: fixed;
     background-size: cover;
-    height: 100vh;
+    height: min-content;
     font-size: 15px;
 }
 
@@ -457,44 +457,44 @@ body {
 }
 
 
-/* --------- EJERCICIO DE DESPLEGABLE MENU ---------- */
 
-.elementos {
-    background-color: white;
+
+
+
+/* CREACION DE MENU DESPLEGABLE */
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-ul {
+.card {
     background-color: lightgreen;
-    list-style: none;
+    border-radius: 10px;
+    height: 76px;
+    margin-top: 16vh;
+    transition: height 400ms;
 }
 
-ul li {
-    display: inline-block;
-    position: relative;
+.card.active {
+    height: 500px;
 }
 
-ul li a {
-    display: block;
-    text-decoration: none;
-    text-align: center;
+.title {
+    font-size: 18px;
+    user-select: none;
 }
 
-ul li ul.drop-down li {
-    display: block;
+.row {
+    align-items: flex-start;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    /* transition: height 400ms; */
+    width: 200px;
 }
 
-ul li ul .drop-down {
-    width: 100%;
-    background-color: lightgray;
-    position: absolute;
-    z-index: 999;
-    display: none;
-}
 
-ul li a:hover {
-    background-color: lightsalmon;
-}
-
-ul li:hover ul .drop-down {
-    display: block;
-}
