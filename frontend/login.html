@@ -7,29 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>login</title>
 </head>
 
 <body>
-    <script type="module" src="js/three.js"></script>
-    <!-- MONTAR SERVIDOR PARA THREE.JS   npx vite -->
 
     <header class="header">
         <nav class="nav">
             <div class="logo">
-                <a href="index.html"><img src="img/Logos/marca (5).png" alt="ghops"></a>
-            </div>
-            <div class="navegation">
-                <a href="#">
-                    <spam><ion-icon name="heart-outline"></ion-icon></spam>
-                </a>
-                <a href="#">
-                    <spam><ion-icon name="bag-handle-outline"></ion-icon></spam>
-                </a>
-                <a href="#">
-                    <spam><ion-icon name="person-circle-outline"></ion-icon></spam>
-                </a>
+                <a href="index.html"><img src="css/img/Logos/marca (5).png" alt="ghops"></a>
             </div>
         </nav>
     </header>
@@ -65,7 +53,225 @@
     </div>
 
 
-    <script src="js/script.js"></script>
+    <!-- corte1 -->
+    <button class="Btn">
+        Pay
+        <svg class="svgIcon" viewBox="0 0 576 512">
+            <path
+                d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z">
+            </path>
+        </svg>
+    </button>
+
+    <!-- corte2 -->
+    <button>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path fill="currentColor"
+                d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z">
+            </path>
+        </svg>
+        <span>Launch</span>
+    </button>
+
+
+    <!-- corte3 -->
+
+    <div class="card">
+        <div class="card-photo"></div>
+        <div class="card-title">JOHN DOE <br>
+            <span>Fullstack dev &amp; UX UI</span>
+        </div>
+        <div class="card-socials">
+            <button class="card-socials-btn facebook">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" id="Layer_21"
+                    height="24" data-name="Layer 21">
+                    <title></title>
+                    <path d="M16.75,9H13.5V7a1,1,0,0,1,1-1h2V3H14a4,4,0,0,0-4,4V9H8v3h2v9h3.5V12H16Z"></path>
+                </svg>
+            </button>
+            <button class="card-socials-btn github">
+                <svg viewBox="0 0 24 24" height="33" width="33" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                    </path>
+                </svg>
+            </button>
+            <button class="card-socials-btn linkedin">
+                <svg height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m51.326 185.85h90.011v270.872h-90.011zm45.608-130.572c-30.807 0-50.934 20.225-50.934 46.771 0 26 19.538 46.813 49.756 46.813h.574c31.396 0 50.948-20.814 50.948-46.813-.589-26.546-19.551-46.771-50.344-46.771zm265.405 124.209c-47.779 0-69.184 26.28-81.125 44.71v-38.347h-90.038c1.192 25.411 0 270.872 0 270.872h90.038v-151.274c0-8.102.589-16.174 2.958-21.978 6.519-16.174 21.333-32.923 46.182-32.923 32.602 0 45.622 24.851 45.622 61.248v144.926h90.024v-155.323c0-83.199-44.402-121.911-103.661-121.911z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- corte4 -->
+
+    <input id="switch" type="checkbox">
+    <div class="app">
+        <div class="body">
+
+            <div class="phone">
+
+                <div class="menu">
+                    <div class="time">4:20</div>
+                    <div class="icons">
+                        <div class="network"></div>
+                        <div class="battery"></div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="circle">
+                        <div class="crescent"></div>
+                    </div>
+
+                    <label for="switch">
+                        <div class="toggle"></div>
+                        <div class="names">
+                            <p class="light">Light</p>
+                            <p class="dark">Dark</p>
+                        </div>
+                    </label>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- corte5 -->
+    <form action="" class="container">
+        <input class="input-btn" type="radio" id="valueIs-1" name="valueIs-radio" checked="" value="valueIs-1">
+        <label class="neon-btn" for="valueIs-1">
+            <span class="span"></span>
+            <span class="txt">OPTION 1</span>
+        </label>
+
+        <input class="input-btn" type="radio" id="valueIs-2" name="valueIs-radio" value="valueIs-2">
+        <label class="neon-btn" for="valueIs-2">
+            <span class="span"></span>
+            <span class="txt">OPTION 2</span>
+        </label>
+    </form>
+
+    <!-- corte6 -->
+
+    <div class="radio-input">
+        <div class="glass">
+            <div class="glass-inner">
+            </div>
+        </div>
+        <div class="selector">
+            <div class="choice">
+                <div>
+                    <input type="radio" id="one" name="number-selector" value="one" checked="true"
+                        class="choice-circle">
+                    <div class="ball"></div>
+                </div>
+                <label class="choice-name" for="one">1</label>
+            </div>
+            <div class="choice">
+                <div>
+                    <input type="radio" id="two" name="number-selector" value="two" class="choice-circle">
+                    <div class="ball"></div>
+                </div>
+                <label class="choice-name">2</label>
+            </div>
+            <div class="choice">
+                <div>
+                    <input type="radio" id="three" name="number-selector" value="three" class="choice-circle">
+                    <div class="ball"></div>
+                </div>
+                <label class="choice-name" for="three">3</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- corte7 -->
+
+
+    <div class="input-wrapper">
+        <button class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="25px" width="25px">
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff"
+                    d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z">
+                </path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20">
+                </path>
+            </svg>
+        </button>
+        <input placeholder="search.." class="input" name="text" type="text">
+    </div>
+
+<!-- corte8 -->
+<div class="form-control">
+    <input required="" type="value">
+    <label>
+        <span style="transition-delay:350ms">U</span>
+        <span style="transition-delay:300ms">s</span>
+        <span style="transition-delay:250ms">e</span>
+        <span style="transition-delay:200ms">r</span>
+        <span style="transition-delay:150ms">n</span>
+        <span style="transition-delay:100ms">a</span>
+        <span style="transition-delay:50ms">m</span>
+        <span style="transition-delay:0ms">e</span>
+    </label>
+</div>
+
+<!-- corte9 -->
+<form class="form">
+    <label for="search">
+        <input required="" autocomplete="off" placeholder="search your chats" id="search" type="text">
+        <div class="icon">
+            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-on">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+            </svg>
+            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-off">
+                <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linejoin="round" stroke-linecap="round"></path>
+            </svg>
+        </div>
+        <button type="reset" class="close-btn">
+            <svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+            </svg>
+        </button>
+    </label>
+</form>
+
+<!-- corte10 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

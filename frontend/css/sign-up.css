@@ -1,0 +1,169 @@
+.body {
+    height: min-content;
+    width: 100%;
+}
+
+.header {
+    height: 10vh;
+    width: 100%;
+}
+
+.header .logo {
+    height: 10vh;
+    width: 55%;
+    display: flex;
+    justify-content: start;
+}
+
+.header .logo img {
+    height: 10vh;
+    user-select: none;
+}
+
+.contenido-principal {
+    /* background-color: red; */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: transparent;
+    position: relative;
+    border-radius: 10px;
+    height: 70vh;
+    width: 30%;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 10px 20px 5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta .form-box {
+    /* background-color: darkgoldenrod; */
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.form-box h2 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    filter: drop-shadow(-20px 20px 5px black);
+    -webkit-filter: drop-shadow(-20px 20px 5px black);
+    user-select: none;
+}
+
+.input-box {
+    position: relative;
+    /* background-color: blue; */
+    margin-bottom: 15px;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+.input-box label {
+    position: absolute;
+    top: 22%;
+    left: 5px;
+    transform: translateY(-50);
+    font-size: 1.2em;
+    user-select: none;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.153);
+    transition: .3s ease;
+}
+
+.input-box input:focus~label {
+    top: -13px;
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 5px;
+    line-height: 70px;
+    font-size: 1.2em;
+    color: white;
+}
+
+.form-box .recuperar {
+    /* background-color: red; */
+    color: white;
+    text-decoration: none;
+    text-decoration-line: underline;
+    display: block;
+    text-align: left;
+    font-size: 0.9em;
+    position: relative;
+}
+
+.form-box .btn {
+    background-color: transparent;
+    color: white;
+    width: 57%;
+    height: 40px;
+    border: 1px solid black;
+    text-transform: uppercase;
+    margin-top: 20px;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.form-box .btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.form-box .btn::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.179);
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    transition: .5s ease;
+}
+
+.form-box .btn:hover::after {
+    left: 0%;
+}
+
+.login-register {
+    background-color: rgba(0, 0, 0, 0.218);
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.login-register p {
+    color: white;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.login-register p a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
