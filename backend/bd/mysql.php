@@ -13,7 +13,7 @@ class dataBase  //*ESTA ES LA CLASE (PLANO)
             apache_getenv("DBSERVER"),
             apache_getenv("DBUSER"),                               //* DATOS GUARDADOS EN EL DOCUMENTO DB.INC
             apache_getenv("DBPASSWORD"),
-            apache_getenv("DBDATABSE"),
+            apache_getenv("DBDATABASE"),
         );
 
         if ($this->conexion->connect_error) {
