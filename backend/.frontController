@@ -1,0 +1,9 @@
+<?php
+
+class frontController
+{
+    public function proccessRequest()                            //* METODO DEL OBJETO FRONTCONTROLLER
+    {
+    echo 'correct';
+    }
+}

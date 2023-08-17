@@ -23,19 +23,19 @@ FUNCIONAMIENTO:
 
 
 ---------------------------------------------------------------------
-NOTAS PARA TENER EN CUENTA EN CUANTO AL FRONTEND Y EL BACKEND
+FORMA DE FUNCIONAMIENTO DEL SISTEMA EN ESTE MOMENTO
 
-1. INDEX.PHP SIEMPRE RECIBE UN PARAMETRO DE LA PARTE FRONTEND
+- EL INDEX RECIBE ACCIONES LAS CUALES LAS ENVIA AL FRONTCONTROLLER Y ESTA LAS REDIRECCIONA A LOS ARCHIVOS QUE TIENEN LA LOGICA PARA RESOLVER LA PETICION DEL USUARIO
 
 
 ---------------------------------------------------------------------
 NOTAS GENERALES:
  * Colocando un punto frente a un documento podemos volverlo incognito frente a personas que puedan vulnerar nuestro sistema
- *
+ * El documento htaccess, nos permite crear una URl interna la cual esta oculta para las otras personas esto nos permite tener mas proteccion dentro de nuestro sitio web
  *
 
 
 
 ---------------------------------------------------------------------
 RETOMAR VIDEO
-55
+1:23
