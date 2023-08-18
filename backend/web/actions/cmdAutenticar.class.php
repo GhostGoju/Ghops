@@ -1,6 +1,6 @@
 <?php
 
-class cmdAutentciar
+class cmdAutenticar
 {
 
     public function execute()                         //* UNICO METODO DE LA CLASE

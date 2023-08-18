@@ -3,10 +3,10 @@
 class cmdBuscarUsuarios
 {
 
-    public function execute()
+    public function execute($params)
     {
         extract($_REQUEST);
-
+        $id = $params[0];
         $u = new usuariosControl();
         $result = $u->buscarUsuarios($id);
         if (is_array($result)) {

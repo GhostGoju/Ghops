@@ -37,6 +37,7 @@ class cmdModificarUsuarios
                     "data" => "$result",
                     "message" => "Usuario creado correctamente"
                 ];
+                break;
         }
         print_r(json_encode($response));
     }

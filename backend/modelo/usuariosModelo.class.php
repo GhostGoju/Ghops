@@ -84,4 +84,13 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         $result = $this->conexion->query($sql);
         return $result;
     }
+
+
+   //? (FUNCION DE ELIMINAR USUARIOS)
+    public function eliminar($id)
+    {
+        $sql = "DELETE FROM  usuarios WHERE id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
 }

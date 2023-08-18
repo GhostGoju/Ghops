@@ -38,5 +38,6 @@ class cmdRegistrar
                 ];
                 break;
         }
+        print_r(json_encode($response));
     }
 }

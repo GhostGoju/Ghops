@@ -2,8 +2,46 @@
 
 class frontController
 {
-    public function proccessRequest()                            //* METODO DEL OBJETO FRONTCONTROLLER
+    private $action;       //* atributo privado de la clase frontcontroller
+    private $params;
+    public function proccessRequest()    //* METODO DEL OBJETO FRONTCONTROLLER
     {
-    echo 'correct';
+        if (isset($_REQUEST['url'])) {
+            $myUrl = explode("/", trim($_REQUEST['url']));                 //* Convertimos la url en un arreglo .Ecplode es para definir el separador de los datos
+            // print_r("<pre>");                                             //* Trim nos permite limpiar los espacios en blanco
+            // print_r($myUrl);
+
+            $this->action = array_shift($myUrl);                    //* con este comando decimos. En action quiero tener el primer valor de $myurl
+            // print_r("La accion: " . $this->action . "<br>");
+            // print_r($myUrl);
+
+            $this->params = $myUrl;                         //* Como quitamos el primer valor a $myUrl dentro de este dolo quedan datos los cuales los almacenamos dentro de params
+            $this->dispatcher($this->action, $this->params);
+        } else {
+            print_r("<br>Error");
+        }
+    }
+
+
+
+    public function dispatcher($action, $params)
+    {
+        $fileName = ACTIONS . $action . ".class.php";                      //* ACTIONS DEFINIDA EN CONFIG/SETTINGS. POSEE LA UBICACION DE LOS DIRECTORIOS Y $ACTION POSEE EL DIRECTORIO AL CUAL DESEAN ENTRAR. LO ULTIMO SON LOS CARACTERES OCULTOS DEL ARCHIVO (CLASS.PHP)
+
+        if (is_file($fileName))                          //* AQUI NOS ASEGURAMOS DE QUE EL DOCUMENTO QUE ESTAMOS SOLICITANDO EXISTE
+        {
+            require_once $fileName;                          //* SI EXISTE EL DOCUMENTO LO REDIRIGIMOS AL DOCUMENTO SOLICITADO
+
+            if (!class_exists($action))                     //* AQUI NOS SERCIORAMOS DE QUE EXISTE UNA CLASE LLAMADA COMO LA SOLICITADA, LA CUAL SE ENCUENTRA ALMACENADA DENTRO DE $ACTION
+            {
+                echo "clase no existe";
+            }
+            else                    // si existe
+            {
+                $cmd = new $action();                             //* AQUI CREAMOS UN NUEVO OBJETO APARTIR DE LA ACCION CONTENIDA DENTRO DE $ACTION
+                $cmd-> execute($params);
+            }
+        } else
+            echo "Achivo no existente";
     }
 }

@@ -84,7 +84,7 @@ class usuariosControl
             !empty($id) && $id != "" && $id != null &&
             !empty($email) && $email != "" && $email != null &&
             !empty($nombre) && $nombre != "" && $nombre != null &&
-            !empty($estado) && $estado != "" && $estado != null
+            $estado != "" && $estado != null
         ) {
             $result = $this->modelo->getById($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) > 0) {
@@ -101,15 +101,27 @@ class usuariosControl
 
 
     //? (ACTUALIZAR PASSWORD)
-// public function cambiarPassword ($id, $password)
-// {
-//     if(
-//         !empty($id) && $id != "" && $id != null &&
-//         !empty($password) && $password != "" && $password != null
-//     )
-//     $result
-// }
 
 
 
+
+
+    //? (ELIMINAR USUARIOS DE LA BASE DE DATOS)
+    public function eliminar($id)
+    {
+        if (
+            !empty($id) && $id != "" && $id != NULL
+        ) {
+            $result = $this->modelo->getById($id);
+            if (is_array($result) && count($result) > 0) {
+                $result = $this->modelo->eliminar($id);
+                if ($result)
+                    return 3; // Usuario eliminado
+                else
+                    return 2; //Usuario no eliminado
+            } else
+                return 1; //Usuario No existe con ese Id
+        } else
+            return  0; //Falta Datos
+    }
 }
