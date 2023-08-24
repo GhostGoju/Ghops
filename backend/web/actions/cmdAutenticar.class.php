@@ -11,29 +11,28 @@ class cmdAutenticar
         $result = $u->autenticar($email, $password);                //* RESULT ALMACENA LA INFORMACION QUE TRAIGAN LAS VARIABLES EMAIL AND PASSWORD
         if (is_array($result)) {
             $response = [
-                "result" => "ok",
+                "result" => "success",
                 "data" => $result,
-                "message" => "Usuario valido"
+                "message" => "Usuario valido",
+                "view" => "home"
             ];
-            // require 'vistas/home.php';                                            //* AQUI ENCUENTRA AL USUARIO Y REDIRIGE AL HOME DE LA PAGINA
         }
         if ($result == 0) {
             $response = [
-                "result" => "bad",
+                "result" => "fail",
                 "data" => "",
-                "message" => "Faltan datos"
+                "message" => "Faltan datos",
+                "view" => "login"
             ];
-
-            // require 'vistas/login.php';                                    //* CUANDO SE LLENA EL FORMULARIO Y NO SE ENCUENTRAN TODOS LOS DATOS EL API REEVIA AL USUARIO A LA PAGINA DE LOGIN
         }
         if ($result == 1) {
             $response = [
-                "result" => "bad",
+                "result" => "success",
                 "data" => "",
-                "message" => "Usuario invalido"
+                "message" => "Usuario invalido",
+                "view" => "login"
             ];
-            // require 'vistas/login.php';                                        //* CUANDO SE LLENA EL FORMULARIO Y NO COINCIDEN LOS DATOS EL API REEVIA AL USUARIO A LA PAGINA DE LOGIN
         }
-        print_r(json_encode($response));
+        return $response;
     }
 }

@@ -78,17 +78,16 @@ class usuariosControl
 
 
     //? (CASO DE USO DE ACTUALIZAR USUARIOS)
-    public function modifiarUsuarios($id, $email, $nombre, $estado)
+    public function modifiarUsuarios($id, $nombre, $estado)
     {
         if (
             !empty($id) && $id != "" && $id != null &&
-            !empty($email) && $email != "" && $email != null &&
             !empty($nombre) && $nombre != "" && $nombre != null &&
             $estado != "" && $estado != null
         ) {
             $result = $this->modelo->getById($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) > 0) {
-                $result = $this->modelo->actualizar($id, $email, $nombre, $estado);
+                $result = $this->modelo->actualizar($id, $nombre, $estado);
                 if ($result)
                     return 3;           //*USUARIO ACTUALIZADO
                 else
@@ -100,10 +99,25 @@ class usuariosControl
     }
 
 
-    //? (ACTUALIZAR PASSWORD)
-
-
-
+    //? (ACTUALIZAR PASSWORD)    (BUSCAR SOLUCION)
+    public function updatePassword($id, $password)
+    {
+        if (
+            !empty($id) && $id != "" && $id != null &&
+            !empty($password) && $password != "" && $password != null
+        ) {
+            $result = $this->modelo->getById($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
+            if (is_array($result) && count($result) > 0) {
+                $result = $this->modelo->actualizarPassword($id, $password);
+                if ($result)
+                    return 3;           //*PASSWORD ACTUALIZADA
+                else
+                    return 2;               //* PASSWORD NO ACTUALIZADA
+            } else
+                return 1;            //*USUARIO NO EXISTENTE CON ESE ID
+        } else
+            return 0;                //* FALTAN DATOS
+    }
 
 
     //? (ELIMINAR USUARIOS DE LA BASE DE DATOS)

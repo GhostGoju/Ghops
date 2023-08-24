@@ -6,42 +6,57 @@ class frontController
     private $params;
     public function proccessRequest()    //* METODO DEL OBJETO FRONTCONTROLLER
     {
-        if (isset($_REQUEST['url'])) {
-            $myUrl = explode("/", trim($_REQUEST['url']));                 //* Convertimos la url en un arreglo .Ecplode es para definir el separador de los datos
-            // print_r("<pre>");                                             //* Trim nos permite limpiar los espacios en blanco
-            // print_r($myUrl);
+        if (isset($_REQUEST["url"])) {
+            $myUrl = explode("/", trim($_REQUEST["url"]));                 //* Convertimos la url en un arreglo .Ecplode es para definir el separador de los datos
+            $view = array_shift($myUrl);
+            if ($view == "api")                         //*AQUI DEFINIMOS SI LA URL LLAMA A API - EN CASO DE QUE SI ES TRUE - SI NO ES FALSE
+            {
+                define("CALL_API", true);              //llamado api
+            } else {
+                define("CALL_API", false);             // llamado web
+            }
+
+            $complemento = $myUrl;
+
+            if (count($complemento) == 0)
+                showError("Peticion invalida", true);
 
             $this->action = array_shift($myUrl);                    //* con este comando decimos. En action quiero tener el primer valor de $myurl
-            // print_r("La accion: " . $this->action . "<br>");
-            // print_r($myUrl);
-
             $this->params = $myUrl;                         //* Como quitamos el primer valor a $myUrl dentro de este dolo quedan datos los cuales los almacenamos dentro de params
-            $this->dispatcher($this->action, $this->params);
+            $result = $this->dispatcher($this->action, $this->params);
+
+            if ($result["result"] == "fail") {
+                ($result["view"] = "defaultError");
+            }
+            if (CALL_API)
+                print_r(json_encode($result));
+            else             // LLAMADO PARA INTERFACES WEB  (NOS ENVIA A LA VISTA WEB) .AQUI SE COLOCA A LA CLASE QUE RENDERIZA LA VISTA
+                View::render($result);
         } else {
-            print_r("<br>Error");
+            print_r("Accion invalida");
         }
     }
+
+
+
 
 
 
     public function dispatcher($action, $params)
     {
         $fileName = ACTIONS . $action . ".class.php";                      //* ACTIONS DEFINIDA EN CONFIG/SETTINGS. POSEE LA UBICACION DE LOS DIRECTORIOS Y $ACTION POSEE EL DIRECTORIO AL CUAL DESEAN ENTRAR. LO ULTIMO SON LOS CARACTERES OCULTOS DEL ARCHIVO (CLASS.PHP)
-
         if (is_file($fileName))                          //* AQUI NOS ASEGURAMOS DE QUE EL DOCUMENTO QUE ESTAMOS SOLICITANDO EXISTE
         {
             require_once $fileName;                          //* SI EXISTE EL DOCUMENTO LO REDIRIGIMOS AL DOCUMENTO SOLICITADO
-
             if (!class_exists($action))                     //* AQUI NOS SERCIORAMOS DE QUE EXISTE UNA CLASE LLAMADA COMO LA SOLICITADA, LA CUAL SE ENCUENTRA ALMACENADA DENTRO DE $ACTION
             {
                 echo "clase no existe";
-            }
-            else                    // si existe
+            } else                    // si existe
             {
                 $cmd = new $action();                             //* AQUI CREAMOS UN NUEVO OBJETO APARTIR DE LA ACCION CONTENIDA DENTRO DE $ACTION
-                $cmd-> execute($params);
+                return $cmd->execute($params);
             }
         } else
-            echo "Achivo no existente";
+            showError("Achivo no existente", true);
     }
 }

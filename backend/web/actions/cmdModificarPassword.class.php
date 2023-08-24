@@ -1,14 +1,13 @@
 <?php
 
-class cmdModificarUsuarios
+class cmdModificarPassword        //*(BUSCAR SOLUCION)
 {
-
     public function execute()                         //* UNICO METODO DE LA CLASE
     {
         extract($_REQUEST);
 
         $u = new usuariosControl();
-        $result = $u->modifiarUsuarios($id, $nombre, $estado);
+        $result = $u->updatePassword($id, $password);
         switch ($result) {
             case 0;                                                 //* FALTAN DATOS
                 $response = [
@@ -17,30 +16,28 @@ class cmdModificarUsuarios
                     "message" => "faltan datos"
                 ];
                 break;
-            case 1;                                                 //* USUARIO YA EXISTENTE CON EL MISMO EMAIL
+            case 1:                                                 //* PASSWORD YA EXISTENTE
                 $response = [
                     "result" => "bad",
                     "data" => "",
-                    "message" => "Usuario existente con el mismo email"
+                    "message" => "Usuario existente con la  misma contrasena"
                 ];
                 break;
-            case 2;                                                 //* USUARIO NO CREADO
+            case 2:                                                 //* PASSWORD NO CREADO
                 $response = [
                     "result" => "bad",
                     "data" => "",
-                    "message" => "Usuario no creado"
+                    "message" => "contrasena no actualizada"
                 ];
                 break;
-            case 3;                                                 //*USUARIO CREADO
+            case 3:                                                 //*PASSWORD CREADO
                 $response = [
                     "result" => "ok",
                     "data" => "$result",
-                    "message" => "Usuario creado correctamente"
+                    "message" => "Contrasena actualizada"
                 ];
                 break;
         }
-        if (!CALL_API == true)
-            $response["view"] = "usuarios/edit";
-            return $response;
+        print_r(json_encode($response));
     }
 }

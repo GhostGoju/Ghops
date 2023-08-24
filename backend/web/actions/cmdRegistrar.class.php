@@ -38,6 +38,8 @@ class cmdRegistrar
                 ];
                 break;
         }
-        print_r(json_encode($response));
+        if (!CALL_API == true)
+        $response["view"] = "usuarios/edit";
+        return $response;
     }
 }

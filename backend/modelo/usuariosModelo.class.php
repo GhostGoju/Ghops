@@ -75,18 +75,18 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
-    //? (FUNCION DE ACTUALIZAR PASSWORD)
-    public function actualizarpassword($id, $password)
+    //? (FUNCION DE ACTUALIZAR PASSWORD)  (BUSCAR SOLUCION)
+    public function actualizarPassword($id, $password)
     {
         $sql = "UPDATE usuarios
-    SET password = '$password',
-    WHERE id= $id";
+    SET id= $id,
+    WHERE password= '$password'";
         $result = $this->conexion->query($sql);
         return $result;
     }
 
 
-   //? (FUNCION DE ELIMINAR USUARIOS)
+    //? (FUNCION DE ELIMINAR USUARIOS)
     public function eliminar($id)
     {
         $sql = "DELETE FROM  usuarios WHERE id = $id";

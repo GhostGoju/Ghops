@@ -13,6 +13,8 @@ define ("ACTIONS", ROOT."web/actions".DS);           // SE DEFINE UNA CONSTANTE 
 
 define ("VIEWS", ROOT."web/vistas".DS);        // ESTA PARTE UBICA LAS RUTAS DE LAS VISTAS DE LA PAGINA WEB
 
+define ("DEFAULT_ACTION", "cmdDefaultLogin");         // ERROR POR DEFECTO
+
 
 
 

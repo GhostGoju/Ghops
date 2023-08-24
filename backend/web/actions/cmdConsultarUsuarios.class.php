@@ -7,6 +7,14 @@ class cmdConsultarUsuarios
     {
         $u = new usuariosControl();                            //* CREA UN OBJETO DEL CONTROL DE USUARIOS
         $result = $u->listarUsurios();                     //* EJECUTA EL METODO DEL OBJETO (LISTARUSUARIOS)
-        print_r(json_encode($result));
+
+        $response = [
+            "result" => "success",
+            "data" => $result,
+            "message" => "Listado generado"
+        ];
+        if (!CALL_API == true)
+            $response["view"] = "usuarios/index";
+            return $response;
     }
 }
