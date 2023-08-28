@@ -9,6 +9,11 @@ class frontController
         if (isset($_REQUEST["url"])) {
             $myUrl = explode("/", trim($_REQUEST["url"]));                 //* Convertimos la url en un arreglo .Ecplode es para definir el separador de los datos
             $view = array_shift($myUrl);
+
+            // VALIDACION DE QUE VENGA WEB O API
+            if ($view != "api" && $view !="web")
+                showError("Peticion invalida", true);
+
             if ($view == "api")                         //*AQUI DEFINIMOS SI LA URL LLAMA A API - EN CASO DE QUE SI ES TRUE - SI NO ES FALSE
             {
                 define("CALL_API", true);              //llamado api

@@ -3,8 +3,10 @@
 class cmdBuscarUsuarios
 {
 
+    private $default_request_method = "GET";
     public function execute($params)
     {
+        valid_method($this->default_request_method);
         extract($_REQUEST);
         if (count($params) == 0)
             $response = [

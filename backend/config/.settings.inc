@@ -15,15 +15,9 @@ define ("VIEWS", ROOT."web/vistas".DS);        // ESTA PARTE UBICA LAS RUTAS DE 
 
 define ("DEFAULT_ACTION", "cmdDefaultLogin");         // ERROR POR DEFECTO
 
+define ("INCLUDES_TEMPLADE", VIEWS . "INCLUDES" .DS);         // CARGA DE TEMPLADES PARA LIMPIAR CODIGO EN EL HTML
 
-
-
-
-
-
-
-
-
+define ("APP_VERSION", "1.0");         // AQUI SE ACTUALIZA LA VISTA DE LA VERSION DEL SISTEMA
 
 
 

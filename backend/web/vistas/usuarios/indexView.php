@@ -1,44 +1,106 @@
+</html>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultar Usuarios</title>
-</head>
+<?php require_once INCLUDES_TEMPLADE . "header.php"; ?></php>
 
-<body>
-    <center><h1>Listado de usuarios</h1></center>
+<body class="hold-transition sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
 
-    <table border="1px">
+        <!-- Navbar -->
+        <?php require_once INCLUDES_TEMPLADE . "navBar.php"; ?></php>
+        <!-- /.navbar -->
 
-        <thead>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Estado</th>
-        </thead>
+        <!-- Main Sidebar Container -->
+        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Blank Page</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
 
-        <tbody>
-            <?php
-            foreach ($d->data as $usuario) {
-                print_r("<tr>");
+            <!-- Main content -->
+            <section class="content">
 
-                print_r("<td>$usuario->id</td>");
-                print_r("<td> $usuario->nombre</td>");
-                print_r("<td> $usuario->email</td>");
-                print_r("<td> $usuario->password</td>");
-                print_r("<td> $usuario->estado</td>");
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Consultar Usuarios</h3>
 
-                print_r("<tr>");
-            }
-            ?>
-        </tbody>
-    </table>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table border="1px">
 
+                            <thead>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Estado</th>
+                            </thead>
 
+                            <tbody>
+                                <?php
+                                foreach ($d->data as $usuario) {
+                                    print_r("<tr>");
 
+                                    print_r("<td>$usuario->id</td>");
+                                    print_r("<td> $usuario->nombre</td>");
+                                    print_r("<td> $usuario->email</td>");
+                                    print_r("<td> $usuario->password</td>");
+                                    print_r("<td> $usuario->estado</td>");
+
+                                    print_r("<tr>");
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        Footer
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+
+    <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
 
 </body>
 
