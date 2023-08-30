@@ -6,7 +6,7 @@ El doxumento ejecuta su logica y la devuelve
 
 
 ---------------------------------------------------------------------
-index extrae los datos, entra la logica del control y la logica de la capa del modelo. El modelo hace las consultas dentro de la base de datos retorna los datos al formControlName="control"
+index extrae los datos, entra la logica del control. El modelo hace las consultas dentro de la base de datos retorna los datos al formControlName="control"
 el control hace las respecticas operaciones y devuelve al index (SE REPITE EL CICLO).
 
 
@@ -35,6 +35,6 @@ EL CMD EJECUTA LA LOGICA EN SU INTERIOR E IMPRIME LA RESPUESTA
 
 ---------------------------------------------------------------------
 RETOMAR VIDEO
-2
+2:21
 
 

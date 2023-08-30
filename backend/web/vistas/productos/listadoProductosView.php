@@ -20,7 +20,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Blank Page</h1>
+                            <h3>Gestion de usuarios</h3>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -49,8 +49,34 @@
                             </button>
                         </div>
                     </div>
+
                     <div class="card-body">
-                        Home de la pagina
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <th>Acciones</th>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Precio</th>
+                            </thead>
+
+                            <tbody>
+                                <?php
+                                foreach ($d->data as $producto) {
+                                    print_r("<tr>");
+                                    print_r("<td>
+                                    <a href='../web/cmdModificarProductos'><i class='nav-icon fas fa-edit'></i></a>
+                                    <a href='../web/cmdEliminarProductos'><i class='nav-icon fas fa-trash'></i></a>
+                                    </td>");
+                                    print_r("<td> $producto->id</td>");
+                                    print_r("<td> $producto->nombre</td>");
+                                    print_r("<td> $producto->descripcion</td>");
+                                    print_r("<td> $producto->precio</td>");
+                                    print_r("</tr>");
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
@@ -76,6 +102,25 @@
 
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
 
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
 </body>
 
 </html>

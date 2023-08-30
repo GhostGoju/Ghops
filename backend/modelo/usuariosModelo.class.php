@@ -25,6 +25,16 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         return $result->fetch_all(MYSQLI_ASSOC);                       //*FETCHALL Y EL CONJUNTO DE VALORES DENTRO DEL ARREGLO SON UNA FORMA DE MOSTRAR LOS VALORES EN COLUMNAS
     }
 
+
+    //? (FUNCION DE TRAER TODA LA LISTA DE PRODUCTOS)
+    public function getAllProductos()
+    {
+        $sql = "SELECT * FROM productos";
+        $result = $this->conexion->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
     //? (FUNCION DE BUSCAR UN USUARIO MEDIANTE SU ID)
     public function getById($id)
     {

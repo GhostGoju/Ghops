@@ -38,6 +38,13 @@ class usuariosControl
     }
 
 
+    //? (FUNCION DE TRAER TODA LA LISTA DE PRODUCTOS)
+    public function listarProductos()
+    {
+        return $this->modelo->getAllProductos();
+    }
+
+
     //? (FUNCION DE BUSCAR UN USUARIO MEDIANTE SU ID)
     public function buscarUsuarios($id)
     {
@@ -66,14 +73,18 @@ class usuariosControl
             $result = $this->modelo->getByEmail($email);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) == 0) {
                 $result = $this->modelo->insertar($email, md5($password), $nombre, $estado);
-                if ($result)
-                    return 3;           //*USUARIO CREADO
-                else
-                    return 2;               //* USUARIO NO CREADO
-            } else
-                return 1;            //*USUARIO YA EXISTENTE CON EL MISMO EMAIL
-        } else
-            return 0;                //* FALTAN DATOS
+                if ($result) {
+                    return 3;
+                }           //*USUARIO CREADO
+                else {
+                    return 2;
+                }               //* USUARIO NO CREADO
+            } else {
+                return 1;
+            }            //*USUARIO YA EXISTENTE CON EL MISMO EMAIL
+        } else {
+            return 0;
+        }                //* FALTAN DATOS
     }
 
 
@@ -88,14 +99,18 @@ class usuariosControl
             $result = $this->modelo->getById($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) > 0) {
                 $result = $this->modelo->actualizar($id, $nombre, $estado);
-                if ($result)
-                    return 3;           //*USUARIO ACTUALIZADO
-                else
-                    return 2;               //* USUARIO NO ACTUALIZADO
-            } else
-                return 1;            //*USUARIO NO EXISTENTE CON ESE ID
-        } else
-            return 0;                //* FALTAN DATOS
+                if ($result) {
+                    return 3;
+                }           //*USUARIO ACTUALIZADO
+                else {
+                    return 2;
+                }               //* USUARIO NO ACTUALIZADO
+            } else {
+                return 1;
+            }            //*USUARIO NO EXISTENTE CON ESE ID
+        } else {
+            return 0;
+        }                //* FALTAN DATOS
     }
 
 
@@ -109,14 +124,18 @@ class usuariosControl
             $result = $this->modelo->getById($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) > 0) {
                 $result = $this->modelo->actualizarPassword($id, $password);
-                if ($result)
-                    return 3;           //*PASSWORD ACTUALIZADA
-                else
-                    return 2;               //* PASSWORD NO ACTUALIZADA
-            } else
-                return 1;            //*USUARIO NO EXISTENTE CON ESE ID
-        } else
-            return 0;                //* FALTAN DATOS
+                if ($result) {
+                    return 3;
+                }           //*PASSWORD ACTUALIZADA
+                else {
+                    return 2;
+                }               //* PASSWORD NO ACTUALIZADA
+            } else {
+                return 1;
+            }            //*USUARIO NO EXISTENTE CON ESE ID
+        } else {
+            return 0;
+        }                //* FALTAN DATOS
     }
 
 
@@ -124,18 +143,22 @@ class usuariosControl
     public function eliminar($id)
     {
         if (
-            !empty($id) && $id != "" && $id != NULL
+            !empty($id) && $id != "" && $id != null
         ) {
             $result = $this->modelo->getById($id);
             if (is_array($result) && count($result) > 0) {
                 $result = $this->modelo->eliminar($id);
-                if ($result)
-                    return 3; // Usuario eliminado
-                else
-                    return 2; //Usuario no eliminado
-            } else
-                return 1; //Usuario No existe con ese Id
-        } else
-            return  0; //Falta Datos
+                if ($result) {
+                    return 3;
+                } // Usuario eliminado
+                else {
+                    return 2;
+                } //Usuario no eliminado
+            } else {
+                return 1;
+            } //Usuario No existe con ese Id
+        } else {
+            return  0;
+        } //Falta Datos
     }
 }
