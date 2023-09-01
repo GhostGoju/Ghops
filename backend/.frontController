@@ -11,7 +11,7 @@ class frontController
             $view = array_shift($myUrl);
 
             // VALIDACION DE QUE VENGA WEB O API
-            if ($view != "api" && $view !="web")
+            if ($view != "api" && $view != "web")
                 showError("Peticion invalida", true);
 
             if ($view == "api")                         //*AQUI DEFINIMOS SI LA URL LLAMA A API - EN CASO DE QUE SI ES TRUE - SI NO ES FALSE
@@ -41,10 +41,6 @@ class frontController
             print_r("Accion invalida");
         }
     }
-
-
-
-
 
 
     public function dispatcher($action, $params)

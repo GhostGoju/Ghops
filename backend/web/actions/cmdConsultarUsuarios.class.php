@@ -16,7 +16,7 @@ class cmdConsultarUsuarios
             "message" => "Listado generado"
         ];
         if (!CALL_API == true)
-            $response["view"] = "usuarios/index";
+            $response["view"] = "usuarios/listadousuarios";
         return $response;
     }
 }

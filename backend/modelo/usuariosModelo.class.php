@@ -63,23 +63,26 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
 
 
     //? (FUNCION DE INSERTAR NUEVO USUARIO)
-    public function insertar($email, $password, $nombre, $estado)
+    public function insertar($email, $password, $nombre, $estado, $rol)
     {
         $sql = "INSERT
         INTO usuarios
-        VALUES (null,'$email','$password','$nombre','$estado')";           //* SI EMAIL ES UN VARCHAR ENTONES DEBE ESTAR DENTRO DE COMILLAS
+        VALUES (null, '$email','$password','$nombre',$estado, $rol)";           //* SI EMAIL ES UN VARCHAR ENTONES DEBE ESTAR DENTRO DE COMILLAS
         $result = $this->conexion->query($sql);
         return $result;
     }
 
 
     //? (FUNCION DE ACTUALIZAR DATOS DEL USUARIO)
-    public function actualizar($id, $nombre, $estado)                          //* PARA ACTUALIZAR LOS DATOS DE UN USUARIO TAMBIEN TENEMOS QUE PASAR EL PARAMETRO ID
+    public function actualizar($id, $email, $nombre, $estado, $rol)
     {
         $sql = "UPDATE usuarios
-    SET nombre = '$nombre',
-    SET estado = '$estado',
+    SET email = '$email',
+    nombre = '$nombre',
+    estado = $estado,
+    rol = $rol
     WHERE id = $id";
+
         $result = $this->conexion->query($sql);
         return $result;
     }

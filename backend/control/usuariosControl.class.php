@@ -62,17 +62,18 @@ class usuariosControl
 
 
     //? (FUNCION DE INSERTAR NUEVO USUARIO)
-    public function registrar($email, $password, $nombre, $estado)
+    public function registrar($email, $password, $nombre, $estado, $rol)
     {
         if (
             !empty($email) && $email != "" && $email != null &&
             !empty($password) && $password != "" && $password != null &&
             !empty($nombre) && $nombre != "" && $nombre != null &&
-            !empty($estado) && $estado != "" && $estado != null
+            !empty($estado) && $estado != "" && $estado != null &&
+            !empty($rol) && $rol != "" && $rol != null
         ) {
             $result = $this->modelo->getByEmail($email);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) == 0) {
-                $result = $this->modelo->insertar($email, md5($password), $nombre, $estado);
+                $result = $this->modelo->insertar($email, md5($password), $nombre, $estado, $rol);
                 if ($result) {
                     return 3;
                 }           //*USUARIO CREADO
@@ -89,16 +90,18 @@ class usuariosControl
 
 
     //? (CASO DE USO DE ACTUALIZAR USUARIOS)
-    public function modifiarUsuarios($id, $nombre, $estado)
+    public function modificarUsuarios($id, $email, $nombre, $estado, $rol)
     {
         if (
             !empty($id) && $id != "" && $id != null &&
+            !empty($email) && $email != "" && $email != null &&
             !empty($nombre) && $nombre != "" && $nombre != null &&
-            $estado != "" && $estado != null
+            !empty($estado) && $estado != "" && $estado != null &&
+            !empty($rol) && $rol != "" && $rol != null
         ) {
             $result = $this->modelo->getById($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) > 0) {
-                $result = $this->modelo->actualizar($id, $nombre, $estado);
+                $result = $this->modelo->actualizar($id, $email, $nombre, $estado, $rol);
                 if ($result) {
                     return 3;
                 }           //*USUARIO ACTUALIZADO
