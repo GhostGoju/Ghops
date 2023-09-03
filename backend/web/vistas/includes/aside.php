@@ -13,7 +13,7 @@
                 <img src="public/img/img-decoracion/maniqui.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="web/cmdDefaultPerfilUsuarios/">Perfil</a>
+                <a href="web/cmdDefaultPerfilUsuarios">Perfil</a>
             </div>
         </div>
 

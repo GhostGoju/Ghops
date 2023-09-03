@@ -42,6 +42,7 @@
 
                         <!-- form start -->
                         <form action="web/cmdCrearUsuarios" method="POST">
+
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="nombre">Nombre</label>

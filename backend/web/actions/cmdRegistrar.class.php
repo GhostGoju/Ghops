@@ -7,7 +7,7 @@ class cmdRegistrar
         extract($_REQUEST);
 
         $u = new usuariosControl();
-        $result = $u->registrar($email, $password, $nombre, $estado);
+        $result = $u->registrar($email, $password, $nombre, $estado, $rol);
         switch ($result) {
             case 0:                                                 //* FALTAN DATOS
                 $response = [
@@ -39,7 +39,7 @@ class cmdRegistrar
                 break;
         }
         if (!CALL_API == true)
-        $response["view"] = "usuarios/edit";
+            $response["view"] = "usuarios/edit";
         return $response;
     }
 }

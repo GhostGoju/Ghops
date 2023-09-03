@@ -60,7 +60,7 @@
                     <a href="<?php echo URL; ?>web/cmdDefaultRecuperarpassword" class="nav-link">Olvide mi contraseña</a>
                 </p>
                 <p class="mb-0">
-                    <a href="<?php echo URL; ?>web/cmdDefaultRegistro" class="nav-link">Registrarse</a>
+                    <a href="<?php echo URL; ?>web/" class="nav-link">Registrarse</a>
                 </p>
             </div>
             <!-- /.card-body -->

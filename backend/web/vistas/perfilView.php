@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | User Profile</title>
+    <title>Perfil</title>
 
     <?php require_once INCLUDES_TEMPLADE . "header.php"; ?></php>
 </head>

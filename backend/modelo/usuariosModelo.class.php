@@ -90,16 +90,6 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         return $result;
     }
 
-    //? (FUNCION DE INSERTAR NUEVO USUARIO)
-    public function validacionRegistroUsuarios($email, $password, $nombre)
-    {
-        $sql = "INSERT
-        INTO usuarios
-        VALUES (null,'$email','$password','$nombre', null, null)";
-        $result = $this->conexion->query($sql);
-        return $result;
-    }
-
 
     //? (FUNCION DE INSERTAR NUEVO PRODUCTO)
     public function insertarProductos($nombre, $descripcion, $precio, $categoria)

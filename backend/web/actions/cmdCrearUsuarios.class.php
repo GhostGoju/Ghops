@@ -6,6 +6,7 @@ class cmdCrearUsuarios
     public function execute($params)
     {
         valid_method($this->default_request_method);
+
         extract($_REQUEST);
         $u = new usuariosControl();
         $result = $u->registrar($email, $password, $nombre, $estado, $rol);
