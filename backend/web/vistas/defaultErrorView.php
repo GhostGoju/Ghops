@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h2>Falla en los pists :(</h2>
+    <h2>Error Pits</h2>
     <h2><?php echo $d->message; ?></h2>
 </body>
 

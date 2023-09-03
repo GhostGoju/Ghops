@@ -1,6 +1,6 @@
 <?php
 
-class cmdDefaultFormulario
+class cmdFAQ
 {
     public function execute()
     {
@@ -8,7 +8,7 @@ class cmdDefaultFormulario
             "result" => "success",
             "data" => "",
             "message" => "",
-            "view" => "formularioUsuarios"
+            "view" => "FAQ"
         ];
         return $response;
     }

@@ -105,6 +105,32 @@ class usuariosControl
     }
 
 
+    //? (FORMULARIO PARA USUARIOS NUEVOS)
+    public function formularioNuevosUsuarios($nombre, $email, $password)
+    {
+        if (
+            !empty($nombre) && $nombre != "" && $nombre != null &&
+            !empty($email) && $email != "" && $email != null &&
+            !empty($password) && $password != "" && $password != null
+        ) {
+            $result = $this->modelo->getByEmail($email);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
+            if (is_array($result) && count($result) == 0) {
+                $result = $this->modelo->formularioInsertarUsuarios($email, md5($password), $nombre);
+                if ($result) {
+                    return 3;
+                }           //*USUARIO CREADO
+                else {
+                    return 2;
+                }               //* USUARIO NO CREADO
+            } else {
+                return 1;
+            }            //*USUARIO YA EXISTENTE CON EL MISMO EMAIL
+        } else {
+            return 0;
+        }                //* FALTAN DATOS
+    }
+
+
     //? (FUNCION DE INSERTAR NUEVO PRODUCTO)
     public function registrarProductos($nombre, $descripcion, $precio, $categoria)
     {

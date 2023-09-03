@@ -2,6 +2,14 @@
     <script src="<?php echo URL; ?>public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="<?php echo URL; ?>public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Ekko Lightbox -->
+    <script src="<?php echo URL; ?>public/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo URL; ?>public/dist/js/adminlte.min.js"></script>
+    <!-- Filterizr-->
+    <script src="<?php echo URL; ?>public/plugins/filterizr/jquery.filterizr.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="<?php echo URL; ?>public/dist/js/demo.js"></script>
     <!-- SweetAlert2 -->
     <script src="<?php echo URL; ?>public/plugins/sweetalert2/sweetalert2.min.js"></script>
     <!-- DataTables  & Plugins -->
@@ -18,6 +26,12 @@
     <script src="<?php echo URL; ?>public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="<?php echo URL; ?>public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+
+
+
+
+
+
     <!-- AdminLTE App -->
     <script src="public/js/adminlte.min.js"></script>
 
@@ -29,8 +43,6 @@
                 showConfirmButton: false,
                 timer: 3000
             });
-
-
             <?php if (isset($d) && $d->message != "") : ?>
                 Toast.fire({
                     icon: 'success',
