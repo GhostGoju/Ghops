@@ -1,6 +1,6 @@
 <?php
 
-class cmdDefaultEditarUsuarios
+class cmdDefaultEditarProductos
 {
 
     private $default_request_method = "GET";
@@ -17,13 +17,13 @@ class cmdDefaultEditarUsuarios
         else {
             $id = $params[0];
             $u = new usuariosControl();
-            $result = $u->buscarUsuarios($id);
+            $result = $u->buscarProductos($id);
             if (is_array($result)) {
                 $response = [
                     "result" => "success",
                     "data" => $result,
                     "message" => "",
-                    "view" => "usuarios/edit"
+                    "view" => "productos/editarProductos"
                 ];
             }
             if ($result == 0) {
@@ -37,7 +37,7 @@ class cmdDefaultEditarUsuarios
                 $response = [
                     "result" => "fail",
                     "data" => "",
-                    "view" => "usuarios/listadoUsuarios"
+                    "view" => "productos/listadoProductos"
                 ];
             }
         }

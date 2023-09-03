@@ -26,7 +26,7 @@ class usuariosControl
                 return 1;
             }
         } else {
-            return 0;                                 //* SI ALGUNA DE LAS CONDICIONES DE ARRIBA NO SE CUMPLE ENTONCES SE LE RETORNA UN 0 (ERROR)
+            return 0;
         }
     }
 
@@ -50,6 +50,22 @@ class usuariosControl
     {
         if (!empty($id) && $id != "" && $id != null) {
             $result = $this->modelo->getById($id);
+            if (is_array($result) && count($result) > 0) {
+                return $result;
+            } else {
+                return 1;
+            }
+        } else {
+            return 0;
+        }
+    }
+
+
+    //? (FUNCION DE BUSCAR UN PRODUCTO MEDIANTE SU ID)
+    public function buscarProductos($id)
+    {
+        if (!empty($id) && $id != "" && $id != null) {
+            $result = $this->modelo->getByIdProductos($id);
             if (is_array($result) && count($result) > 0) {
                 return $result;
             } else {
@@ -88,6 +104,57 @@ class usuariosControl
         }                //* FALTAN DATOS
     }
 
+    public function registroUsuarios($email, $password, $nombre)
+    {
+        if (
+            !empty($email) && $email != "" && $email != null &&
+            !empty($password) && $password != "" && $password != null &&
+            !empty($nombre) && $nombre != "" && $nombre != null
+        ) {
+            $result = $this->modelo->getByEmail($email);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
+            if (is_array($result) && count($result) == 0) {
+                $result = $this->modelo->validacionRegistroUsuarios($email, md5($password), $nombre);
+                if ($result) {
+                    return 3;
+                }           //*USUARIO CREADO
+                else {
+                    return 2;
+                }               //* USUARIO NO CREADO
+            } else {
+                return 1;
+            }            //*USUARIO YA EXISTENTE CON EL MISMO EMAIL
+        } else {
+            return 0;
+        }                //* FALTAN DATOS
+    }
+
+
+    //? (FUNCION DE INSERTAR NUEVO PRODUCTO)
+    public function registrarProductos($nombre, $descripcion, $precio, $categoria)
+    {
+        if (
+            !empty($nombre) && $nombre != "" && $nombre != null &&
+            !empty($descripcion) && $descripcion != "" && $descripcion != null &&
+            !empty($precio) && $precio != "" && $precio != null &&
+            !empty($categoria) && $categoria != "" && $categoria != null
+        ) {
+            $result = $this->modelo->getByNombreProductos($nombre);
+            if (is_array($result) && count($result) == 0) {
+                $result = $this->modelo->insertarProductos($nombre, $descripcion, $precio, $categoria);
+                if ($result) {
+                    return 3;
+                }           //*PREDUCTO CREADO
+                else {
+                    return 2;
+                }               //* PRODUCTO NO CREADO
+            } else {
+                return 1;
+            }            //*PRODUCTO YA EXISTENTE CON EL MISMO ID
+        } else {
+            return 0;
+        }                //* FALTAN DATOS
+    }
+
 
     //? (CASO DE USO DE ACTUALIZAR USUARIOS)
     public function modificarUsuarios($id, $email, $nombre, $estado, $rol)
@@ -116,23 +183,25 @@ class usuariosControl
         }                //* FALTAN DATOS
     }
 
-
-    //? (ACTUALIZAR PASSWORD)    (BUSCAR SOLUCION)
-    public function updatePassword($id, $password)
+    //? (CASO DE USO DE ACTUALIZAR USUARIOS)
+    public function modificarProductos($id, $nombre, $descripcion, $precio, $categoria)
     {
         if (
             !empty($id) && $id != "" && $id != null &&
-            !empty($password) && $password != "" && $password != null
+            !empty($nombre) && $nombre != "" && $nombre != null &&
+            !empty($descripcion) && $descripcion != "" && $descripcion != null &&
+            !empty($precio) && $precio != "" && $precio != null &&
+            !empty($categoria) && $categoria != "" && $categoria != null
         ) {
-            $result = $this->modelo->getById($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
+            $result = $this->modelo->getByIdProductos($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) > 0) {
-                $result = $this->modelo->actualizarPassword($id, $password);
+                $result = $this->modelo->actualizarProductos($id, $nombre, $descripcion, $precio, $categoria);
                 if ($result) {
                     return 3;
-                }           //*PASSWORD ACTUALIZADA
+                }           //*USUARIO ACTUALIZADO
                 else {
                     return 2;
-                }               //* PASSWORD NO ACTUALIZADA
+                }               //* USUARIO NO ACTUALIZADO
             } else {
                 return 1;
             }            //*USUARIO NO EXISTENTE CON ESE ID
@@ -163,5 +232,62 @@ class usuariosControl
         } else {
             return  0;
         } //Falta Datos
+    }
+
+
+    //? (ELIMINAR USUARIOS DE LA BASE DE DATOS)
+    public function eliminarProductos($id)
+    {
+        if (
+            !empty($id) && $id != "" && $id != null
+        ) {
+            $result = $this->modelo->getByIdProductos($id);
+            if (is_array($result) && count($result) > 0) {
+                $result = $this->modelo->eliminarProductos($id);
+                if ($result) {
+                    return 3;
+                } // Usuario eliminado
+                else {
+                    return 2;
+                } //Usuario no eliminado
+            } else {
+                return 1;
+            } //Usuario No existe con ese Id
+        } else {
+            return  0;
+        } //Falta Datos
+    }
+
+
+
+
+
+
+
+
+
+
+    //? (ACTUALIZAR PASSWORD)    (BUSCAR SOLUCION)
+    public function updatePassword($id, $password)
+    {
+        if (
+            !empty($id) && $id != "" && $id != null &&
+            !empty($password) && $password != "" && $password != null
+        ) {
+            $result = $this->modelo->getById($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
+            if (is_array($result) && count($result) > 0) {
+                $result = $this->modelo->actualizarPassword($id, $password);
+                if ($result) {
+                    return 3;
+                }           //*PASSWORD ACTUALIZADA
+                else {
+                    return 2;
+                }               //* PASSWORD NO ACTUALIZADA
+            } else {
+                return 1;
+            }            //*USUARIO NO EXISTENTE CON ESE ID
+        } else {
+            return 0;
+        }                //* FALTAN DATOS
     }
 }

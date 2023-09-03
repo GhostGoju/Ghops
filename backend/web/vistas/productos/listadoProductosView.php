@@ -6,11 +6,6 @@
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
-
-        <!-- Navbar -->
-        <?php require_once INCLUDES_TEMPLADE . "navBar.php"; ?></php>
-        <!-- /.navbar -->
-
         <!-- Main Sidebar Container -->
         <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
         <!-- Content Wrapper. Contains page content -->
@@ -20,12 +15,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h3>Gestion de usuarios</h3>
+                            <h3>Gestion Productos</h3>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Blank Page</li>
+                                <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Blank Page</li> -->
                             </ol>
                         </div>
                     </div>
@@ -38,8 +33,9 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Title</h3>
 
+                        <a href="web/cmdDefaultCrearProductos" class="btn btn-primary">Agregar</a>
+                        <!--
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                                 <i class="fas fa-minus"></i>
@@ -47,7 +43,7 @@
                             <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
                                 <i class="fas fa-times"></i>
                             </button>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="card-body">
@@ -58,20 +54,22 @@
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
                                 <th>Precio</th>
+                                <th>categoria</th>
                             </thead>
 
                             <tbody>
                                 <?php
-                                foreach ($d->data as $producto) {
+                                foreach ($d->data as $productos) {
                                     print_r("<tr>");
                                     print_r("<td>
-                                    <a href='../web/cmdModificarProductos'><i class='nav-icon fas fa-edit'></i></a>
-                                    <a href='../web/cmdEliminarProductos'><i class='nav-icon fas fa-trash'></i></a>
+                                    <a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'></i></a>
+                                    <a href='web/cmdEliminarProductos/" . $productos->id . "'><i class='nav-icon fas fa-trash'></i></a>
                                     </td>");
-                                    print_r("<td> $producto->id</td>");
-                                    print_r("<td> $producto->nombre</td>");
-                                    print_r("<td> $producto->descripcion</td>");
-                                    print_r("<td> $producto->precio</td>");
+                                    print_r("<td> $productos->id</td>");
+                                    print_r("<td> $productos->nombre</td>");
+                                    print_r("<td> $productos->descripcion</td>");
+                                    print_r("<td> $productos->precio</td>");
+                                    print_r("<td> $productos->categoria</td>");
                                     print_r("</tr>");
                                 }
                                 ?>
@@ -80,7 +78,6 @@
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        Footer
                     </div>
                     <!-- /.card-footer-->
                 </div>
@@ -89,10 +86,6 @@
             </section>
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-
-        <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php>
-
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->

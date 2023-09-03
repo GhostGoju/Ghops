@@ -44,6 +44,15 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
+    //? (FUNCION DE BUSCAR UN PRODUCTO MEDIANTE SU ID)
+    public function getByIdProductos($id)
+    {
+        $sql = "SELECT * FROM productos WHERE id = $id";
+        $result = $this->conexion->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
     //? (FUNCION DE (INICIO DE SESION) VALIDAR ESTA ACCION)
     public function validarUsuarios($email, $password)                              //* ESTE ES EL METODO DEL MODELO QUE REVISA SI EL CORREO Y LA CONTRASENA ESTAN CORRECTOS
     {
@@ -62,12 +71,42 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
+    //? (FUNCION DE BUSCAR USUARIOS MEDIANTE SU EMAIL)
+    public function getByNombreProductos($nombre)                              //* ESTE ES EL METODO DEL MODELO QUE REVISA SI EL CORREO ESTA CORRECTO
+    {
+        $sql = "SELECT * FROM productos WHERE nombre = '$nombre'";           //* SI EMAIL ES UN VARCHAR ENTONES DEBE ESTAR DENTRO DE COMILLAS
+        $result = $this->conexion->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
     //? (FUNCION DE INSERTAR NUEVO USUARIO)
     public function insertar($email, $password, $nombre, $estado, $rol)
     {
         $sql = "INSERT
         INTO usuarios
         VALUES (null, '$email','$password','$nombre',$estado, $rol)";           //* SI EMAIL ES UN VARCHAR ENTONES DEBE ESTAR DENTRO DE COMILLAS
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+    //? (FUNCION DE INSERTAR NUEVO USUARIO)
+    public function validacionRegistroUsuarios($email, $password, $nombre)
+    {
+        $sql = "INSERT
+        INTO usuarios
+        VALUES (null,'$email','$password','$nombre', null, null)";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
+    //? (FUNCION DE INSERTAR NUEVO PRODUCTO)
+    public function insertarProductos($nombre, $descripcion, $precio, $categoria)
+    {
+        $sql = "INSERT
+        INTO productos
+        VALUES (null, '$nombre', '$descripcion', $precio, $categoria)";
         $result = $this->conexion->query($sql);
         return $result;
     }
@@ -87,13 +126,16 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         return $result;
     }
 
-
-    //? (FUNCION DE ACTUALIZAR PASSWORD)  (BUSCAR SOLUCION)
-    public function actualizarPassword($id, $password)
+    //? (FUNCION DE ACTUALIZAR DATOS DEL producto)
+    public function actualizarProductos($id, $nombre, $descripcion, $precio, $categoria)
     {
-        $sql = "UPDATE usuarios
-    SET id= $id,
-    WHERE password= '$password'";
+        $sql = "UPDATE productos
+    SET nombre = '$nombre',
+    descripcion = '$descripcion',
+    precio= $precio,
+    categoria = $categoria
+    WHERE id = $id";
+
         $result = $this->conexion->query($sql);
         return $result;
     }
@@ -103,6 +145,37 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     public function eliminar($id)
     {
         $sql = "DELETE FROM  usuarios WHERE id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
+    //? (FUNCION DE ELIMINAR USUARIOS)
+    public function eliminarProductos($id)
+    {
+        $sql = "DELETE FROM productos WHERE id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //? (FUNCION DE ACTUALIZAR PASSWORD)  (BUSCAR SOLUCION)
+    public function actualizarPassword($id, $password)
+    {
+        $sql = "UPDATE usuarios
+    SET id= $id,
+    WHERE password= '$password'";
         $result = $this->conexion->query($sql);
         return $result;
     }

@@ -62,8 +62,8 @@
                                 foreach ($d->data as $usuario) {
                                     print_r("<tr>");
                                     print_r("<td>
-                                    <a href=web/cmdDefaultEditarUsuarios/'" . $usuario->id . "'><i class='nav-icon fas fa-edit'></i></a>
-                                    <a href=web/cmdEliminarUsuarios/'" . $usuario->id . "'><i class='nav-icon fas fa-trash'></i></a>
+                                    <a href='web/cmdDefaultEditarUsuarios/" . $usuario->id . "'><i class='nav-icon fas fa-edit'></i></a>
+                                    <a href='web/cmdEliminarUsuarios/" . $usuario->id . "'><i class='nav-icon fas fa-trash'></i></a>
                                     </td>");
                                     print_r("<td> $usuario->id</td>");
                                     print_r("<td> $usuario->nombre</td>");

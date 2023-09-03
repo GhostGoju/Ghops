@@ -16,7 +16,7 @@ class cmdConsultarProductos
             "message" => "Listado generado"
         ];
         if (!CALL_API == true)
-            $response["view"] = "productos/listadoProductos";  //*REVISAR
+            $response["view"] = "productos/listadoProductos";
         return $response;
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
-class cmdAutenticar
+class cmdRegistro
+
 {
     private $default_request_method = "POST";
     public function execute()                         //* UNICO METODO DE LA CLASE
@@ -10,7 +11,7 @@ class cmdAutenticar
 
         extract($_REQUEST);                                           //* LOS DATOS QUE SE NECESITAN PARA EJECUTAR LAS ACCIONES SE EXTRAEN DE REQUEST
         $u = new usuariosControl();
-        $result = $u->autenticar($email, $password);                //* RESULT ALMACENA LA INFORMACION QUE TRAIGAN LAS VARIABLES EMAIL AND PASSWORD
+        $result = $u->registroUsuarios($email, $password);             //* RESULT ALMACENA LA INFORMACION QUE TRAIGAN LAS VARIABLES EMAIL AND PASSWORD
         if (is_array($result)) {
             $response = [
                 "result" => "success",

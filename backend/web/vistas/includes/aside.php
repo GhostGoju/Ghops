@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo URL; ?>web/ cmdConsultarproductos" class="nav-link">
+                    <a href="<?php echo URL; ?>web/cmdConsultarProductos" class="nav-link">
                         <i class="nav-icon fas fa-box"></i>
                         <p>
                             Gestion Productos

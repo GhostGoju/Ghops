@@ -1,6 +1,6 @@
 <?php
 
-class cmdActualizarusuarios
+class cmdActualizarProductos
 {
     private $default_request_method = "POST";
     public function execute()
@@ -8,39 +8,39 @@ class cmdActualizarusuarios
         valid_method($this->default_request_method);
         extract($_REQUEST);
         $u = new usuariosControl();
-        $result = $u->modificarUsuarios($id, $email, $nombre, $estado, $rol);
-        $datos = $u->listarUsurios();
+        $result = $u->modificarProductos($id, $nombre, $descripcion, $precio, $categoria);
+        $datos = $u->listarProductos();
         switch ($result) {
             case 0:
                 $response = [
                     "result" => "fail",
                     "data" => $datos,
                     "message" => "faltan datos",
-                    "view" => "usuarios/listadoUsuarios"
+                    "view" => "productos/listadoProductos"
                 ];
                 break;
             case 1:
                 $response = [
                     "result" => "fail",
                     "data" => $datos,
-                    "message" => "Usuario existente con el mismo email",
-                    "view" => "usuarios/listadoUsuarios"
+                    "message" => "Producto existente con el mismo nombre",
+                    "view" => "productos/listadoProductos"
                 ];
                 break;
             case 2:
                 $response = [
                     "result" => "fail",
                     "data" => $datos,
-                    "message" => "Usuario no actualizado",
-                    "view" => "usuarios/listadoUsuarios"
+                    "message" => "Producto no actualizado",
+                    "view" => "productos/listadoProductos"
                 ];
                 break;
             case 3:
                 $response = [
                     "result" => "success",
                     "data" => $datos,
-                    "message" => "Usuario actualizado correctamente",
-                    "view" => "usuarios/listadoUsuarios"
+                    "message" => "Producto actualizado correctamente",
+                    "view" => "productos/listadoProductos"
                 ];
                 break;
         }
