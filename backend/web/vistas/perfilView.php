@@ -188,7 +188,7 @@
                                         <div class="tab-pane" id="settings">
                                             <form class="form-horizontal">
                                                 <div class="form-group row">
-                                                    <label for="inputName" class="col-sm-2 col-form-label">recuperacion de password</label>
+                                                    <label for="inputName" class="col-sm-2 col-form-label">recuperacion de contraseña</label>
                                                     <div class="col-sm-10">
                                                         <input type="email" class="form-control" id="inputName" placeholder="Name">
                                                     </div>

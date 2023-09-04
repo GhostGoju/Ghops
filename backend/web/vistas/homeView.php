@@ -14,28 +14,33 @@
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
 
-
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Productos</h1>
+                            <h1>Catalogo</h1>
                         </div>
                     </div>
-                </div><!-- /.container-fluid -->
+                </div>
             </section>
-
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                            <div class="card card-primary">
+                            <!-- Default box -->
+                            <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title"></h4>
+                                    <h3 class="card-title">Camisetas</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
@@ -64,19 +69,61 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- /.container-fluid -->
+                </div>
             </section>
-            <!-- /.content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Default box -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Pocillos</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
+                                                <img src="public/img/productos/pocillo.jpg" class="img-fluid mb-2" alt="black sample" />
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
+                                                <img src="public/img/productos/pocillo.jpg" class="img-fluid mb-2" alt="black sample" />
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
+                                                <img src="public/img/productos/pocillo.jpg" class="img-fluid mb-2" alt="black sample" />
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
+                                                <img src="public/img/productos/pocillo.jpg" class="img-fluid mb-2" alt="black sample" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <!-- /.content-wrapper -->
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+
+        <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php>
     </div>
+
+
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
-    <!-- Page specific script -->
     <script>
         $(function() {
             $(document).on('click', '[data-toggle="lightbox"]', function(event) {

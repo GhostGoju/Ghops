@@ -9,34 +9,23 @@
             <a href="<?php echo URL; ?>web/cmdDefaultHome" class="nav-link">Home</a>
         </p>
         <p class="mb-0">
-            <a href="<?php echo URL; ?>web/cmdFAQ" class="nav-link">FAQ</a>
+            <a href="<?php echo URL; ?>web/cmdPaginaContacto" class="nav-link">Contactanos</a>
         </p>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Navbar Search -->
-        <li class="nav-item">
-            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                <i class="fas fa-search"></i>
+        <li>
+            <a href="<?php echo URL; ?>web/cmdDefaultFavoritos" class="nav-link">
+                <img src="public/img/logos/corazon.png" class="nav-link" />
             </a>
-            <div class="navbar-search-block">
-                <form class="form-inline">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-navbar" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
         </li>
-
+        <li>
+            <a href="<?php echo URL; ?>web/cmdDefaultCarrito" class="nav-link">
+                <img src="public/img/logos/carrito.png" class="nav-link" />
+            </a>
+        </li>
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <img src="public/img/img-decoracion/maniqui.png" class="user-image img-circle elevation-3" alt="User Image">
