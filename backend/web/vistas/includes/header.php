@@ -21,4 +21,5 @@
 
     <!-- Theme style -->
     <link rel="stylesheet" href="public/css/adminlte.min.css">
+
 </head>

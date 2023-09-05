@@ -27,11 +27,6 @@
     <script src="<?php echo URL; ?>public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 
-
-
-
-
-
     <!-- AdminLTE App -->
     <script src="public/js/adminlte.min.js"></script>
 

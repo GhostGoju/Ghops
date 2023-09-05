@@ -22,7 +22,6 @@
             </div>
         </div>
         <!-- /.error-page -->
-
     </section>
     <!-- /.content -->
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
