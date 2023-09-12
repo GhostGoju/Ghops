@@ -16,16 +16,13 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Navbar Search -->
-        <li>
-            <a href="<?php echo URL; ?>web/cmdDefaultFavoritos" class="nav-link">
-                <img src="public/img/logos/corazon.png" class="nav-link" />
-            </a>
-        </li>
-        <li>
-            <a href="<?php echo URL; ?>web/cmdDefaultCarrito" class="nav-link">
-                <img src="public/img/logos/carrito.png" class="nav-link" />
-            </a>
-        </li>
+        <p class="mb-0">
+            <a href="<?php echo URL; ?>web/cmdDefaultFavoritos" class="nav-link">Favoritos</a>
+        </p>
+        <p class="mb-0">
+            <a href="<?php echo URL; ?>web/cmdDefaultCarrito" class="nav-link">Carrito</a>
+            <!-- <i class="nav-icon fas fa-cart-hear"></i> -->
+        </p>
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <img src="public/img/img-decoracion/maniqui.png" class="user-image img-circle elevation-3" alt="User Image">

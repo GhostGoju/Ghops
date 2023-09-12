@@ -160,7 +160,12 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
-
+    public function redireccionamiento($rol)
+    {
+        $sql = "SELECT * FROM usuarios WHERE rol = '$rol'";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
 
 
 

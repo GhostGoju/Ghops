@@ -261,6 +261,15 @@ class usuariosControl
     }
 
 
+    public function redireccionarUsuarios($rol)
+    {
+        if ($rol == "administrador") {
+            $result = $this->modelo->redireccionamiento($rol);
+            echo "admin";
+        } else {
+            echo "user";
+        }
+    }
 
 
 

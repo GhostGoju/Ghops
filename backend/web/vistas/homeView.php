@@ -34,12 +34,12 @@
                                 <div class="card-header">
                                     <h3 class="card-title">Camisetas</h3>
                                     <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                        <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                                             <i class="fas fa-minus"></i>
                                         </button>
                                         <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
                                             <i class="fas fa-times"></i>
-                                        </button>
+                                        </button> -->
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -80,36 +80,10 @@
                                 <div class="card-header">
                                     <h3 class="card-title">Pocillos</h3>
                                     <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                            <i class="fas fa-times"></i>
-                                        </button>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
-                                                <img src="public/img/productos/pocillo.jpg" class="img-fluid mb-2" alt="black sample" />
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
-                                                <img src="public/img/productos/pocillo.jpg" class="img-fluid mb-2" alt="black sample" />
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
-                                                <img src="public/img/productos/pocillo.jpg" class="img-fluid mb-2" alt="black sample" />
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
-                                                <img src="public/img/productos/pocillo.jpg" class="img-fluid mb-2" alt="black sample" />
-                                            </a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
