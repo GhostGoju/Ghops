@@ -103,11 +103,11 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
 
 
     //? (FUNCION DE INSERTAR NUEVO PRODUCTO)
-    public function insertarProductos($nombre, $descripcion, $precio, $categoria)
+    public function insertarProductos($nombre, $descripcion, $precio, $categoria, $imagen)
     {
         $sql = "INSERT
         INTO productos
-        VALUES (null, '$nombre', '$descripcion', $precio, $categoria)";
+        VALUES (null, '$nombre', '$descripcion', $precio, $categoria,'$imagen')";
         $result = $this->conexion->query($sql);
         return $result;
     }

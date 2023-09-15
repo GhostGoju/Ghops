@@ -30,7 +30,6 @@
                                         <img class="profile-user-img img-fluid img-circle" src="public/img/img-decoracion/maniqui.png" alt="User profile picture">
                                     </div>
 
-
                                     <h3 class="profile-username text-center">user</h3>
 
                                     <a href="<?php echo URL; ?>web/cmdDefaultLogin" class="btn btn-primary btn-block"><b>salir</b></a>

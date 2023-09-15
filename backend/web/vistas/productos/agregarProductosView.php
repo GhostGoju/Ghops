@@ -59,8 +59,11 @@
                                     <label for="categoria">Categoria</label>
                                     <input type="number" class="form-control" name="categoria" id="categoria" placeholder="Categoria">
                                 </div>
+                                <div class="form-group">
+                                    <label for="imagen">Imagen</label>
+                                    <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen">
+                                </div>
                             </div>
-
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Crear</button>
                             </div>

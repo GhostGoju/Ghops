@@ -9,24 +9,37 @@
             <a href="<?php echo URL; ?>web/cmdDefaultHome" class="nav-link">Home</a>
         </p>
         <p class="mb-0">
-            <a href="<?php echo URL; ?>web/cmdPaginaContacto" class="nav-link">Contactanos</a>
+            <a href="<?php echo URL; ?>web/cmdDefaultHome" class="nav-link">Categorias</a>
         </p>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown"></button>
+
+            <div class="dropdown-menu" role="menu">
+                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdPaginaContacto">Contactanos</a>
+                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdFAQ">FAQ</a>
+            </div>
+        </div>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Navbar Search -->
         <p class="mb-0">
-            <a href="<?php echo URL; ?>web/cmdDefaultFavoritos" class="nav-link">Favoritos</a>
+            <a href="<?php echo URL; ?>web/cmdDefaultFavoritos" class="nav-link">
+                <i class="fas fa-heart"></i> Favoritos
+            </a>
         </p>
         <p class="mb-0">
-            <a href="<?php echo URL; ?>web/cmdDefaultCarrito" class="nav-link">Carrito</a>
+            <a href="<?php echo URL; ?>web/cmdDefaultCarrito" class="nav-link">
+                <i class="fas fa-credit-card"></i> Pagar
+            </a>
             <!-- <i class="nav-icon fas fa-cart-hear"></i> -->
         </p>
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <img src="public/img/img-decoracion/maniqui.png" class="user-image img-circle elevation-3" alt="User Image">
-                <span class="d-none d-md-inline">Name User</span>
+                <span class="d-none d-md-inline">User</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <!-- User image -->
@@ -34,7 +47,7 @@
                     <img src="public/img/img-decoracion/maniqui.png" class="img-circle elevation-2" alt="User Image">
 
                     <p>
-                        User Name
+                        User
                         <small>Datos</small>
                     </p>
                 </li>

@@ -132,17 +132,18 @@ class usuariosControl
 
 
     //? (FUNCION DE INSERTAR NUEVO PRODUCTO)
-    public function registrarProductos($nombre, $descripcion, $precio, $categoria)
+    public function registrarProductos($nombre, $descripcion, $precio, $categoria, $imagen)
     {
         if (
             !empty($nombre) && $nombre != "" && $nombre != null &&
             !empty($descripcion) && $descripcion != "" && $descripcion != null &&
             !empty($precio) && $precio != "" && $precio != null &&
-            !empty($categoria) && $categoria != "" && $categoria != null
+            !empty($categoria) && $categoria != "" && $categoria != null &&
+            !empty($imagen) && $imagen != "" && $imagen != null
         ) {
             $result = $this->modelo->getByNombreProductos($nombre);
             if (is_array($result) && count($result) == 0) {
-                $result = $this->modelo->insertarProductos($nombre, $descripcion, $precio, $categoria);
+                $result = $this->modelo->insertarProductos($nombre, $descripcion, $precio, $categoria, $imagen);
                 if ($result) {
                     return 3;
                 }           //*PREDUCTO CREADO
@@ -260,7 +261,7 @@ class usuariosControl
         } //Falta Datos
     }
 
-
+    //* TERMINAR
     public function redireccionarUsuarios($rol)
     {
         if ($rol == "administrador") {

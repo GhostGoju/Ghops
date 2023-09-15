@@ -3,14 +3,13 @@
 class cmdAutenticar
 {
     private $default_request_method = "POST";
-    public function execute()                         //* UNICO METODO DE LA CLASE
+    public function execute()
     {
-
         valid_method($this->default_request_method);
-
-        extract($_REQUEST);                                           //* LOS DATOS QUE SE NECESITAN PARA EJECUTAR LAS ACCIONES SE EXTRAEN DE REQUEST
+        extract($_REQUEST);
         $u = new usuariosControl();
-        $result = $u->autenticar($email, $password);                //* RESULT ALMACENA LA INFORMACION QUE TRAIGAN LAS VARIABLES EMAIL AND PASSWORD
+        $result = $u->autenticar($email, $password);
+
         if (is_array($result)) {
             $response = [
                 "result" => "success",

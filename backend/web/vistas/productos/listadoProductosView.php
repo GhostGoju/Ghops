@@ -33,17 +33,7 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-
                         <a href="web/cmdDefaultCrearProductos" class="btn btn-primary">Agregar</a>
-                        <!--
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div> -->
                     </div>
 
                     <div class="card-body">
@@ -55,6 +45,7 @@
                                 <th>Descripcion</th>
                                 <th>Precio</th>
                                 <th>categoria</th>
+                                <th>imagen</th>
                             </thead>
 
                             <tbody>
@@ -70,6 +61,7 @@
                                     print_r("<td> $productos->descripcion</td>");
                                     print_r("<td> $productos->precio</td>");
                                     print_r("<td> $productos->categoria</td>");
+                                    print_r("<td> $productos->imagen</td>");
                                     print_r("</tr>");
                                 }
                                 ?>

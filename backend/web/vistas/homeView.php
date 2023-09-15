@@ -1,121 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-
-    <?php require_once INCLUDES_TEMPLADE . "header.php"; ?></php>
-</head>
+<?php require_once INCLUDES_TEMPLADE . "header.php"; ?></php>
 
 <body class="hold-transition sidebar-mini">
+    <!-- Site wrapper -->
     <div class="wrapper">
+        <!-- Main Sidebar Container -->
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
-
+        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
             <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Catalogo</h1>
-                        </div>
-                    </div>
-                </div>
             </section>
-            <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Default box -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Camisetas</h3>
-                                    <div class="card-tools">
-                                        <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                            <i class="fas fa-times"></i>
-                                        </button> -->
-                                    </div>
+
+                <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                    <div class="card bg-light d-flex flex-fill">
+                        <div class="card-header text-muted border-bottom-0">
+                            <div class="form-group">
+                                <label>Nombre Producto</label>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="row">
+                                <div class="col-7">
+                                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Descripcion del producto</li>
+                                    </ul>
                                 </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
-                                                <img src="public/img/productos/ropaf.png" class="img-fluid mb-2" alt="black sample" />
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
-                                                <img src="public/img/productos/ropaf.png" class="img-fluid mb-2" alt="black sample" />
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
-                                                <img src="public/img/productos/ropaf.png" class="img-fluid mb-2" alt="black sample" />
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <a href="web/cmdDefaultEcommerce" s data-gallery="gallery">
-                                                <img src="public/img/productos/ropaf.png" class="img-fluid mb-2" alt="black sample" />
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="col-5 text-center">
+                                    <img src="" alt="user-avatar" class="img-circle img-fluid">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                    <i class="fas fa-cart-plus"></i> Carrito
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-heart"></i> Favoritos
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Default box -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Pocillos</h3>
-                                    <div class="card-tools">
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+
+
+
+
+
+
+
+
             </section>
         </div>
-
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
         <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php>
     </div>
 
-
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
-    <script>
-        $(function() {
-            $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox({
-                    alwaysShowClose: true
-                });
-            });
 
-            $('.filter-container').filterizr({
-                gutterPixels: 3
-            });
-            $('.btn[data-filter]').on('click', function() {
-                $('.btn[data-filter]').removeClass('active');
-                $(this).addClass('active');
-            });
-        })
-    </script>
 </body>
 
 </html>

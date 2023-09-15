@@ -63,6 +63,10 @@
                                     <label for="categoria">Categoria</label>
                                     <input type="number" class="form-control" value="<?php print_r($d->data[0]->categoria); ?>" name="categoria" id="categoria" placeholder="Categoria">
                                 </div>
+                                <div class="form-group">
+                                    <label for="imagen">Imagen</label>
+                                    <input type="file" class="form-control" value="<?php print_r($d->data[0]->imagen); ?>" name="imagen" id="imagen" placeholder="imagen">
+                                </div>
                             </div>
 
                             <div class="card-footer">
