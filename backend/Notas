@@ -12,14 +12,14 @@ el control hace las respecticas operaciones y devuelve al index (SE REPITE EL CI
 
 ---------------------------------------------------------------------
 NOTAS GENERALES:
- * Colocando un punto frente a un documento podemos volverlo incognito frente a personas que puedan vulnerar nuestro sistema
- * El documento htaccess, nos permite crear una URl interna la cual esta oculta para las otras personas esto nos permite tener mas proteccion dentro de nuestro sitio web
- * La función isset() en PHP se utiliza para verificar si una variable está definida y su valor no es NULL. Esta función devuelve un valor booleano: true si la variable está definida y no es NULL, y false en caso contrario
+* Colocando un punto frente a un documento podemos volverlo incognito frente a personas que puedan vulnerar nuestro sistema
+* El documento htaccess, nos permite crear una URl interna la cual esta oculta para las otras personas esto nos permite tener mas proteccion dentro de nuestro sitio web
+* La función isset() en PHP se utiliza para verificar si una variable está definida y su valor no es NULL. Esta función devuelve un valor booleano: true si la variable está definida y no es NULL, y false en caso contrario
 
 
 ---------------------------------------------------------------------
 HTACCESS DESCRIPCION DE LINEA DE CODIGO:
-RewriteRule  ^(.+) $index.php?url=$1 [QSA,L]
+RewriteRule ^(.+) $index.php?url=$1 [QSA,L]
 regla de reescritura / si encuentra un parametro que tenga punto o mas lo modifica / se le indica el parametro a modificar se marca como url
 se asigna una varible para almacenar los datos
 
@@ -30,4 +30,3 @@ HTACCESS TOMA LA EL URL Y LO DESCOMPONE - LA INFROMACION LA TOMA LA CLASE ACTION
 OBJETO QUE DISPARA EL METODO EJECUTAR (EXECUTE) DENTRO DE TODOS LOS ARCHIVOS CON ACCIONES - SE LLAMA AL CONTROL EL CUAL INVOCA EL MODELO Y LA ACCION QUE DESEA -
 EL MODELO DISPARA LAS ACCIONES CORRESPONDIENTES Y CONSULTA LA BASE DE DATOS Y DEVOLVERA AL CONTROL - EL CONTROL ENVIA LOS DATOS AL CMD(ACCION CORRESPONDIENTE) -
 EL CMD EJECUTA LA LOGICA EN SU INTERIOR E IMPRIME LA RESPUESTA
-

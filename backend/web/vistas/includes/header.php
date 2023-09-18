@@ -4,7 +4,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Blank Page</title>
+    <link rel="icon" href="public/img/logos/marca (4).png">
+    <title>Ghops</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -21,5 +22,10 @@
 
     <!-- Theme style -->
     <link rel="stylesheet" href="public/css/adminlte.min.css">
+
+    <!-- extras -->
+    <!-- <link rel="stylesheet" href="public/extras/css/styles.css">
+    <link rel="stylesheet" href="public/extras/css/sign-up.css">
+    <link rel="stylesheet" href="public/extras/css/login.css"> -->
 
 </head>

@@ -55,7 +55,7 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <a href="<?php echo URL; ?>web/" class="btn btn-app bg-info">
+                        <a href="<?php echo URL; ?>web/" class="btn btn-app bg-success">
                             <i class="fas fa-tshirt"></i> Publicar Producto
                         </a>
                     </ul>

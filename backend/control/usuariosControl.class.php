@@ -186,6 +186,7 @@ class usuariosControl
         }                //* FALTAN DATOS
     }
 
+
     //? (CASO DE USO DE ACTUALIZAR USUARIOS)
     public function modificarProductos($id, $nombre, $descripcion, $precio, $categoria)
     {
@@ -261,20 +262,21 @@ class usuariosControl
         } //Falta Datos
     }
 
-    //* TERMINAR
+
+    //? (REDIRECCIONAR A LOS UUARIOS DEPENDINDO DE SU ROL)
     public function redireccionarUsuarios($rol)
     {
-        if ($rol == "administrador") {
+        if ($rol == 1) {
             $result = $this->modelo->redireccionamiento($rol);
-            echo "admin";
+            if ($result !== null) {
+                return $result; // Devolver el rol si existe
+            } else {
+                return 1; // Devolver 1 si el rol no existe en la base de datos
+            }
         } else {
-            echo "user";
+            return 0; // Devolver 0 si el rol no es igual a 1
         }
     }
-
-
-
-
 
 
 

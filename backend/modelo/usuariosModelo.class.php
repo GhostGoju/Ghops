@@ -160,11 +160,18 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
+    //? (FUNCION DE REDIRECCIONAMIENTO DE USUARIOS)
     public function redireccionamiento($rol)
     {
-        $sql = "SELECT * FROM usuarios WHERE rol = '$rol'";
+        $sql = "SELECT rol FROM usuarios WHERE rol = '$rol'";
         $result = $this->conexion->query($sql);
-        return $result;
+
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return $row['rol'];
+        } else {
+            return null;
+        }
     }
 
 
