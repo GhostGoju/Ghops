@@ -35,13 +35,15 @@
 
                     <!-- general form elements -->
                     <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Crear Productos</h3>
+                        <div class="header-editor">
+                            <h3 class="card-title">Crear Producto</h3>
                         </div>
+
                         <!-- /.card-header -->
 
                         <!-- form start -->
                         <form action="web/cmdCrearProductos" method="POST">
+
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="nombre">Nombre Producto</label>
@@ -65,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Crear</button>
+                                <button type="submit" class="btn-actualizar">Crear</button>
                             </div>
                         </form>
                     </div>

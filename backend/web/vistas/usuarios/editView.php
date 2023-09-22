@@ -30,12 +30,12 @@
             <!-- Main content -->
             <section class="content">
 
-                <div class="card-body">
+                <div class="lista-gen">
                     <h1></h1>
 
                     <!-- general form elements -->
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="header-editor">
                             <h3 class="card-title">Editar Usuario</h3>
                         </div>
                         <!-- /.card-header -->
@@ -48,7 +48,8 @@
                                     <input type="number" class="form-control" readonly="false" value="<?php print_r($d->data[0]->id); ?>" name="id" id="nombre" placeholder="Id usuario">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nombre">Nombre Usuario</label><input type="text" class="form-control" value="<?php print_r($d->data[0]->nombre); ?>" name="nombre" id="nombre" placeholder="Nombre">
+                                    <label for="nombre">Nombre Usuario</label>
+                                    <input type="text" readonly="false" class="form-control" value="<?php print_r($d->data[0]->nombre); ?>" name="nombre" id="nombre" placeholder="Nombre">
 
                                 </div>
                                 <div class="form-group">
@@ -66,7 +67,7 @@
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Actualizar</button>
+                                <button type="submit" class="btn-actualizar">Actualizar</button>
                             </div>
                         </form>
                     </div>

@@ -34,10 +34,11 @@
                     <h1></h1>
 
                     <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Crear Usuario</h3>
+                    <div class="lista-gen">
+                        <div class="header-editor">
+                            <h3 class="card-title">Crear Usuarios</h3>
                         </div>
+
                         <!-- /.card-header -->
 
                         <!-- form start -->
@@ -65,9 +66,8 @@
                                     <input type="number" class="form-control" name="rol" id="rol" placeholder="Rol">
                                 </div>
                             </div>
-
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Crear</button>
+                                <button type="submit" class="btn-actualizar">Crear</button>
                             </div>
                         </form>
                     </div>

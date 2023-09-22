@@ -11,20 +11,8 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h3>Gestion Productos</h3>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Blank Page</li> -->
-                            </ol>
-                        </div>
-                    </div>
-                </div><!-- /.container-fluid -->
+            <section class="listado-header">
+                <p>Gestion Productos</p>
             </section>
 
             <!-- Main content -->
@@ -32,11 +20,11 @@
 
                 <!-- Default box -->
                 <div class="card">
-                    <div class="card-header">
-                        <a href="web/cmdDefaultCrearProductos" class="btn btn-primary">Agregar</a>
+                    <div class="lista-gen-header">
+                        <a href="web/cmdDefaultCrearProductos" class="btn-agregar">Agregar</a>
                     </div>
 
-                    <div class="card-body">
+                    <div class="lista-gen">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <th>Acciones</th>
@@ -53,8 +41,8 @@
                                 foreach ($d->data as $productos) {
                                     print_r("<tr>");
                                     print_r("<td>
-                                    <a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'></i></a>
-                                    <a href='web/cmdEliminarProductos/" . $productos->id . "'><i class='nav-icon fas fa-trash'></i></a>
+                                    <a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'style='color:#9BCB62; margin:20px;'></i></a>
+                                    <a href='web/cmdEliminarProductos/" . $productos->id . "'><i class='nav-icon fas fa-trash'style='color:#CB6462;'></i></a>
                                     </td>");
                                     print_r("<td> $productos->id</td>");
                                     print_r("<td> $productos->nombre</td>");

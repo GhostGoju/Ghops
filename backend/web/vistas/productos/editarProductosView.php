@@ -30,12 +30,12 @@
             <!-- Main content -->
             <section class="content">
 
-                <div class="card-body">
+                <div class="lista-gen">
                     <h1></h1>
 
                     <!-- general form elements -->
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <div class="header-editor">
                             <h3 class="card-title">Editar Productos</h3>
                         </div>
                         <!-- /.card-header -->
@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Actualizar</button>
+                                <button type="submit" class="btn-actualizar">Actualizar</button>
                             </div>
                         </form>
                     </div>

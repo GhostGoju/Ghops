@@ -14,7 +14,7 @@
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
 
         <!-- Default box -->
-        <div class="card">
+        <div class="card-contact">
             <div class="card-body row">
                 <div class="col-5 text-center d-flex align-items-center justify-content-center">
                     <div class="">
@@ -28,19 +28,19 @@
                     </div>
                 </div>
                 <div class="col-7">
-                    <div class="form-group">
+                    <div class="form-contact">
                         <label for="inputName">Nombre</label>
                         <input type="text" id="inputName" class="form-control" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-contact">
                         <label for="inputEmail">E-Mail</label>
                         <input type="email" id="inputEmail" class="form-control" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-contact">
                         <label for="inputSubject">Asunto</label>
                         <input type="text" id="inputSubject" class="form-control" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-contact">
                         <label for="inputMessage">Mensaje</label>
                         <textarea id="inputMessage" class="form-control" rows="4"></textarea>
                     </div>
