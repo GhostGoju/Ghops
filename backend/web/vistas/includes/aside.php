@@ -75,7 +75,7 @@
                         <a class="btn btn-app bg-secondary" href="<?php echo URL; ?>web/">
                             <i class="fas fa-toolbox"></i> Ajustes
                         </a>
-                        <a class="btn btn-app bg-danger" href="<?php echo URL; ?>web/cmdDefaultCerrarSesion">
+                        <a class="btn btn-app bg-danger" href="<?php echo URL; ?>web/cmdCerrarSesion">
                             <i class="fas fa-door-open"></i> Salir
                         </a>
                     </ul>

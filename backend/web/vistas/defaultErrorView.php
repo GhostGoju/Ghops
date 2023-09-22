@@ -8,7 +8,7 @@
     <?php require_once INCLUDES_TEMPLADE . "header.php"; ?></php>
 </head>
 
-<body>
+<body class="container-error">
     <!-- Main content -->
     <section class="content">
         <div class="error-page">

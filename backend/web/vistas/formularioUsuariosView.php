@@ -13,10 +13,10 @@
     <div class="register-box">
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a class="h1"><b>GH</b>OPS</a>
+                <img src="public/img/logos/marca (4).png" class="logo-login"> <a class="h1"><b>GH</b>OPS</a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Registrarse como nuevo usuario</p>
+                <p class="login-box-msg">Crear Usuario</p>
 
                 <form action="web/cmdFormularioNuevosUsuarios" method="post">
                     <div class="input-group mb-3">
@@ -54,7 +54,7 @@
                     </div>
                 </form>
 
-                <a href="web/cmdDefaultLogin" class="text-center">Ya tengo una cuenta</a>
+                <a href="web/cmdDefaultLogin" class="text-center"><b>Ya tengo una cuenta</b></a>
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->

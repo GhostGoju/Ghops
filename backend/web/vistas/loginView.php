@@ -8,8 +8,9 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a class="h1"><b>GH</b>OPS</a>
+                <img src="public/img/logos/marca (4).png" class="logo-login"> <a class="h1"><b>GH</b>OPS</a>
             </div>
+
             <div class="card-body">
                 <p class="login-box-msg">Iniciar Sesion</p>
 
@@ -34,17 +35,17 @@
                         <div class="col-8">
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+                            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
                         </div>
                     </div>
                 </form>
 
 
                 <p class="mb-0">
-                    <a href="<?php echo URL; ?>web/cmdDefaultRecuperarpassword" class="nav-link">Olvide mi contraseña</a>
+                    <a href="<?php echo URL; ?>web/cmdDefaultRecuperarpassword" class="nav-link"><b>Olvide mi contraseña</b></a>
                 </p>
                 <p class="mb-0">
-                    <a href="<?php echo URL; ?>web/cmdDefaultFormulario" class="nav-link">Registrarse</a>
+                    <a href="<?php echo URL; ?>web/cmdDefaultFormulario" class="nav-link"><b>Registrarse</b></a>
                 </p>
             </div>
             <!-- /.card-body -->

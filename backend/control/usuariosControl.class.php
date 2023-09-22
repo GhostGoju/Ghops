@@ -16,17 +16,17 @@ class usuariosControl
     public function autenticar($email, $password)
     {
         if (
-            !empty($email) && $email != "" && $email != null &&                       //* SI NO ESTA BASIO EMAIL Y ADEMAS EMAIL ES DIFERENTE DE BASIO ES DIFERENTE DE NULL
+            !empty($email) && $email != "" && $email != null &&
             !empty($password) && $password != "" && $password != null
-        ) {                                                                   //* SI TODAS LAS CONDICIONES DE ARRIBA SE CUMPLEN ENTONCES  $RESULT TRAE EL ARREGLO QUE TIENE VALIDARUSUARIOS
+        ) {
             $result = $this->modelo->validarUsuarios($email, md5($password));
-            if (is_array($result) && count($result) > 0) {                             //*AQUI SE PREGUNTA SI $RESULT TRAE UNA CADENA DE TEXTO Y MAS DE 0 REGISTROS
+            if (is_array($result) && count($result) > 0) {
                 return $result;
             } else {
-                return 1;
+                return 1;      //* USUARIOS YA EXISTENTE CON EL MISMO CORREO
             }
         } else {
-            return 0;
+            return 0;  //* FALTAN DATOS
         }
     }
 
@@ -261,47 +261,4 @@ class usuariosControl
             return  0;
         } //Falta Datos
     }
-
-
-    // //? (REDIRECCIONAR A LOS UUARIOS DEPENDINDO DE SU ROL)
-    // public function redireccionarUsuarios($rol)
-    // {
-    //     if ($rol == 1) {
-    //         $result = $this->modelo->redireccionamiento($rol);
-    //         if ($result !== null) {
-    //             return $result; // Devolver el rol si existe
-    //         } else {
-    //             return 1; // Devolver 1 si el rol no existe en la base de datos
-    //         }
-    //     } else {
-    //         return 0; // Devolver 0 si el rol no es igual a 1
-    //     }
-    // }
-
-
-
-
-    // //? (ACTUALIZAR PASSWORD)    (BUSCAR SOLUCION)
-    // public function updatePassword($id, $password)
-    // {
-    //     if (
-    //         !empty($id) && $id != "" && $id != null &&
-    //         !empty($password) && $password != "" && $password != null
-    //     ) {
-    //         $result = $this->modelo->getById($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
-    //         if (is_array($result) && count($result) > 0) {
-    //             $result = $this->modelo->actualizarPassword($id, $password);
-    //             if ($result) {
-    //                 return 3;
-    //             }           //*PASSWORD ACTUALIZADA
-    //             else {
-    //                 return 2;
-    //             }               //* PASSWORD NO ACTUALIZADA
-    //         } else {
-    //             return 1;
-    //         }            //*USUARIO NO EXISTENTE CON ESE ID
-    //     } else {
-    //         return 0;
-    //     }                //* FALTAN DATOS
-    // }
 }

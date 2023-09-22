@@ -54,9 +54,10 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
 
 
     //? (FUNCION DE (INICIO DE SESION) VALIDAR ESTA ACCION)
-    public function validarUsuarios($email, $password)                              //* ESTE ES EL METODO DEL MODELO QUE REVISA SI EL CORREO Y LA CONTRASENA ESTAN CORRECTOS
+    public function validarUsuarios($email, $password)
     {
-        $sql = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$password'";           //* SI EMAIL ES UN VARCHAR ENTONES $password DEBE ESTAR DEBTRO DE COMILLAS
+        $sql = "SELECT * FROM usuarios WHERE email = '$email'
+        AND password = '$password'";
         $result = $this->conexion->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -155,40 +156,6 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     public function eliminarProductos($id)
     {
         $sql = "DELETE FROM productos WHERE id = $id";
-        $result = $this->conexion->query($sql);
-        return $result;
-    }
-
-
-    // //? (FUNCION DE REDIRECCIONAMIENTO DE USUARIOS)
-    // public function redireccionamiento($rol)
-    // {
-    //     $sql = "SELECT rol FROM usuarios WHERE rol = '$rol'";
-    //     $result = $this->conexion->query($sql);
-
-    //     if ($result && $result->num_rows > 0) {
-    //         $row = $result->fetch_assoc();
-    //         return $row['rol'];
-    //     } else {
-    //         return null;
-    //     }
-    // }
-
-
-
-
-
-
-
-
-
-
-    //? (FUNCION DE ACTUALIZAR PASSWORD)  (BUSCAR SOLUCION)
-    public function actualizarPassword($id, $password)
-    {
-        $sql = "UPDATE usuarios
-    SET id= $id,
-    WHERE password= '$password'";
         $result = $this->conexion->query($sql);
         return $result;
     }

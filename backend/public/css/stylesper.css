@@ -1,0 +1,73 @@
+/* LOGIN DE LA PAGINA */
+.login-page {
+    background-image: url(alt/img/oscuro.jpg);
+    background-size: cover;
+}
+
+.register-page {
+    background-image: url(alt/img/oscuro.jpg);
+    background-size: cover;
+}
+
+.logo-login {
+    width: 4rem;
+    height: 4rem;
+}
+
+.card-header {
+    background-color: rgba(255, 0, 0, 0);
+    backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.card-body {
+    background-color: rgba(255, 0, 0, 0);
+    backdrop-filter: blur(7px);
+    color: white;
+}
+
+.card-body a {
+    text-decoration: underline;
+    color: white;
+}
+
+.card {
+    background-color: transparent;
+}
+
+.card-body button {
+    border: none;
+}
+
+
+/* HOME DE LA PAGINA */
+
+.content-wrapper {
+    background-color: transparent;
+    color: white;
+}
+
+.wrapper {
+    background-image: url(alt/img/claro.jpg);
+    background-size: cover;
+}
+
+/* BAR DE LA PAGINA */
+.navbar {
+    background-color: transparent;
+    backdrop-filter: blur(7px);
+    border: none;
+}
+
+/* FOOTER */
+.main-footer {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+
+/* ASIDE */

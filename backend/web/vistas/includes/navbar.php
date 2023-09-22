@@ -25,12 +25,12 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Navbar Search -->
-        <p class="mb-0">
+        <p class="">
             <a href="<?php echo URL; ?>web/cmdDefaultFavoritos" class="nav-link">
                 <i class="fas fa-heart"></i> Favoritos
             </a>
         </p>
-        <p class="mb-0">
+        <p class="">
             <a href="<?php echo URL; ?>web/cmdDefaultCarrito" class="nav-link">
                 <i class="fas fa-credit-card"></i> Pagar
             </a>
@@ -53,7 +53,7 @@
                 </li>
                 <li class="user-footer">
                     <a href="web/cmdDefaultPerfilUsuarios" class="btn btn-default btn-flat">Perfil</a>
-                    <a href="web/cmdDefaultLogin" class="btn btn-default btn-flat float-right">Salir</a>
+                    <a href="web/cmdCerrarSesion" class="btn btn-default btn-flat float-right">Salir</a>
                 </li>
             </ul>
         </li>

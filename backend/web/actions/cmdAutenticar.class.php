@@ -8,13 +8,13 @@ class cmdAutenticar
         valid_method($this->default_request_method);
         extract($_REQUEST);
         $u = new usuariosControl();
-        $result = $u->autenticar($email, $password);
+        $result = $u->autenticar($email, $password,);
 
         if (is_array($result)) {
             $response = [
                 "result" => "success",
                 "data" => $result,
-                "message" => "Usuario valido",
+                "message" => "",
                 "view" => "home"
             ];
         }

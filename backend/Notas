@@ -30,3 +30,102 @@ HTACCESS TOMA LA EL URL Y LO DESCOMPONE - LA INFROMACION LA TOMA LA CLASE ACTION
 OBJETO QUE DISPARA EL METODO EJECUTAR (EXECUTE) DENTRO DE TODOS LOS ARCHIVOS CON ACCIONES - SE LLAMA AL CONTROL EL CUAL INVOCA EL MODELO Y LA ACCION QUE DESEA -
 EL MODELO DISPARA LAS ACCIONES CORRESPONDIENTES Y CONSULTA LA BASE DE DATOS Y DEVOLVERA AL CONTROL - EL CONTROL ENVIA LOS DATOS AL CMD(ACCION CORRESPONDIENTE) -
 EL CMD EJECUTA LA LOGICA EN SU INTERIOR E IMPRIME LA RESPUESTA
+
+
+---------------------------------------------------------------------
+
+<?php
+
+class cmdAutenticar
+{
+    private $default_request_method = "POST";
+    public function execute()
+    {
+        valid_method($this->default_request_method);
+        extract($_REQUEST);
+        $u = new usuariosControl();
+        $result = $u->autenticar($email, $password, $rol);
+
+        $response = [
+            "result" => "fail",
+            "data" => "",
+            "message" => "Usuario invalido",
+            "view" => "login"
+        ];
+
+        if (is_array($result)) {
+            if ($result['rol'] == 1) {
+                $response['message'] = "Admin valido";
+                $response['view'] = "home";
+            } elseif ($result['rol'] == 2) {
+                $response['message'] = "Usuario valido";
+                $response['view'] = "home";
+            }
+        } elseif ($result == 0) {
+            $response['message'] = "defaultError";
+        }
+
+        return $response;
+    }
+}
+
+
+
+// --------------------------------------------
+
+session_start(); // Asegúrate de haber iniciado la sesión en tu script
+
+if (isset($_SESSION['rol'])) {
+    $rol = $_SESSION['rol'];
+
+    switch ($rol) {
+        case 'administrador':
+            header('Location: /ruta-para-administradores.php');
+            exit();
+        case 'usuario_normal':
+            header('Location: /ruta-para-usuarios.php');
+            exit();
+            // Agrega más casos según sea necesario para otros roles
+        default:
+            // Si el rol no coincide con ninguno de los casos anteriores, redirecciona a una página predeterminada o muestra un mensaje de error.
+            header('Location: /pagina-de-error.php');
+            exit();
+    }
+} else {
+    // Si no se ha establecido un rol, redirecciona a una página de inicio de sesión.
+    header('Location: /pagina-de-inicio-de-sesion.php');
+    exit();
+}
+
+// --------------------------------------------
+
+
+if (is_array($result)) {
+    $response = [
+        "result" => "success",
+        "data" => $result,
+        "message" => "Usuario válido",
+    ];
+
+    // Verifica el rol del usuario y redirige a la vista correspondiente
+    if ($userRole === "admin") {
+        $response["view"] = "admin_home";
+    } elseif ($userRole === "user") {
+        $response["view"] = "user_home";
+    } else {
+        // En caso de un rol desconocido, puedes redirigir a una vista predeterminada o mostrar un mensaje de error.
+        $response["view"] = "error";
+        $response["message"] = "Rol desconocido";
+    }
+} else {
+    // Manejar el caso en que $result no sea un arreglo
+    $response = [
+        "result" => "error",
+        "message" => "Usuario no válido",
+        "view" => "login", // Puedes redirigir al inicio de sesión u otra vista adecuada.
+    ];
+}
+
+// Luego, puedes redirigir a la vista correspondiente según el valor de $response["view"].
+header("Location: " . $response["view"] . ".php");
+exit();
