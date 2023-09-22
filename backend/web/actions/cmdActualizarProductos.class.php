@@ -8,7 +8,7 @@ class cmdActualizarProductos
         valid_method($this->default_request_method);
         extract($_REQUEST);
         $u = new usuariosControl();
-        $result = $u->modificarProductos($id, $nombre, $descripcion, $precio, $categoria);
+        $result = $u->modificarProductos($id, $nombre, $descripcion, $precio, $categoria, $imagen);
         $datos = $u->listarProductos();
         switch ($result) {
             case 0:

@@ -190,18 +190,19 @@ class usuariosControl
 
 
     //? (CASO DE USO DE ACTUALIZAR USUARIOS)
-    public function modificarProductos($id, $nombre, $descripcion, $precio, $categoria)
+    public function modificarProductos($id, $nombre, $descripcion, $precio, $categoria, $imagen)
     {
         if (
             !empty($id) && $id != "" && $id != null &&
             !empty($nombre) && $nombre != "" && $nombre != null &&
             !empty($descripcion) && $descripcion != "" && $descripcion != null &&
             !empty($precio) && $precio != "" && $precio != null &&
-            !empty($categoria) && $categoria != "" && $categoria != null
+            !empty($categoria) && $categoria != "" && $categoria != null &&
+            !empty($imagen) && $imagen != "" && $imagen != null
         ) {
             $result = $this->modelo->getByIdProductos($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) > 0) {
-                $result = $this->modelo->actualizarProductos($id, $nombre, $descripcion, $precio, $categoria);
+                $result = $this->modelo->actualizarProductos($id, $nombre, $descripcion, $precio, $categoria, $imagen);
                 if ($result) {
                     return 3;
                 }           //*USUARIO ACTUALIZADO
