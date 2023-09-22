@@ -18,7 +18,7 @@
             <div class="card-body">
                 <p class="login-box-msg">Crear Usuario</p>
 
-                <form action="web/cmdFormularioNuevosUsuarios" method="post">
+                <form action="web/cmdFormularioNuevosUsuarios" method="POST">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                         <div class="input-group-append">
@@ -43,14 +43,18 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <input type="hidden" class="form-control" name="rol" id="rol" value="2">
+                    <input type="hidden" class="form-control" name="estado" id="estado" value="1">
+
+
                     <div class="row">
-                        <div class="col-8">
-                        </div>
-                        <!-- /.col -->
+                        <!-- <div class="col-8">
+                        </div> -->
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
                         </div>
-                        <!-- /.col -->
                     </div>
                 </form>
 

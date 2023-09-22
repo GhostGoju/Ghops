@@ -93,11 +93,11 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
 
 
     //? (Formulario para ingreso de nuevos usuarios)
-    public function formularioInsertarUsuarios($email, $password, $nombre)
+    public function formularioInsertarUsuarios($nombre, $email, $password, $rol, $estado)
     {
         $sql = "INSERT
         INTO usuarios
-        VALUES (null,'$email','$password','$nombre',null,null)";
+        VALUES (null,'$nombre','$email','$password','$rol','$estado')";
         $result = $this->conexion->query($sql);
         return $result;
     }

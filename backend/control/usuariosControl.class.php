@@ -106,16 +106,18 @@ class usuariosControl
 
 
     //? (FORMULARIO PARA USUARIOS NUEVOS)
-    public function formularioNuevosUsuarios($nombre, $email, $password)
+    public function formularioNuevosUsuarios($nombre, $email, $password, $rol, $estado)
     {
         if (
             !empty($nombre) && $nombre != "" && $nombre != null &&
             !empty($email) && $email != "" && $email != null &&
-            !empty($password) && $password != "" && $password != null
+            !empty($password) && $password != "" && $password != null &&
+            !empty($rol) && $rol != "" && $rol != null &&
+            !empty($estado) && $estado != "" && $estado != null
         ) {
             $result = $this->modelo->getByEmail($email);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) == 0) {
-                $result = $this->modelo->formularioInsertarUsuarios($email, md5($password), $nombre);
+                $result = $this->modelo->formularioInsertarUsuarios($nombre, $email, md5($password), $rol, $estado);
                 if ($result) {
                     return 3;
                 }           //*USUARIO CREADO

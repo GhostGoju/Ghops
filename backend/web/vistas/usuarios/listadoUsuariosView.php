@@ -32,8 +32,8 @@
                                 <th>Nombre</th>
                                 <th>Email</th>
                                 <th>Password</th>
-                                <th>Estado</th>
                                 <th>Rol</th>
+                                <th>Estado</th>
                             </thead>
 
                             <tbody>
@@ -48,8 +48,8 @@
                                     print_r("<td> $usuario->nombre</td>");
                                     print_r("<td> $usuario->email</td>");
                                     print_r("<td> $usuario->password</td>");
-                                    print_r("<td> $usuario->estado</td>");
                                     print_r("<td> $usuario->rol</td>");
+                                    print_r("<td> $usuario->estado</td>");
                                     print_r("</tr>");
                                 }
                                 ?>

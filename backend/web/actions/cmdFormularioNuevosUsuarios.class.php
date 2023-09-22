@@ -9,7 +9,7 @@ class cmdFormularioNuevosUsuarios
 
         extract($_REQUEST);
         $u = new usuariosControl();
-        $result = $u->formularioNuevosUsuarios($nombre, $email, $password);
+        $result = $u->formularioNuevosUsuarios($nombre, $email, $password, $rol, $estado);
         switch ($result) {
             case 0:
                 $response = [
