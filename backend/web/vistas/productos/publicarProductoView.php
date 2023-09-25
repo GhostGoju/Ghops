@@ -24,70 +24,59 @@
                             </ol>
                         </div>
                     </div>
-                </div><!-- /.container-fluid -->
+                </div>
             </section>
 
             <!-- Main content -->
             <section class="content">
 
-                <div class="card-body">
+                <div class="lista-gen">
                     <h1></h1>
 
-                    <!-- general form elements -->
-                    <div class="lista-gen">
+                    <div class="card card-primary">
                         <div class="header-editor">
-                            <h3 class="card-title">Crear Producto</h3>
+                            <h3 class="card-title">Publicar Producto</h3>
                         </div>
 
-                        <!-- /.card-header -->
 
-                        <!-- form start -->
-                        <form action="web/cmdCrearProductos" method="POST">
-
+                        <form action="/cmdpublicarProducto" method="GET">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="nombre">Nombre Producto</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                                    <label for="id">Id</label>
+                                    <input type="number" readonly="true" class="form-control" value="<?php echo $d->data[0]->id; ?>" name="id" id="id">
                                 </div>
                                 <div class="form-group">
-                                    <label for="descripcion">Descripcion</label>
-                                    <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion">
+                                    <label for="nombre">Nombre Producto</label>
+                                    <input type="text" readonly="true" class="form-control" value="<?php echo $d->data[0]->nombre; ?>" name="nombre" id="nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion">Descripción</label>
+                                    <input type="text" readonly="true" class="form-control" value="<?php echo $d->data[0]->descripcion; ?>" name="descripcion" id="descripcion">
                                 </div>
                                 <div class="form-group">
                                     <label for="precio">Precio</label>
-                                    <input type="number" class="form-control" name="precio" id="precio" placeholder="Precio">
+                                    <input type="number" readonly="true" class="form-control" value="<?php echo $d->data[0]->precio; ?>" name="precio" id="precio">
                                 </div>
                                 <div class="form-group">
-                                    <label for="categoria">Categoria</label>
-                                    <input type="number" class="form-control" name="categoria" id="categoria" placeholder="Categoria">
+                                    <label for="categoria">Categoría</label>
+                                    <input type="text" readonly="true" class="form-control" value="<?php echo $d->data[0]->categoria; ?>" name="categoria" id="categoria">
                                 </div>
                                 <div class="form-group">
                                     <label for="imagen">Imagen</label>
-                                    <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen">
+                                    <input type="file" class="form-control" name="imagen" id="imagen">
                                 </div>
                             </div>
+
                             <div class="card-footer">
-                                <button type="submit" class="btn-actualizar">Crear</button>
+                                <button type="submit" class="btn-actualizar">Publicar</button>
                             </div>
                         </form>
                     </div>
             </section>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-
-        <!-- <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php> -->
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
     </div>
 
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
-
-
 </body>
 
 </html>

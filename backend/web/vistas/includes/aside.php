@@ -11,8 +11,6 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-
-
                 <!-- OPCIONES DE GESTION DE LA PAGINA -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -32,24 +30,6 @@
                     </ul>
                 </li>
 
-
-                <!-- OPCIONES DE PUBLICACIONES -->
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-folder-open"></i>
-                        <p>
-                            Publicaciones
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <a href="<?php echo URL; ?>web/" class="btn btn-app bg-success">
-                            <i class="fas fa-tshirt"></i> Publicar Producto
-                        </a>
-                    </ul>
-                </li>
-
-
                 <!-- OPCIONES EXTRA DE LA PAGINA -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -68,7 +48,6 @@
                         </a>
                     </ul>
                 </li>
-
 
             </ul>
         </nav>

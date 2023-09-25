@@ -37,22 +37,20 @@
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <img src="public/img/img-decoracion/maniqui.png" class="user-image img-circle elevation-3" alt="User Image">
                 <span class="img-user">
-                    <p>User</p>
                 </span>
             </a>
-            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <ul class="dropdown-menu dropdown-menu-">
                 <!-- User image -->
                 <li class="user-header bg-primary">
                     <img src="public/img/img-decoracion/maniqui.png" class="img-circle elevation-2" alt="User Image">
 
                     <p>
-                        User
-                        <small>Datos</small>
+                        Name User
                     </p>
                 </li>
                 <li class="user-footer">
-                    <a href="web/cmdDefaultPerfilUsuarios" class="btn btn-default btn-flat">Perfil</a>
-                    <a href="web/cmdCerrarSesion" class="btn btn-default btn-flat float-right">Salir</a>
+                    <a href="web/cmdCerrarSesion" class="btn btn- btn-flat float-right"> <i class="fas fa-power-off" style="color:black;"></i></a>
+                    <a href="web/cmdDefaultPerfilUsuarios" class="btn btn- btn-flat float-right"> <i class="fas fa-user" style="color:black;"></i></a>
                 </li>
             </ul>
         </li>

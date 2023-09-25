@@ -24,9 +24,4 @@
     <link rel="stylesheet" href="public/css/adminlte.min.css">
     <link rel="stylesheet" href="public/css/stylesper.css">
 
-    <!-- extras -->
-    <!-- <link rel="stylesheet" href="public/extras/css/styles.css">
-    <link rel="stylesheet" href="public/extras/css/sign-up.css">
-    <link rel="stylesheet" href="public/extras/css/login.css"> -->
-
 </head>

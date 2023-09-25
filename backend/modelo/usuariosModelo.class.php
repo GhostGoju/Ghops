@@ -57,11 +57,10 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     public function validarUsuarios($email, $password)
     {
         $sql = "SELECT * FROM usuarios WHERE email = '$email'
-        AND password = '$password'";
+    AND password = '$password'";
         $result = $this->conexion->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-
 
     //? (FUNCION DE BUSCAR USUARIOS MEDIANTE SU EMAIL)
     public function getByEmail($email)                              //* ESTE ES EL METODO DEL MODELO QUE REVISA SI EL CORREO ESTA CORRECTO

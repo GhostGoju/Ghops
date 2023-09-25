@@ -1,33 +1,33 @@
 CAPAS DE LA PAGINA
 htaccess toma la url y la divide
-index toma el parametro inicial (cmdconsultar) y lo envia a frontcontroller
+index toma el parametro inicial(cmdconsultar) y lo envia a frontcontroller
 frontcontroller toma la accion que le envio index y lo redirije al documento correspondiente
 El doxumento ejecuta su logica y la devuelve
 
 
 ---------------------------------------------------------------------
-index extrae los datos, entra la logica del control. El modelo hace las consultas dentro de la base de datos retorna los datos al formControlName="control"
-el control hace las respecticas operaciones y devuelve al index (SE REPITE EL CICLO).
+index extrae los datos, entra la logica del control.El modelo hace las consultas dentro de la base de datos retorna los datos al formControlName = "control"
+el control hace las respecticas operaciones y devuelve al index(SE REPITE EL CICLO).
 
 
 ---------------------------------------------------------------------
 NOTAS GENERALES:
 * Colocando un punto frente a un documento podemos volverlo incognito frente a personas que puedan vulnerar nuestro sistema
 * El documento htaccess, nos permite crear una URl interna la cual esta oculta para las otras personas esto nos permite tener mas proteccion dentro de nuestro sitio web
-* La función isset() en PHP se utiliza para verificar si una variable está definida y su valor no es NULL. Esta función devuelve un valor booleano: true si la variable está definida y no es NULL, y false en caso contrario
+* La función isset() en PHP se utiliza para verificar si una variable está definida y su valor no es NULL.Esta función devuelve un valor booleano: true si la variable está definida y no es NULL, y false en caso contrario
 
 
 ---------------------------------------------------------------------
 HTACCESS DESCRIPCION DE LINEA DE CODIGO:
-RewriteRule ^(.+) $index.php?url=$1 [QSA,L]
+RewriteRule ^ (.+) $index.php ? url = $1[QSA, L]
 regla de reescritura / si encuentra un parametro que tenga punto o mas lo modifica / se le indica el parametro a modificar se marca como url
 se asigna una varible para almacenar los datos
 
 
 ---------------------------------------------------------------------
 
-HTACCESS TOMA LA EL URL Y LO DESCOMPONE - LA INFROMACION LA TOMA LA CLASE ACTIONS (ARCHIVO SETTINGS) Y CREA UNA RUTA AL ARCHIVO - EL FRONTCONTROLLER TOMA LA DIRECCION Y CREA UN
-OBJETO QUE DISPARA EL METODO EJECUTAR (EXECUTE) DENTRO DE TODOS LOS ARCHIVOS CON ACCIONES - SE LLAMA AL CONTROL EL CUAL INVOCA EL MODELO Y LA ACCION QUE DESEA -
+HTACCESS TOMA LA EL URL Y LO DESCOMPONE - LA INFROMACION LA TOMA LA CLASE ACTIONS(ARCHIVO SETTINGS) Y CREA UNA RUTA AL ARCHIVO - EL FRONTCONTROLLER TOMA LA DIRECCION Y CREA UN
+OBJETO QUE DISPARA EL METODO EJECUTAR(EXECUTE) DENTRO DE TODOS LOS ARCHIVOS CON ACCIONES - SE LLAMA AL CONTROL EL CUAL INVOCA EL MODELO Y LA ACCION QUE DESEA -
 EL MODELO DISPARA LAS ACCIONES CORRESPONDIENTES Y CONSULTA LA BASE DE DATOS Y DEVOLVERA AL CONTROL - EL CONTROL ENVIA LOS DATOS AL CMD(ACCION CORRESPONDIENTE) -
 EL CMD EJECUTA LA LOGICA EN SU INTERIOR E IMPRIME LA RESPUESTA
 

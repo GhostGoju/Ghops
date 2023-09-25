@@ -7,9 +7,10 @@ class cmdAutenticar
     {
         valid_method($this->default_request_method);
         extract($_REQUEST);
+        session_start();
         $u = new usuariosControl();
-        $result = $u->autenticar($email, $password,);
 
+        $result = $u->autenticar($email, $password);
         if (is_array($result)) {
             $response = [
                 "result" => "success",

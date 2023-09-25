@@ -41,7 +41,10 @@
                                 foreach ($d->data as $productos) {
                                     print_r("<tr>");
                                     print_r("<td>
-                                    <a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'style='color:#9BCB62; margin:20px;'></i></a>
+                                    <a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin-right:20px;'></i></a>
+
+                                    <a href='web/cmdDefaultPublicarProducto/" . $productos->id . "'><i class='nav-icon fas fa-share'style='color:#9BCB62; margin-right:20px;'></i></a>
+
                                     <a href='web/cmdEliminarProductos/" . $productos->id . "'><i class='nav-icon fas fa-trash'style='color:#CB6462;'></i></a>
                                     </td>");
                                     print_r("<td> $productos->id</td>");
