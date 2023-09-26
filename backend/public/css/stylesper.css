@@ -56,10 +56,6 @@
 }
 
 /* BAR DE LA PAGINA */
-.navbar {
-    border: none;
-    background-color: rgba(0, 0, 0, 0.418);
-}
 
 .mb-0 a {
     color: white;
@@ -105,9 +101,6 @@
 }
 
 /* ASIDE */
-.main-sidebar {
-    background-color: rgba(0, 0, 0, 0.418);
-}
 
 .brand-text {
     color: white;

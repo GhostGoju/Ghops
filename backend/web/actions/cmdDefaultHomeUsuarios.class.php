@@ -1,6 +1,6 @@
 <?php
 
-class cmdDefaultPublicarProducto
+class cmdDefaultHomeUsuarios
 {
     public function execute()
     {
@@ -8,7 +8,7 @@ class cmdDefaultPublicarProducto
             "result" => "success",
             "data" => "",
             "message" => "",
-            "view" => "productos/publicarProducto"
+            "view" => "homeUsuarios"
         ];
         return $response;
     }

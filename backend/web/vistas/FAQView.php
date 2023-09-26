@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FAQ</title>
 
-    <?php require_once INCLUDES_TEMPLADE . "header.php"; ?></php>
+    <?php require_once INCLUDES_TEMPLADE . "header.php";
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    } ?></php>
 </head>
 
 <body class="hold-transition sidebar-mini">

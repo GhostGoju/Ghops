@@ -1,7 +1,13 @@
-<!-- Navbar -->
 <nav class="main-header navbar navbar-expand ">
-    <!-- Left navbar links -->
+
     <ul class="navbar-nav">
+        <?php
+        if ($_SESSION['rol'] == 1) {
+            echo '<li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>';
+        }
+        ?>
         <p class="mb-0">
             <a href="<?php echo URL; ?>web/cmdDefaultHome" class="nav-link">Home</a>
         </p>
@@ -18,10 +24,9 @@
             </div>
         </div>
     </ul>
-
-    <!-- Right navbar links -->
+    <ul class="navbar-nav">
+    </ul>
     <ul class="navbar-nav ml-auto">
-        <!-- Navbar Search -->
         <p class="link-bag">
             <a href="<?php echo URL; ?>web/cmdDefaultFavoritos" class="nav-link">
                 <i class="fas fa-heart">Favoritos</i>
@@ -56,4 +61,3 @@
         </li>
     </ul>
 </nav>
-<!-- /.navbar -->

@@ -56,11 +56,17 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     //? (FUNCION DE (INICIO DE SESION) VALIDAR ESTA ACCION)
     public function validarUsuarios($email, $password)
     {
-        $sql = "SELECT * FROM usuarios WHERE email = '$email'
-    AND password = '$password'";
+        $sql = "SELECT rol FROM usuarios WHERE email = '$email' AND password = '$password'";
         $result = $this->conexion->query($sql);
-        return $result->fetch_all(MYSQLI_ASSOC);
+
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return $row;                                      //* Devuelve un array asociativo
+        } else {
+            return null;                                      //* No resultados
+        }
     }
+
 
     //? (FUNCION DE BUSCAR USUARIOS MEDIANTE SU EMAIL)
     public function getByEmail($email)                              //* ESTE ES EL METODO DEL MODELO QUE REVISA SI EL CORREO ESTA CORRECTO
