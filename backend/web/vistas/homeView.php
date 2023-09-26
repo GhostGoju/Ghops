@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php require_once INCLUDES_TEMPLADE . "header.php";
+<?php session_start();
+
+if (!isset($_SESSION['rol'])) {
+    // El usuario no está autenticado, redirigir a la página de inicio de sesión
+    header("Location: cmdDefaultLogin");
+    exit;
+}
+
+// Resto del código de la página segura aquí...
+require_once INCLUDES_TEMPLADE . "header.php";
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 ?></php>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php require_once INCLUDES_TEMPLADE . "header.php"; ?>
+</head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -18,7 +33,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </section>
             <section class="content">
 
-                <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                <!-- <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
                     <div class="card bg-light d-flex flex-fill">
                         <div class="card-header text-muted border-bottom-0">
                             Nombre del producto
@@ -48,7 +63,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
             </section>
