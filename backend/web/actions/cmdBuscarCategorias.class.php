@@ -1,6 +1,6 @@
 <?php
 
-class cmdBuscarProductos
+class cmdBuscarCategorias
 {
 
     private $default_request_method = "GET";
@@ -17,12 +17,12 @@ class cmdBuscarProductos
         else {
             $id = $params[0];
             $u = new usuariosControl();
-            $result = $u->buscarProductos($id);
+            $result = $u->buscarCategorias($id);
             if (is_array($result)) {
                 $response = [
                     "result" => "success",
                     "data" => $result,
-                    "message" => "Producto encontrado"
+                    "message" => "Categoria encontrada"
                 ];
             }
             if ($result == 0) {
@@ -36,12 +36,12 @@ class cmdBuscarProductos
                 $response = [
                     "result" => "fail",
                     "data" => "",
-                    "message" => "Producto no encontrado"
+                    "message" => "Categoria no encontrada"
                 ];
             }
         }
         if (!CALL_API == true)
-            $response["view"] = "productos/editarProductos";                         //* CUANDO LLAMO A BUSCAR USUARIOS, PREGUNTO SE DENTRO DE ESTE VIENE API O WEB Y DEPENDIENDO DEL LLAMADO EJECUTO UNA U OTRA ACCION
+            $response["view"] = "Categorias/editarCategorias";                         //* CUANDO LLAMO A BUSCAR USUARIOS, PREGUNTO SE DENTRO DE ESTE VIENE API O WEB Y DEPENDIENDO DEL LLAMADO EJECUTO UNA U OTRA ACCION
         return $response;
     }
 }

@@ -25,7 +25,7 @@ if (session_status() == PHP_SESSION_NONE) {
         } ?></php>
         <div class="content-wrapper">
             <section class="content-header">
-                <H5>HOME</H5>
+                <H5>CATEGORIAS</H5>
             </section>
         </div>
         <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php>

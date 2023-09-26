@@ -14,6 +14,12 @@ class cmdAutenticar
         $u = new usuariosControl();
         $result = $u->autenticar($email, $password);
         if (is_array($result)) {
+            $_SESSION['email'] = $email;
+            $_SESSION['nombre'] = $result['nombre'];
+            $_SESSION['rol'] = $result['rol'];
+
+            var_dump($result['nombre']);
+
             $response = [
                 "result" => "success",
                 "data" => $result,

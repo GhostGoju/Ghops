@@ -1,4 +1,5 @@
-<?PHP
+<?php
+
 //* ESTA ES LA CAPA DE USUARIOS. GESTIONA LOS DATOS DE LOS USUARIOS
 //* ESATA CAPA TIENE SU PROPIA LOGIA LA CUAL SERA GESTIONAR LOS DATOS DE LA TABLA USUARIOS
 
@@ -7,9 +8,9 @@ require_once "bd/mysql.php";
 
 class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
 {
-    var $conexion;                  //* ATRIBUTO
+    public $conexion;                  //* ATRIBUTO
 
-    function __construct()          //* METODO. EN EL MOMENTO EN LE QUE NASCA UN ELEMENTO USUARIOS MODELO SE DISPARA EL CONSTRUCTOR Y AUTOMANTICAMENTE SE CONECTA A LA BASE DE DATOS
+    public function __construct()          //* METODO. EN EL MOMENTO EN LE QUE NASCA UN ELEMENTO USUARIOS MODELO SE DISPARA EL CONSTRUCTOR Y AUTOMANTICAMENTE SE CONECTA A LA BASE DE DATOS
     {
         $con = new dataBase();                         //* VARIABLE INTERNA ($CON). AQUI NACE EL OBJETO CON LA GENETICA QUE ESTA EL EL DOCUMENTO mysql (CLASE = DATABASE)
         $this->conexion = $con->getConexion();            //* Y ESTA INFORMACION QUE GUARDADA DENTRO DE LA VARIABLE $CON.
@@ -34,6 +35,14 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    //? (FUNCION DE TRAER TODA LA LISTA DE CATEGORIAS)
+    public function getAllCategorias()
+    {
+        $sql = "SELECT * FROM categorias";
+        $result = $this->conexion->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 
     //? (FUNCION DE BUSCAR UN USUARIO MEDIANTE SU ID)
     public function getById($id)
@@ -48,6 +57,14 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     public function getByIdProductos($id)
     {
         $sql = "SELECT * FROM productos WHERE id = $id";
+        $result = $this->conexion->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    //? (FUNCION DE BUSCAR UNA CATEGORIA MEDIANTE SU ID)
+    public function getByIdCategorias($id)
+    {
+        $sql = "SELECT * FROM categorias WHERE id = $id";
         $result = $this->conexion->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -86,6 +103,15 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
+    //? (FUNCION DE BUSCAR USUARIOS MEDIANTE SU EMAIL)
+    public function getByNombreCategorias($nombre)                              //* ESTE ES EL METODO DEL MODELO QUE REVISA SI EL CORREO ESTA CORRECTO
+    {
+        $sql = "SELECT * FROM categorias WHERE nombre = '$nombre'";           //* SI EMAIL ES UN VARCHAR ENTONES DEBE ESTAR DENTRO DE COMILLAS
+        $result = $this->conexion->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
     //? (FUNCION DE INSERTAR NUEVO USUARIO)
     public function insertar($email, $password, $nombre, $estado, $rol)
     {
@@ -114,6 +140,17 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         $sql = "INSERT
         INTO productos
         VALUES (null, '$nombre', '$descripcion', $precio, $categoria,'$imagen')";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
+    //? (FUNCION DE INSERTAR UNA NUEVA CATEGORIA)
+    public function insertarCategorias($nombre, $descripcion)
+    {
+        $sql = "INSERT
+        INTO categorias
+        VALUES (null, '$nombre', '$descripcion', null)";
         $result = $this->conexion->query($sql);
         return $result;
     }
@@ -148,6 +185,19 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
+    //? (FUNCION DE ACTUALIZAR CATEGORIAS)
+    public function actualizarCategorias($id, $nombre, $descripcion)
+    {
+        $sql = "UPDATE categorias
+    SET nombre = '$nombre',
+    descripcion = '$descripcion'
+    WHERE id = $id";
+
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
     //? (FUNCION DE ELIMINAR USUARIOS)
     public function eliminar($id)
     {
@@ -161,6 +211,15 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     public function eliminarProductos($id)
     {
         $sql = "DELETE FROM productos WHERE id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
+    //? (FUNCION DE ELIMINAR USUARIOS)
+    public function eliminarCategorias($id)
+    {
+        $sql = "DELETE FROM categorias WHERE id = $id";
         $result = $this->conexion->query($sql);
         return $result;
     }
