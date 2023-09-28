@@ -47,6 +47,7 @@
 
 .content-wrapper {
     background-color: transparent;
+    color: black;
     color: white;
 }
 
@@ -56,6 +57,11 @@
 }
 
 /* BAR DE LA PAGINA */
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.212);
+    border: none;
+}
 
 .mb-0 a {
     color: white;
@@ -68,7 +74,7 @@
 }
 
 .btn-group button:hover {
-    background-color: transparent;
+    background-color: white;
     border: none;
 }
 
@@ -102,6 +108,11 @@
 
 /* ASIDE */
 
+.main-sidebar {
+    background-color: rgba(0, 0, 0, 0.212);
+}
+
+
 .brand-text {
     color: white;
 }
@@ -121,6 +132,7 @@
     text-align: center;
     margin-bottom: 20px;
     margin-bottom: 50px;
+    color: white;
 }
 
 .listado-header p {
@@ -146,12 +158,13 @@
 
 .btn-agregar:hover {
     background-color: lightgreen;
-    color: black;
+    color: white;
 }
 
 .lista-gen {
     background-color: rgba(0, 0, 0, 0.362);
     backdrop-filter: blur(7px);
+    color: white;
 }
 
 .header-editor {
@@ -192,5 +205,5 @@
 
 .card-contact {
     width: 90%;
-    height: 90vh;
+    height: 95vh;
 }

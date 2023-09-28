@@ -7,14 +7,12 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
                 <!-- OPCIONES DE GESTION DE LA PAGINA -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-folder-open"></i>
+                        <i class="nav-icon fas fa-pen"></i>
                         <p>
                             Gestion
                             <i class="right fas fa-angle-left"></i>
