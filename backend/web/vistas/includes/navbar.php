@@ -47,14 +47,8 @@
             <ul class="dropdown-menu dropdown-menu-">
                 <li class="user-header bg-primary">
                     <img src="public/img/img-decoracion/maniqui.png" class="img-circle elevation-2" alt="User Image">
-                    <p>
-                        Name User
-                    </p>
                 </li>
-                <li class="user-footer">
-                    <a href="web/cmdCerrarSesion" class="btn btn- btn-flat float-right"> <i class="fas fa-power-off" style="color:black;"></i></a>
-                    <a href="web/cmdDefaultPerfilUsuarios" class="btn btn- btn-flat float-right"> <i class="fas fa-user" style="color:black;"></i></a>
-                </li>
+
         </li>
     </ul>
     </li>

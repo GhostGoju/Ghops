@@ -9,6 +9,18 @@
     <div class="sidebar">
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                <!-- OPCIONES DE MENU DE USUARIO -->
+
+                <a href="web/cmdDefaultPerfilUsuarios">
+                    <ul class="dropdown-menu dropdown-menu-">
+                        <li class="perfil-usuarios">
+                            <img src="public/img/img-decoracion/maniqui.png" alt="">
+                        </li>
+                    </ul>
+                </a>
+
+
                 <!-- OPCIONES DE GESTION DE LA PAGINA -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
