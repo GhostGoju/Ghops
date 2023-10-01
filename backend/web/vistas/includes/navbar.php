@@ -9,20 +9,8 @@
         }
         ?>
         <p class="mb-0">
-            <a href="<?php echo URL; ?>web/cmdDefaultHome" class="nav-link">Home</a>
-        </p>
-        <p class="mb-0">
-            <a href="<?php echo URL; ?>web/cmdDefaultCategorias" class="nav-link">Categorias</a>
-        </p>
 
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown"></button>
-
-            <div class="dropdown-menu" role="menu">
-                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdPaginaContacto">Contactanos</a>
-                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdFAQ">FAQ</a>
-            </div>
-        </div>
+        </p>
     </ul>
     <ul class="navbar-nav">
     </ul>
@@ -34,7 +22,7 @@
         </p>
         <p class="link-bag">
             <a href="<?php echo URL; ?>web/cmdDefaultCarrito" class="nav-link">
-                <i class="fas fa-credit-card "> Pagar</i>
+                <i class="fas fa-opencart "> Pagar</i>
             </a>
             <!-- <i class="nav-icon fas fa-cart-hear"></i> -->
         </p>

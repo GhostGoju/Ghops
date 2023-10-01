@@ -1,5 +1,4 @@
 <?php session_start();
-
 if (!isset($_SESSION['rol'])) {
     header("Location: cmdDefaultLogin");
     exit;
@@ -20,9 +19,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <?php if ($_SESSION['rol'] == 1) {
-            require_once INCLUDES_TEMPLADE . "aside.php";
-        } ?></php>
+        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
         <div class="content-wrapper">
             <section class="content-header">
                 <H5>HOME</H5>

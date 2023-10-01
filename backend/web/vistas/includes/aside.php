@@ -12,34 +12,41 @@
 
                 <!-- OPCIONES DE MENU DE USUARIO -->
 
-                <a href="web/cmdDefaultPerfilUsuarios">
-                    <ul class="dropdown-menu dropdown-menu-">
-                        <li class="perfil-usuarios">
-                            <img src="public/img/img-decoracion/maniqui.png" alt="">
-                        </li>
-                    </ul>
-                </a>
 
 
                 <!-- OPCIONES DE GESTION DE LA PAGINA -->
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-pen"></i>
-                        <p>
-                            Gestion
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview ">
-                        <div class="col-md-12">
-                            <a href="<?php echo URL; ?>web/cmdConsultarUsuarios" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-user"></i> Usuarios</a>
-                            <a href="<?php echo URL; ?>web/cmdConsultarProductos" class="btn btn-outline-info btn-block btn-sm"><i class="fas fa-tshirt"></i> Productos</a>
-                            <a href="<?php echo URL; ?>web/cmdConsultarCategorias" class="btn btn-outline-danger btn-block btn-sm"><i class="fa fa-box"></i> Categorias</a>
-                        </div>
-                    </ul>
-                </li>
+
+                <?php if ($_SESSION['rol'] == 1) : ?>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-pen"></i>
+                            <p>
+                                Gestion
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo URL; ?>web/cmdConsultarUsuarios"><i class="fa fa-user"></i> Usuarios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo URL; ?>web/cmdConsultarProductos"><i class="fas fa-tshirt"></i> Productos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo URL; ?>web/cmdConsultarCategorias"><i class="fa fa-box"></i> Categorias</a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+
 
                 <!-- OPCIONES EXTRA DE LA PAGINA -->
+                <li class="nav-item">
+                    <a href="<?php echo URL; ?>web/cmdDefaultCategorias" class="nav-link">Categorias</a>
+                </li>
+
+
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-folder-open"></i>
@@ -49,9 +56,28 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <a class="btn btn-danger btn-block" href="<?php echo URL; ?>web/cmdCerrarSesion"><i class="fa fa-door-open"></i> SALIR</a>
+                        <tr>
+                            <td>
+                                <a type="button" href="<?php echo URL; ?>web/cmdPaginaContacto" class="btn btn-block bg-gradient-info">Contactanos</a>
+                            </td>
+                            <td>
+                                <a type="button" href="<?php echo URL; ?>web/cmdFAQ" class="btn btn-block bg-gradient-info">FAQ</a>
+                            </td>
+                        </tr>
                     </ul>
                 </li>
+
+
+
+
+
+
+
+                <!-- CERRAR SESION -->
+                <div class="button-cerrar-sesion">
+                    <a class="btn btn-danger btn-block" href="<?php echo URL; ?>web/cmdCerrarSesion"><i class="fa fa-door-open"></i> SALIR</a>
+                </div>
+
 
             </ul>
         </nav>
