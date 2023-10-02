@@ -52,6 +52,7 @@
 }
 
 .wrapper {
+    background-image: url(./alt/img/maniqui.jpg);
     background-size: cover;
 }
 

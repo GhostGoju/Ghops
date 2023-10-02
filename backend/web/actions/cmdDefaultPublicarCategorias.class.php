@@ -1,6 +1,6 @@
 <?php
 
-class cmdDefaultPublicarCategoria
+class cmdDefaultPublicarCategorias
 {
     public function execute()
     {

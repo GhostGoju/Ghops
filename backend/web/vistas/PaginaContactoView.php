@@ -1,3 +1,13 @@
+<?php session_start();
+if (!isset($_SESSION['rol'])) {
+    header("Location: cmdDefaultLogin");
+    exit;
+}
+require_once INCLUDES_TEMPLADE . "header.php";
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?></php>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +25,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
+        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
 
         <!-- Default box -->
         <div class="card-contact">
