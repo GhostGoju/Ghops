@@ -18,8 +18,6 @@ class cmdAutenticar
             $_SESSION['nombre'] = $result['nombre'];
             $_SESSION['rol'] = $result['rol'];
 
-            var_dump($result['nombre']);
-
             $response = [
                 "result" => "success",
                 "data" => $result,

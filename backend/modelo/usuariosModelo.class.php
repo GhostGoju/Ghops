@@ -73,7 +73,7 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     //? (FUNCION DE (INICIO DE SESION) VALIDAR ESTA ACCION)
     public function validarUsuarios($email, $password)
     {
-        $sql = "SELECT rol FROM usuarios WHERE email = '$email' AND password = '$password'";
+        $sql = "SELECT email, rol, nombre FROM usuarios WHERE email = '$email' AND password = '$password'";
         $result = $this->conexion->query($sql);
 
         if ($result && $result->num_rows > 0) {

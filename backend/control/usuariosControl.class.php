@@ -21,9 +21,9 @@ class usuariosControl
         ) {
             $result = $this->modelo->validarUsuarios($email, md5($password));
             if (is_array($result) && count($result) > 0) {
+                $_SESSION['email'] = $result['email'];
                 $_SESSION['rol'] = $result['rol'];
-                // Imprime el valor del rol para depuración
-                // echo "Rol en la sesión: " . $_SESSION['rol'];
+                $_SESSION['nombre'] = $result['nombre'];
                 return $result;
             } else {
                 return 1;      //* USUARIOS YA EXISTENTE CON EL MISMO CORREO

@@ -52,7 +52,6 @@
 }
 
 .wrapper {
-    background-image: url(alt/img/claro.jpg);
     background-size: cover;
 }
 
@@ -108,11 +107,6 @@
 
 /* ASIDE */
 
-.perfil-usuarios {
-    background-color: red;
-
-}
-
 .main-sidebar {
     background-color: rgba(0, 0, 0, 0.212);
 }
@@ -126,9 +120,11 @@
     color: white;
 }
 
-.nav-item i {
-    color: white;
+.nav opciones-extra {
+    margin-bottom: 10px;
+    background-color: darkblue;
 }
+
 
 /* LISTADOS GENERALES */
 
