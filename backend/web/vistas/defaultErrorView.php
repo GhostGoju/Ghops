@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
-    <?php require_once INCLUDES_TEMPLADE . "header.php"; ?></php>
+    <?php require_once INCLUDES_TEMPLADE . "header.php"; ?>
 </head>
 
 <body class="container-error">

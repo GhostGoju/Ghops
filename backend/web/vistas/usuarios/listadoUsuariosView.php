@@ -49,7 +49,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                 foreach ($d->data as $usuario) {
                                     print_r("<tr>");
                                     print_r("<td>
-                                    <a href='web/cmdDefaultEditarUsuarios/" . $usuario->id . "'><i class='nav-icon fas fa-edit'style='color:#9BCB62; margin:20px;'></i></a>
+                                    <a href='web/cmdDefaultEditarUsuarios/" . $usuario->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin:20px;'></i></a>
                                     </td>");
                                     print_r("<td> $usuario->id</td>");
                                     print_r("<td> $usuario->nombre</td>");

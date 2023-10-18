@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require_once INCLUDES_TEMPLADE . "header.php";
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?></php>
+<?php require_once INCLUDES_TEMPLADE . "header.php"; ?></php>
 
 <body class="hold-transition login-page">
     <div class="login-box">
@@ -46,10 +42,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
                 <p class="mb-0">
-                    <a href="<?php echo URL; ?>web/cmdDefaultRecuperarpassword" class="nav-link"><b>Olvide mi contraseña</b></a>
+                    <a href="<?php echo URL; ?>web/cmdDefaultRecuperarpassword" class="link-enter"><b>Olvide mi contraseña</b></a>
                 </p>
                 <p class="mb-0">
-                    <a href="<?php echo URL; ?>web/cmdDefaultFormulario" class="nav-link"><b>Registrarse</b></a>
+                    <a href="<?php echo URL; ?>web/cmdDefaultFormulario" class="link-enter"><b>Registrarse</b></a>
                 </p>
             </div>
             <!-- /.card-body -->

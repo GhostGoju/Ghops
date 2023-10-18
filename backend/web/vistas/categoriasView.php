@@ -20,12 +20,10 @@ if (session_status() == PHP_SESSION_NONE) {
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <?php if ($_SESSION['rol'] == 1) {
-            require_once INCLUDES_TEMPLADE . "aside.php";
-        } ?></php>
+        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
         <div class="content-wrapper">
             <section class="content-header">
-                <H5>CATEGORIAS</H5>
+                <H5>Categorias</H5>
             </section>
         </div>
         <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php>

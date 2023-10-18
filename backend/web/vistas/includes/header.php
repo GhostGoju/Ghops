@@ -22,7 +22,6 @@
 
     <!-- Theme style -->
     <link rel="stylesheet" href="public/css/adminlte.min.css">
-    <link rel="stylesheet" href="public/css/stylesper.css">
-    <link rel="stylesheet" href="public/css/alt/img">
+    <link rel="stylesheet" href="public/css/abstylesper.css">
 
 </head>

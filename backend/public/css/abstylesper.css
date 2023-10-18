@@ -1,11 +1,11 @@
-/* LOGIN DE LA PAGINA */
+/* LOGIN - REGISTRO - RECUPERACION */
 .login-page {
-    background-image: url(alt/img/oscuro.jpg);
+    background-image: url(alt/img/noche.jpg);
     background-size: cover;
 }
 
 .register-page {
-    background-image: url(alt/img/oscuro.jpg);
+    background-image: url(alt/img/noche.jpg);
     background-size: cover;
 }
 
@@ -29,11 +29,6 @@
     color: white;
 }
 
-.card-body a {
-    text-decoration: underline;
-    color: white;
-}
-
 .card {
     background-color: transparent;
 }
@@ -42,90 +37,64 @@
     border: none;
 }
 
+.link-enter {
+    color: red;
+    text-decoration: none;
+}
+
 
 /* HOME DE LA PAGINA */
-
 .content-wrapper {
     background-color: transparent;
-    color: black;
-    color: white;
+    color: #0F2C59;
 }
 
 .wrapper {
-    background-image: url(./alt/img/maniqui.jpg);
-    background-size: cover;
+    background-color: #F8F0E5;
+    width: 100%;
 }
 
-/* BAR DE LA PAGINA */
 
+/* NAVBAR DE LA PAGINA */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.212);
+    background-color: #DAC0A3;
     border: none;
+    color: #0F2C59;
 }
 
 .mb-0 a {
-    color: white;
+    color: #0F2C59;
 }
 
 .btn-group button {
     background-color: transparent;
     border: none;
-    color: white;
-}
-
-.btn-group button:hover {
-    background-color: white;
-    border: none;
+    color: red;
 }
 
 .dropdown-menu {
-    background-color: white;
+    background-color: #DAC0A3;
 }
 
 .dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.188);
-}
-
-.fas fa-heart {
-    color: white;
+    background-color: #EADBC8;
 }
 
 .nav-link i {
-    color: white;
+    color: #0F2C59;
 }
 
 .img-user p {
-    color: white;
+    color: #0F2C59;
 }
 
 
 /* FOOTER */
 .main-footer {
-    background-color: transparent;
-    color: white;
+    background-color: #DAC0A3;
+    color: #0F2C59;
     border: none;
 }
-
-/* ASIDE */
-
-.main-sidebar {
-    background-color: rgba(0, 0, 0, 0.212);
-}
-
-
-.brand-text {
-    color: white;
-}
-
-.nav-item p {
-    color: white;
-}
-
-.nav opciones-extra {
-    margin-bottom: 10px;
-    background-color: darkblue;
-}
-
 
 /* LISTADOS GENERALES */
 
@@ -133,8 +102,8 @@
     background-color: transparent;
     text-align: center;
     margin-bottom: 20px;
-    margin-bottom: 50px;
-    color: white;
+    padding-top: 3rem;
+    text-transform: uppercase;
 }
 
 .listado-header p {
@@ -142,36 +111,26 @@
 }
 
 .lista-gen-header {
-    background-color: rgba(0, 0, 0, 0.362);
     margin-bottom: 50px;
     backdrop-filter: blur(7px);
-    text-align: center;
+    text-align: left;
 }
 
 .btn-agregar {
     padding: 0.6em 1em;
-    border: 4px solid lightgreen;
-    transition: ease-in-out 0.3s;
-    background-color: transparent;
-    color: lightgreen;
-    font-weight: bolder;
+    background-color: #0F2C59;
+    color: white;
     font-size: 16px;
 }
 
-.btn-agregar:hover {
-    background-color: lightgreen;
-    color: white;
-}
-
 .lista-gen {
-    background-color: rgba(0, 0, 0, 0.362);
-    backdrop-filter: blur(7px);
-    color: white;
+    background-color: #ad8b73b0;
+    color: #0F2C59;
+    border: none;
 }
 
 .header-editor {
-    background-color: rgba(0, 0, 0, 0.484);
-    color: white;
+    background-color: red;
     display: flex;
     justify-content: center;
 }
@@ -191,13 +150,6 @@
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
 }
-
-.btn-actualizar:hover {
-    background-color: black;
-    color: white;
-    border: 1px black;
-}
-
 
 /* PAGINA DE CONTACTO */
 

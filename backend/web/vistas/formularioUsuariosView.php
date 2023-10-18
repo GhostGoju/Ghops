@@ -58,7 +58,7 @@
                     </div>
                 </form>
 
-                <a href="web/cmdDefaultLogin" class="text-center"><b>Ya tengo una cuenta</b></a>
+                <a href="web/cmdDefaultLogin" class="link-enter"><b>Ya tengo una cuenta</b></a>
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->

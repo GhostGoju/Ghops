@@ -24,6 +24,7 @@ class usuariosControl
                 $_SESSION['email'] = $result['email'];
                 $_SESSION['rol'] = $result['rol'];
                 $_SESSION['nombre'] = $result['nombre'];
+                $_SESSION['estado'] = $result['estado'];
                 return $result;
             } else {
                 return 1;      //* USUARIOS YA EXISTENTE CON EL MISMO CORREO

@@ -28,7 +28,7 @@
                         <!-- /.col -->
                     </div>
                 </form>
-                <p class="mt-3 mb-1">
+                <p class="link-enter">
                     <a href="web/cmdDefaultLogin">Iniciar Sesion</a>
                 </p>
             </div>
