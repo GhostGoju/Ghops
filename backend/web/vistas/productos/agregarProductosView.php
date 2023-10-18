@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Main Sidebar Container -->
-        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -36,49 +36,43 @@ if (session_status() == PHP_SESSION_NONE) {
             </section>
 
             <!-- Main content -->
-            <section class="content">
+            <section class="listado-header">
+                <p>Crear productos</p>
+            </section>
 
-                <div class="card-body">
+            <section class="content">
+                <div class="lista-gen">
                     <h1></h1>
 
-                    <!-- general form elements -->
-                    <div class="lista-gen">
-                        <div class="header-editor">
-                            <h3 class="card-title">Crear Producto</h3>
+                    <form action="web/cmdCrearProductos" method="POST">
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Producto</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion">
+                            </div>
+                            <div class="form-group">
+                                <label for="precio">Precio</label>
+                                <input type="number" class="form-control" name="precio" id="precio" placeholder="Precio">
+                            </div>
+                            <div class="form-group">
+                                <label for="categoria">Categoria</label>
+                                <input type="number" class="form-control" name="categoria" id="categoria" placeholder="Categoria">
+                            </div>
+                            <div class="form-group">
+                                <label for="imagen">Imagen</label>
+                                <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen">
+                            </div>
                         </div>
-
-                        <!-- /.card-header -->
-
-                        <!-- form start -->
-                        <form action="web/cmdCrearProductos" method="POST">
-
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="nombre">Nombre Producto</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="descripcion">Descripcion</label>
-                                    <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion">
-                                </div>
-                                <div class="form-group">
-                                    <label for="precio">Precio</label>
-                                    <input type="number" class="form-control" name="precio" id="precio" placeholder="Precio">
-                                </div>
-                                <div class="form-group">
-                                    <label for="categoria">Categoria</label>
-                                    <input type="number" class="form-control" name="categoria" id="categoria" placeholder="Categoria">
-                                </div>
-                                <div class="form-group">
-                                    <label for="imagen">Imagen</label>
-                                    <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen">
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn-actualizar">Crear</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn-actualizar">Crear</button>
+                        </div>
+                    </form>
+                </div>
             </section>
             <!-- /.content -->
         </div>

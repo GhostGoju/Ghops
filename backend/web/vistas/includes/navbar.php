@@ -15,9 +15,9 @@
     <!-- ESPACIO DE GESTION -->
     <?php if ($_SESSION['rol'] == 1) : ?>
         <div class="btn-group">
-            <button type="button" class="btn btn-default">Gestion</button>
-            <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 <span class="sr-only"></span>
+                Gestion
             </button>
             <div class="dropdown-menu" role="menu">
                 <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarUsuarios">Usuarios</a>
@@ -64,5 +64,6 @@
                     <a href="web/cmdCerrarSesion" class="btn btn-danger btn-flat float-right">Salir</a>
                 </li>
             </ul>
+        </li>
     </ul>
 </nav>

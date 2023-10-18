@@ -6,7 +6,7 @@
 <body class="hold-transition login-page">
 
     <div class="login-box">
-        <div class="card card-outline card-primary">
+        <div class="card card-outline">
             <div class="card-header text-center">
                 <a class="h1"><b>GH</b>OPS</a>
             </div>
@@ -28,7 +28,7 @@
                         <!-- /.col -->
                     </div>
                 </form>
-                <p class="link-enter">
+                <p class="mb-0">
                     <a href="web/cmdDefaultLogin">Iniciar Sesion</a>
                 </p>
             </div>

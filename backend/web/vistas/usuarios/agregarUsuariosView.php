@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Main Sidebar Container -->
-        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -36,49 +36,42 @@ if (session_status() == PHP_SESSION_NONE) {
             </section>
 
             <!-- Main content -->
-            <section class="content">
+            <section class="listado-header">
+                <p>Crear Usuarios</p>
+            </section>
 
-                <div class="card-body">
+            <section class="content">
+                <div class="lista-gen">
                     <h1></h1>
 
-                    <!-- general form elements -->
-                    <div class="lista-gen">
-                        <div class="header-editor">
-                            <h3 class="card-title">Crear Usuarios</h3>
+                    <form action="web/cmdCrearUsuarios" method="POST">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="estado">Estado</label>
+                                <input type="number" class="form-control" name="estado" id="estado" placeholder="Estado">
+                            </div>
+                            <div class="form-group">
+                                <label for="rol">Rol</label>
+                                <input type="number" class="form-control" name="rol" id="rol" placeholder="Rol">
+                            </div>
                         </div>
-
-                        <!-- /.card-header -->
-
-                        <!-- form start -->
-                        <form action="web/cmdCrearUsuarios" method="POST">
-
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="nombre">Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                                </div>
-                                <div class="form-group">
-                                    <label for="estado">Estado</label>
-                                    <input type="number" class="form-control" name="estado" id="estado" placeholder="Estado">
-                                </div>
-                                <div class="form-group">
-                                    <label for="rol">Rol</label>
-                                    <input type="number" class="form-control" name="rol" id="rol" placeholder="Rol">
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn-actualizar">Crear</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn-actualizar">Crear</button>
+                        </div>
+                    </form>
+                </div>
             </section>
             <!-- /.content -->
         </div>

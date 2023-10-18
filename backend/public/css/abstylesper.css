@@ -35,13 +35,16 @@
 
 .card-body button {
     border: none;
+    margin-bottom: 50px;
 }
 
-.link-enter {
-    color: red;
-    text-decoration: none;
+.link-enter a {
+    color: white;
 }
 
+.mb-0 a {
+    color: white;
+}
 
 /* HOME DE LA PAGINA */
 .content-wrapper {
@@ -51,9 +54,7 @@
 
 .wrapper {
     background-color: #F8F0E5;
-    width: 100%;
 }
-
 
 /* NAVBAR DE LA PAGINA */
 .navbar {
@@ -63,13 +64,13 @@
 }
 
 .mb-0 a {
-    color: #0F2C59;
+    color: white;
 }
 
 .btn-group button {
     background-color: transparent;
     border: none;
-    color: red;
+    color: #0F2C59;
 }
 
 .dropdown-menu {
@@ -88,12 +89,19 @@
     color: #0F2C59;
 }
 
-
 /* FOOTER */
 .main-footer {
     background-color: #DAC0A3;
     color: #0F2C59;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main-footer a {
+    color: #0F2C59;
+    text-decoration: underline;
 }
 
 /* LISTADOS GENERALES */
@@ -129,12 +137,6 @@
     border: none;
 }
 
-.header-editor {
-    background-color: red;
-    display: flex;
-    justify-content: center;
-}
-
 .header-editor h3 {
     text-transform: uppercase;
     font-size: 2rem;
@@ -143,7 +145,6 @@
 .btn-actualizar {
     background-color: white;
     color: black;
-    border: 1px white;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -160,4 +161,12 @@
 .card-contact {
     width: 90%;
     height: 95vh;
+}
+
+.content-wrapper {
+    margin-top: 40px;
+}
+
+.card-body h3 {
+    color: #0F2C59;
 }

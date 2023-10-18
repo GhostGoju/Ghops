@@ -15,20 +15,18 @@ if (session_status() == PHP_SESSION_NONE) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Perfil</title>
-
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
         <div class="content-wrapper">
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-3">
 
-                            <div class="card card-primary card-outline">
+                            <div class="card card-primary ">
                                 <div class="card-body box-profile">
                                     <div class="text-center">
                                         <img class="profile-user-img img-fluid img-circle" src="public/img/img-decoracion/maniqui.png" alt="User profile picture">

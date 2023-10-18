@@ -15,6 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Main Sidebar Container -->
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -36,49 +37,44 @@ if (session_status() == PHP_SESSION_NONE) {
             </section>
 
             <!-- Main content -->
-            <section class="content">
+            <section class="listado-header">
+                <p>Gestion Usuarios</p>
+            </section>
 
+            <section class="content">
                 <div class="lista-gen">
                     <h1></h1>
 
-                    <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="header-editor">
-                            <h3 class="card-title">Editar Usuario</h3>
+                    <form action="web/cmdActualizarUsuarios" method="POST">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="nombre">ID</label>
+                                <input type="number" class="form-control" readonly="false" value="<?php print_r($d->data[0]->id); ?>" name="id" id="nombre" placeholder="Id usuario">
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre">Nombre Usuario</label>
+                                <input type="text" readonly="false" class="form-control" value="<?php print_r($d->data[0]->nombre); ?>" name="nombre" id="nombre" placeholder="Nombre">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" readonly="false" class="form-control" value="<?php print_r($d->data[0]->email); ?>" name="email" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="estado">Estado</label>
+                                <input type="number" class="form-control" value="<?php print_r($d->data[0]->estado); ?>" name="estado" id="estado" placeholder="Estado">
+                            </div>
+                            <div class="form-group">
+                                <label for="rol">Rol</label>
+                                <input type="number" class="form-control" value="<?php print_r($d->data[0]->rol); ?>" name="rol" id="rol" placeholder="Rol">
+                            </div>
                         </div>
-                        <!-- /.card-header -->
 
-                        <!-- form start -->
-                        <form action="web/cmdActualizarUsuarios" method="POST">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="nombre">ID</label>
-                                    <input type="number" class="form-control" readonly="false" value="<?php print_r($d->data[0]->id); ?>" name="id" id="nombre" placeholder="Id usuario">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nombre">Nombre Usuario</label>
-                                    <input type="text" readonly="false" class="form-control" value="<?php print_r($d->data[0]->nombre); ?>" name="nombre" id="nombre" placeholder="Nombre">
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" readonly="false" class="form-control" value="<?php print_r($d->data[0]->email); ?>" name="email" id="email" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="estado">Estado</label>
-                                    <input type="number" class="form-control" value="<?php print_r($d->data[0]->estado); ?>" name="estado" id="estado" placeholder="Estado">
-                                </div>
-                                <div class="form-group">
-                                    <label for="rol">Rol</label>
-                                    <input type="number" class="form-control" value="<?php print_r($d->data[0]->rol); ?>" name="rol" id="rol" placeholder="Rol">
-                                </div>
-                            </div>
-
-                            <div class="card-footer">
-                                <button type="submit" class="btn-actualizar">Actualizar</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn-actualizar">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
             </section>
         </div>
     </div>

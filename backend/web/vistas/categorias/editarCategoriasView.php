@@ -15,6 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Main Sidebar Container -->
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -36,40 +37,34 @@ if (session_status() == PHP_SESSION_NONE) {
             </section>
 
             <!-- Main content -->
+            <section class="listado-header">
+                <p>Gestion Categorias</p>
+            </section>
             <section class="content">
-
                 <div class="lista-gen">
                     <h1></h1>
 
-                    <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="header-editor">
-                            <h3 class="card-title">Editar Categorias</h3>
+                    <form action="web/cmdActualizarCategorias" method="POST">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="id">Id</label>
+                                <input type="number" readonly="false" class="form-control" value="<?php print_r($d->data[0]->id); ?>" name="id" id="id" placeholder="id">
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre">Nombre Categoria</label>
+                                <input type="text" class="form-control" value="<?php print_r($d->data[0]->nombre); ?>" name="nombre" id="nombre" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" class="form-control" value="<?php print_r($d->data[0]->descripcion); ?>" name="descripcion" id="descripcion" placeholder="Descripcion">
+                            </div>
                         </div>
-                        <!-- /.card-header -->
 
-                        <!-- form start -->
-                        <form action="web/cmdActualizarCategorias" method="POST">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="id">Id</label>
-                                    <input type="number" readonly="false" class="form-control" value="<?php print_r($d->data[0]->id); ?>" name="id" id="id" placeholder="id">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nombre">Nombre Categoria</label>
-                                    <input type="text" class="form-control" value="<?php print_r($d->data[0]->nombre); ?>" name="nombre" id="nombre" placeholder="Nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="descripcion">Descripcion</label>
-                                    <input type="text" class="form-control" value="<?php print_r($d->data[0]->descripcion); ?>" name="descripcion" id="descripcion" placeholder="Descripcion">
-                                </div>
-                            </div>
-
-                            <div class="card-footer">
-                                <button type="submit" class="btn-actualizar">Actualizar</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn-actualizar">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
             </section>
             <!-- /.content -->
         </div>

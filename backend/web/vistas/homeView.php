@@ -23,17 +23,18 @@ if (session_status() == PHP_SESSION_NONE) {
     <?php require_once INCLUDES_TEMPLADE . "header.php"; ?>
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="contenido">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
 
         <div class="content-wrapper">
+
+
             <section class="content-header">
                 <H5>Home</H5>
             </section>
 
-
-            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+            <div class="col-8 col-sm-5 col-md-4 d-flex align-items-stretch flex-column">
                 <div class="card bg-light d-flex flex-fill">
                     <div class="card-header text-muted border-bottom-0">
                         Digital Strategist

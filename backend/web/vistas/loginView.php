@@ -6,7 +6,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
+        <div class="card card-outline">
             <div class="card-header text-center">
                 <img src="public/img/logos/marca (4).png" class="logo-login"> <a class="h1"><b>GH</b>OPS</a>
             </div>

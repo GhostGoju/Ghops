@@ -15,10 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Main Sidebar Container -->
-        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
-        <?php if ($_SESSION['rol'] == 1) : ?>
-            <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
-        <?php endif; ?>
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->

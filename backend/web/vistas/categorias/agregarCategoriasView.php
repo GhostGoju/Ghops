@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Main Sidebar Container -->
-        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -36,37 +36,31 @@ if (session_status() == PHP_SESSION_NONE) {
             </section>
 
             <!-- Main content -->
-            <section class="content">
+            <section class="listado-header">
+                <p>Crear Categorias</p>
+            </section>
 
-                <div class="card-body">
+            <section class="content">
+                <div class="lista-gen">
                     <h1></h1>
 
-                    <!-- general form elements -->
-                    <div class="lista-gen">
-                        <div class="header-editor">
-                            <h3 class="card-title">Crear Categoria</h3>
+                    <form action="web/cmdCrearCategorias" method="POST">
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Categoria</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion">
+                            </div>
                         </div>
-
-                        <!-- /.card-header -->
-
-                        <!-- form start -->
-                        <form action="web/cmdCrearCategorias" method="POST">
-
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="nombre">Nombre Categoria</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="descripcion">Descripcion</label>
-                                    <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion">
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn-actualizar">Crear</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn-actualizar">Crear</button>
+                        </div>
+                    </form>
+                </div>
             </section>
             <!-- /.content -->
         </div>

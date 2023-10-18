@@ -11,7 +11,7 @@
 
 <body class="hold-transition register-page">
     <div class="register-box">
-        <div class="card card-outline card-primary">
+        <div class="card card-outline">
             <div class="card-header text-center">
                 <img src="public/img/logos/marca (4).png" class="logo-login"> <a class="h1"><b>GH</b>OPS</a>
             </div>
@@ -50,15 +50,16 @@
 
 
                     <div class="row">
-                        <!-- <div class="col-8">
-                        </div> -->
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
                         </div>
                     </div>
                 </form>
 
-                <a href="web/cmdDefaultLogin" class="link-enter"><b>Ya tengo una cuenta</b></a>
+                <p class="mb-0">
+                    <a href="web/cmdDefaultLogin" class="link-enter"><b>Ya tengo una cuenta</b></a>
+                </p>
+
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->
