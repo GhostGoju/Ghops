@@ -56,6 +56,10 @@
     background-color: #F8F0E5;
 }
 
+.content-header h5 {
+    text-align: center;
+}
+
 /* NAVBAR DE LA PAGINA */
 .navbar {
     background-color: #DAC0A3;

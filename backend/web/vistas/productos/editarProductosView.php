@@ -38,7 +38,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
             <!-- Main content -->
             <section class="listado-header">
-                <p>Gestion Productos</p>
+                <p>Editar Productos</p>
             </section>
 
             <section class="content">
