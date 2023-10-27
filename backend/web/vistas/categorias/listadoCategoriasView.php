@@ -48,7 +48,6 @@ if (session_status() == PHP_SESSION_NONE) {
                                     print_r("<tr>");
                                     print_r("<td>
                                     <a href='web/cmdDefaultEditarCategorias/" . $categorias->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin-right:20px;'></i></a>
-                                    <a href='web/cmdDefaultPublicarCategorias/" . $categorias->id . "'><i class='nav-icon fas fa-share'style='color:#9BCB62; margin-right:20px;'></i></a>
                                     <a href='web/cmdEliminarCategorias/" . $categorias->id . "'><i class='nav-icon fas fa-trash'style='color:#CB6462;'></i></a>
                                     </td>");
                                     print_r("<td> $categorias->id</td>");

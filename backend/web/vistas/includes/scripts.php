@@ -44,3 +44,19 @@
                 <?php endif ?>
             });
         </script>
+
+        <!-- //////////////////////////////////////////////// -->
+
+        <script>
+            function updateDate() {
+                var currentDate = new Date();
+                var options = {
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric'
+                };
+                document.getElementById("currentDate").textContent = currentDate.toLocaleDateString(undefined, options);
+            }
+            updateDate();
+            setInterval(updateDate, 1000);
+        </script>

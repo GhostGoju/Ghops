@@ -8,7 +8,7 @@ class cmdCrearProductos
         valid_method($this->default_request_method);
         extract($_REQUEST);
         $u = new usuariosControl();
-        $result = $u->registrarProductos($nombre, $descripcion, $precio, $categoria, $imagen);
+        $result = $u->registrarProductos($nombre, $descripcion, $precio, $categoria, $estado_producto, $imagen);
         $datos = $u->listarProductos();
 
         switch ($result) {

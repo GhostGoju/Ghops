@@ -161,18 +161,19 @@ class usuariosControl
 
 
     //? (FUNCION DE INSERTAR NUEVO PRODUCTO)
-    public function registrarProductos($nombre, $descripcion, $precio, $categoria, $imagen)
+    public function registrarProductos($nombre, $descripcion, $precio, $categoria, $estado_producto, $imagen)
     {
         if (
             !empty($nombre) && $nombre != "" && $nombre != null &&
             !empty($descripcion) && $descripcion != "" && $descripcion != null &&
             !empty($precio) && $precio != "" && $precio != null &&
             !empty($categoria) && $categoria != "" && $categoria != null &&
+            !empty($estado_producto) && $estado_producto != "" && $estado_producto != null &&
             !empty($imagen) && $imagen != "" && $imagen != null
         ) {
             $result = $this->modelo->getByNombreProductos($nombre);
             if (is_array($result) && count($result) == 0) {
-                $result = $this->modelo->insertarProductos($nombre, $descripcion, $precio, $categoria, $imagen);
+                $result = $this->modelo->insertarProductos($nombre, $descripcion, $precio, $categoria, $estado_producto, $imagen);
                 if ($result) {
                     return 3;
                 }           //*PREDUCTO CREADO

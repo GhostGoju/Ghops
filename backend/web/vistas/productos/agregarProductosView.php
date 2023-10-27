@@ -63,6 +63,9 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <label for="categoria">Categoria</label>
                                 <input type="number" class="form-control" name="categoria" id="categoria" placeholder="Categoria">
                             </div>
+
+                            <input type="hidden" class="form-control" name="estado_producto" id="estado_producto" value="2">
+
                             <div class="form-group">
                                 <label for="imagen">Imagen</label>
                                 <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen">

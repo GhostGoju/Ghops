@@ -15,9 +15,9 @@
             <div class="card-header text-center">
                 <img src="public/img/logos/marca (4).png" class="logo-login"> <a class="h1"><b>GH</b>OPS</a>
             </div>
+
             <div class="card-body">
                 <p class="login-box-msg">Crear Usuario</p>
-
                 <form action="web/cmdFormularioNuevosUsuarios" method="POST">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="nombre" placeholder="Nombre">
@@ -44,10 +44,8 @@
                         </div>
                     </div>
 
-
                     <input type="hidden" class="form-control" name="rol" id="rol" value="2">
                     <input type="hidden" class="form-control" name="estado" id="estado" value="1">
-
 
                     <div class="row">
                         <div class="col-12">
@@ -59,13 +57,9 @@
                 <p class="mb-0">
                     <a href="web/cmdDefaultLogin" class="link-enter"><b>Ya tengo una cuenta</b></a>
                 </p>
-
             </div>
-            <!-- /.form-box -->
-        </div><!-- /.card -->
+        </div>
     </div>
-    <!-- /.register-box -->
-
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
 </body>
 

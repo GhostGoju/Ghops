@@ -16,7 +16,6 @@ if (session_status() == PHP_SESSION_NONE) {
     <div class="wrapper">
         <!-- Main Sidebar Container -->
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -42,6 +41,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <th>Descripcion</th>
                                 <th>Precio</th>
                                 <th>categoria</th>
+                                <th>Estado</th>
                                 <th>imagen</th>
                             </thead>
 
@@ -51,7 +51,6 @@ if (session_status() == PHP_SESSION_NONE) {
                                     print_r("<tr>");
                                     print_r("<td>
                                     <a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin-right:20px;'></i></a>
-                                    <a href='web/cmdDefaultPublicarProducto/" . $productos->id . "'><i class='nav-icon fas fa-share'style='color:#9BCB62; margin-right:20px;'></i></a>
                                     <a href='web/cmdEliminarProductos/" . $productos->id . "'><i class='nav-icon fas fa-trash'style='color:#CB6462;'></i></a>
                                     </td>");
                                     print_r("<td> $productos->id</td>");
@@ -59,6 +58,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                     print_r("<td> $productos->descripcion</td>");
                                     print_r("<td> $productos->precio</td>");
                                     print_r("<td> $productos->categoria</td>");
+                                    print_r("<td> $productos->estado_producto</td>");
                                     print_r("<td> $productos->imagen</td>");
                                     print_r("</tr>");
                                 }
