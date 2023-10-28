@@ -28,6 +28,13 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
                         <input type="email" class="form-control" name="email" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">

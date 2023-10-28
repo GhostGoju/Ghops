@@ -9,12 +9,6 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 ?></php>
 
-<!-- <?php
-        echo "Rol: " . $_SESSION['rol'];
-        echo "Nombre: " . $_SESSION['nombre'];
-        echo "Email: " . $_SESSION['email'];
-        ?> -->
-
 <!DOCTYPE html>
 <html lang="en">
 

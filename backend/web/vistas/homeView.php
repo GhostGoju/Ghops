@@ -26,6 +26,17 @@ if (session_status() == PHP_SESSION_NONE) {
                 <h5>Home</h5>
             </section>
 
+            <!-- <?php
+                    echo "Rol: " . $_SESSION['rol'];
+                    echo "Nombre: " . $_SESSION['nombre'];
+                    echo "Apellidos: " . $_SESSION['apellidos'];
+                    echo "Email: " . $_SESSION['email'];
+                    echo "Estado: " . $_SESSION['estado'];
+                    echo "Telefono: " . $_SESSION['telefono'];
+                    echo "Pais: " . $_SESSION['pais'];
+                    echo "Municipio: " . $_SESSION['municipio'];
+                    echo "Direccion: " . $_SESSION['direccion'];
+                    ?> -->
 
         </div>
         <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>

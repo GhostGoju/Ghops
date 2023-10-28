@@ -73,7 +73,7 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     //? (FUNCION DE (INICIO DE SESION) VALIDAR ESTA ACCION)
     public function validarUsuarios($email, $password)
     {
-        $sql = "SELECT email, rol, nombre, estado FROM usuarios WHERE email = '$email' AND password = '$password'";
+        $sql = "SELECT email, rol, nombre, apellidos,telefono, pais, municipio, direccion, estado FROM usuarios WHERE email = '$email' AND password = '$password'";
         $result = $this->conexion->query($sql);
 
         if ($result && $result->num_rows > 0) {
@@ -124,11 +124,11 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
 
 
     //? (Formulario para ingreso de nuevos usuarios)
-    public function formularioInsertarUsuarios($nombre, $email, $password, $rol, $estado)
+    public function formularioInsertarUsuarios($nombre, $apellidos, $email, $password, $rol, $estado)
     {
         $sql = "INSERT
         INTO usuarios
-        VALUES (null,'$nombre','$email','$password','$rol','$estado')";
+        VALUES (null,'$nombre','$apellidos','$email','$password',null, null,null,null,'$rol','$estado')";
         $result = $this->conexion->query($sql);
         return $result;
     }

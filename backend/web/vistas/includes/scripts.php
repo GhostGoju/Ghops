@@ -55,7 +55,11 @@
                     month: 'numeric',
                     day: 'numeric'
                 };
-                document.getElementById("currentDate").textContent = currentDate.toLocaleDateString(undefined, options);
+                var dateElements = document.querySelectorAll("#currentDate"); // Selecciona ambos elementos
+
+                for (var i = 0; i < dateElements.length; i++) {
+                    dateElements[i].textContent = currentDate.toLocaleDateString(undefined, options);
+                }
             }
             updateDate();
             setInterval(updateDate, 1000);

@@ -34,7 +34,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>
-                                            <i class="fas fa-globe"></i> GHOPS - Digital Store
+                                            <img src="public/img/logos/marca (4)"></img> GHOPS - Digital Store
                                             <small class="float-right" span id="currentDate"></span></small>
                                         </h4>
                                     </div>
@@ -51,24 +51,21 @@ if (session_status() == PHP_SESSION_NONE) {
 
                                 <div class="col-sm-4 invoice-col">
                                     <address>
-                                        <strong>Datos de Usuario</strong><br>
-                                        <?php print_r($_SESSION['nombre']) ?><br>
-                                        San Francisco, CA 94107<br>
-                                        Phone: (555) 539-1037<br>
-                                        Email: <?php print_r($_SESSION['email']) ?>
+                                        <strong>Datos de Usuario</strong><small> <a href="<?php echo URL; ?>web/cmdDefaultEditarPerfil"><i class='nav-icon fas fa-edit' style='color: #0F2C59; margin-left: 8px;'></i></small></a><br>
+                                        <?php print_r($_SESSION['email']) ?><br>
+                                        <?php print_r($_SESSION['municipio']) ?><br>
+                                        <?php print_r($_SESSION['direccion']) ?><br>
+                                        <?php print_r($_SESSION['telefono']) ?>
                                     </address>
                                 </div>
 
                                 <div class="col-sm-4 invoice-col">
-                                    <b>Invoice #007612</b><br>
-                                    <br>
-                                    <b>Order ID:</b> 4F3S8J<br>
-                                    <b>Payment Due:</b> 2/22/2014<br>
-                                    <b>Account:</b> 968-34567
+                                    <b>Factura</b><br>
+                                    <b>Order ID:</b><br>
+                                    <b>Fecha Facturacion:</b> <span id="currentDate"></span><br>
                                 </div>
                             </div>
-
-
+                            <br>
                             <div class="row">
                                 <div class="col-12 table-responsive">
                                     <table class="table table-striped">
@@ -89,53 +86,21 @@ if (session_status() == PHP_SESSION_NONE) {
                                                 <td>El snort testosterone trophy driving gloves handsome</td>
                                                 <td>$64.50</td>
                                             </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Need for Speed IV</td>
-                                                <td>247-925-726</td>
-                                                <td>Wes Anderson umami biodiesel</td>
-                                                <td>$50.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Monsters DVD</td>
-                                                <td>735-845-642</td>
-                                                <td>Terry Richardson helvetica tousled street art master</td>
-                                                <td>$10.70</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Grown Ups Blue Ray</td>
-                                                <td>422-568-642</td>
-                                                <td>Tousled lomo letterpress</td>
-                                                <td>$25.99</td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <!-- /.col -->
                             </div>
-                            <!-- /.row -->
-
+                            <br>
                             <div class="row">
-                                <!-- accepted payments column -->
                                 <div class="col-6">
-                                    <p class="lead">Payment Methods:</p>
-                                    <img src="../../dist/img/credit/visa.png" alt="Visa">
-                                    <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
-                                    <img src="../../dist/img/credit/american-express.png" alt="American Express">
-                                    <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
-
+                                    <p class="lead">Metodo de Pago: </p>
+                                    <img src="public/img/logos/nequi.png" alt="Nequi" width="70">
                                     <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-                                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
-                                        plugg
-                                        dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                                        Selecciona tu metodo de pago preferido.
                                     </p>
                                 </div>
-                                <!-- /.col -->
-                                <div class="col-6">
-                                    <p class="lead">Amount Due 2/22/2014</p>
 
+                                <div class="col-6">
                                     <div class="table-responsive">
                                         <table class="table">
                                             <tr>
@@ -157,20 +122,14 @@ if (session_status() == PHP_SESSION_NONE) {
                                         </table>
                                     </div>
                                 </div>
-                                <!-- /.col -->
                             </div>
-                            <!-- /.row -->
-
-                            <!-- this row will not appear when printing -->
                             <div class="row no-print">
                                 <div class="col-12">
-                                    <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                                    <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
-                                        Payment
+                                    <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Realizar Compra
                                     </button>
-                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                                    <!-- <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
                                         <i class="fas fa-download"></i> Generate PDF
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>

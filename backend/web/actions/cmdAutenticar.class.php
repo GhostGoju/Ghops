@@ -24,9 +24,13 @@ class cmdAutenticar
                 "view" => "login"
             ];
         } elseif (is_array($result)) {
-            // Usuario autenticado y activo, permite el acceso.
-            $_SESSION['email'] = $email;
             $_SESSION['nombre'] = $result['nombre'];
+            $_SESSION['apellidos'] = $result['apellidos'];
+            $_SESSION['email'] = $result['email'];
+            $_SESSION['telefono'] = $result['telefono'];
+            $_SESSION['pais'] = $result['pais'];
+            $_SESSION['municipio'] = $result['municipio'];
+            $_SESSION['direccion'] = $result['direccion'];
             $_SESSION['rol'] = $result['rol'];
             $_SESSION['estado'] = $result['estado'];
 

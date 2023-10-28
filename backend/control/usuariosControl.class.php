@@ -21,9 +21,14 @@ class usuariosControl
         ) {
             $result = $this->modelo->validarUsuarios($email, md5($password));
             if (is_array($result) && count($result) > 0) {
-                $_SESSION['email'] = $result['email'];
-                $_SESSION['rol'] = $result['rol'];
                 $_SESSION['nombre'] = $result['nombre'];
+                $_SESSION['apellidos'] = $result['apellidos'];
+                $_SESSION['email'] = $result['email'];
+                $_SESSION['telefono'] = $result['telefono'];
+                $_SESSION['pais'] = $result['pais'];
+                $_SESSION['municipio'] = $result['municipio'];
+                $_SESSION['direccion'] = $result['direccion'];
+                $_SESSION['rol'] = $result['rol'];
                 $_SESSION['estado'] = $result['estado'];
                 return $result;
             } else {
@@ -116,7 +121,7 @@ class usuariosControl
         ) {
             $result = $this->modelo->getByEmail($email);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) == 0) {
-                $result = $this->modelo->insertar($email, md5($password), $nombre, $estado, $rol);
+                $result = $this->modelo->insertar($email, $apellido, md5($password), $nombre, $estado, $rol);
                 if ($result) {
                     return 3;
                 }           //*USUARIO CREADO
@@ -133,10 +138,11 @@ class usuariosControl
 
 
     //? (FORMULARIO PARA USUARIOS NUEVOS)
-    public function formularioNuevosUsuarios($nombre, $email, $password, $rol, $estado)
+    public function formularioNuevosUsuarios($nombre, $apellidos, $email, $password, $rol, $estado)
     {
         if (
             !empty($nombre) && $nombre != "" && $nombre != null &&
+            !empty($apellidos) && $apellidos != "" && $apellidos != null &&
             !empty($email) && $email != "" && $email != null &&
             !empty($password) && $password != "" && $password != null &&
             !empty($rol) && $rol != "" && $rol != null &&
@@ -144,7 +150,7 @@ class usuariosControl
         ) {
             $result = $this->modelo->getByEmail($email);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) == 0) {
-                $result = $this->modelo->formularioInsertarUsuarios($nombre, $email, md5($password), $rol, $estado);
+                $result = $this->modelo->formularioInsertarUsuarios($nombre, $apellidos, $email, md5($password), $rol, $estado);
                 if ($result) {
                     return 3;
                 }           //*USUARIO CREADO
