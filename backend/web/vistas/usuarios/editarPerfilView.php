@@ -20,7 +20,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <div class="content-wrapper">
+        <div class="content h-100">
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">

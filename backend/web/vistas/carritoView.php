@@ -21,7 +21,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
-        <div class="content-wrapper">
+        <div class="h-100">
             <section class="listado-header">
                 <p>Carrito</p>
             </section>
@@ -29,7 +29,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-10">
                             <div class="invoice p-3 mb-3">
                                 <div class="row">
                                     <div class="col-12">
@@ -52,39 +52,37 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <div class="col-sm-4 invoice-col">
                                     <address>
                                         <strong>Datos de Usuario</strong><small> <a href="<?php echo URL; ?>web/cmdDefaultEditarPerfil"><i class='nav-icon fas fa-edit' style='color: #0F2C59; margin-left: 8px;'></i></small></a><br>
-                                        <?php print_r($_SESSION['email']) ?><br>
-                                        <?php print_r($_SESSION['municipio']) ?><br>
-                                        <?php print_r($_SESSION['direccion']) ?><br>
-                                        <?php print_r($_SESSION['telefono']) ?>
+                                        <strong>Nombre: </strong><?php print_r($_SESSION['nombre'] . " " . $_SESSION['apellidos']) ?><br>
+                                        <strong>Correo: </strong><?php print_r($_SESSION['email']) ?><br>
+                                        <strong>Municipio: </strong><?php print_r($_SESSION['municipio'] . " - " . $_SESSION['departamento']) ?><br>
+                                        <strong>Direccion: </strong><?php print_r($_SESSION['direccion']) ?><br>
+                                        <strong>Telefono: </strong>+57<?php print_r($_SESSION['telefono']) ?>
                                     </address>
                                 </div>
 
                                 <div class="col-sm-4 invoice-col">
                                     <b>Factura</b><br>
-                                    <b>Order ID:</b><br>
+                                    <b>N Orden:</b><br>
                                     <b>Fecha Facturacion:</b> <span id="currentDate"></span><br>
                                 </div>
                             </div>
+                            <br>
+                            <br>
                             <br>
                             <div class="row">
                                 <div class="col-12 table-responsive">
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Cantidad</th>
+                                                <th>N Unidades</th>
                                                 <th>Producto</th>
-                                                <th>Serial #</th>
                                                 <th>Descripcion</th>
                                                 <th>Subtotal</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Call of Duty</td>
-                                                <td>455-981-221</td>
-                                                <td>El snort testosterone trophy driving gloves handsome</td>
-                                                <td>$64.50</td>
+                                                <td></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -93,7 +91,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             <br>
                             <div class="row">
                                 <div class="col-6">
-                                    <p class="lead">Metodo de Pago: </p>
+                                    <p class="lead">Metodos de Pago Disponibles: </p>
                                     <img src="public/img/logos/nequi.png" alt="Nequi" width="70">
                                     <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
                                         Selecciona tu metodo de pago preferido.
@@ -104,32 +102,33 @@ if (session_status() == PHP_SESSION_NONE) {
                                     <div class="table-responsive">
                                         <table class="table">
                                             <tr>
-                                                <th style="width:50%">Subtotal:</th>
-                                                <td>$250.30</td>
+                                                <th style="width:50%">Subtotal: </th>
+                                                <td></td>
                                             </tr>
                                             <tr>
-                                                <th>Tax (9.3%)</th>
-                                                <td>$10.34</td>
+                                                <th>IVA: </th>
+                                                <td></td>
                                             </tr>
                                             <tr>
-                                                <th>Shipping:</th>
-                                                <td>$5.80</td>
+                                                <th>Envio:</th>
+                                                <td></td>
                                             </tr>
                                             <tr>
-                                                <th>Total:</th>
-                                                <td>$265.24</td>
+                                                <th>Total: </th>
+                                                <td></td>
                                             </tr>
                                         </table>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row no-print">
-                                <div class="col-12">
-                                    <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Realizar Compra
+                            <div class="row-compra">
+                                <div class="conten-btn-compra">
+                                    <button class="btn-compra">
+                                        Comprar
+                                        <svg class="svgIcon" viewBox="0 0 576 512">
+                                            <path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path>
+                                        </svg>
                                     </button>
-                                    <!-- <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                                        <i class="fas fa-download"></i> Generate PDF
-                                    </button> -->
                                 </div>
                             </div>
                         </div>

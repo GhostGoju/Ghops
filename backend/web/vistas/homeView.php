@@ -21,7 +21,8 @@ if (session_status() == PHP_SESSION_NONE) {
 <body class="contenido">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
-        <div class="content-wrapper">
+        <div class="h-100">
+
             <section class="content-header">
                 <h5>Home</h5>
             </section>
@@ -37,6 +38,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     echo "Municipio: " . $_SESSION['municipio'];
                     echo "Direccion: " . $_SESSION['direccion'];
                     ?> -->
+
 
         </div>
         <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>

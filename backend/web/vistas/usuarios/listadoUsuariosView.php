@@ -3,7 +3,6 @@ if (!isset($_SESSION['rol'])) {
     header("Location: cmdDefaultLogin");
     exit;
 }
-
 require_once INCLUDES_TEMPLADE . "header.php";
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -15,7 +14,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <div class="content-wrapper">
+        <div class="content h-100">
             <section class="listado-header">
                 <p>Gestion Usuarios</p>
             </section>
@@ -24,37 +23,45 @@ if (session_status() == PHP_SESSION_NONE) {
                     <div class="lista-gen-header">
                         <a href="web/cmdDefaultCrearUsuarios" class="btn-agregar">Agregar</a>
                     </div>
-
                     <div class="lista-gen">
                         <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <th>Acciones</th>
-                                <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Rol</th>
-                                <th>Estado</th>
-                            </thead>
 
+                            <thead>
+                                <tr>
+                                    <th>Acciones</th>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Email</th>
+                                    <th>Telefono</th>
+                                    <th>Direccion</th>
+                                    <th>pais</th>
+                                    <th>Departamento</th>
+                                    <th>Municipio</th>
+                                    <th>Rol</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <?php
-                                foreach ($d->data as $usuario) {
+                                foreach ($d->data as $usuarios) {
                                     print_r("<tr>");
-                                    print_r("<td>
-                                    <a href='web/cmdDefaultEditarUsuarios/" . $usuario->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin:20px;'></i></a>
-                                    </td>");
-                                    print_r("<td> $usuario->id</td>");
-                                    print_r("<td> $usuario->nombre</td>");
-                                    print_r("<td> $usuario->email</td>");
-                                    print_r("<td> $usuario->password</td>");
-                                    print_r("<td> $usuario->rol</td>");
-                                    print_r("<td> $usuario->estado</td>");
+                                    print_r("<td><a href='web/cmdDefaultEditarUsuarios/" . $usuarios->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin-right:20px;'></i></a></td>");
+                                    print_r("<td> $usuarios->id</td>");
+                                    print_r("<td> $usuarios->nombre</td>");
+                                    print_r("<td> $usuarios->apellidos</td>");
+                                    print_r("<td> $usuarios->email</td>");
+                                    print_r("<td> $usuarios->telefono</td>");
+                                    print_r("<td> $usuarios->direccion</td>");
+                                    print_r("<td> $usuarios->pais</td>");
+                                    print_r("<td> $usuarios->departamento</td>");
+                                    print_r("<td> $usuarios->municipio</td>");
+                                    print_r("<td> $usuarios->rol</td>");
+                                    print_r("<td> $usuarios->estado</td>");
                                     print_r("</tr>");
                                 }
                                 ?>
                             </tbody>
-                        </table>
                     </div>
                     <div class="card-footer">
                     </div>

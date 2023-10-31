@@ -12,37 +12,30 @@ if (session_status() == PHP_SESSION_NONE) {
 <html lang="en">
 
 <body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
     <div class="wrapper">
-        <!-- Main Sidebar Container -->
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
+        <div class="h-100">
             <section class="listado-header">
                 <p>Gestion Productos</p>
             </section>
-
-            <!-- Main content -->
             <section class="content">
-
-                <!-- Default box -->
                 <div class="card">
                     <div class="lista-gen-header">
                         <a href="web/cmdDefaultCrearProductos" class="btn-agregar">Agregar</a>
                     </div>
-
                     <div class="lista-gen">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
-                                <th>Acciones</th>
-                                <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Descripcion</th>
-                                <th>Precio</th>
-                                <th>categoria</th>
-                                <th>Estado</th>
-                                <th>imagen</th>
+                                <tr>
+                                    <th>Acciones</th>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Descripcion</th>
+                                    <th>Precio</th>
+                                    <th>categoria</th>
+                                    <th>Estado</th>
+                                    <th>imagen</th>
+                                </tr>
                             </thead>
 
                             <tbody>

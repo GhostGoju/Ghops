@@ -20,7 +20,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
-        <div class="content-wrapper">
+        <div class="h-100">
             <section class="content-header">
                 <H5>Favoritos</H5>
             </section>

@@ -18,7 +18,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="h-100">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">

@@ -26,6 +26,7 @@ class usuariosControl
                 $_SESSION['email'] = $result['email'];
                 $_SESSION['telefono'] = $result['telefono'];
                 $_SESSION['pais'] = $result['pais'];
+                $_SESSION['departamento'] = $result['departamento'];
                 $_SESSION['municipio'] = $result['municipio'];
                 $_SESSION['direccion'] = $result['direccion'];
                 $_SESSION['rol'] = $result['rol'];
