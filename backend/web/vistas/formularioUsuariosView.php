@@ -31,6 +31,7 @@
                         <input type="text" class="form-control" name="apellido" placeholder="Apellido">
                         <div class="input-group-append">
                             <div class="input-group-text">
+                                <span class="fas fa-user"></span>
                             </div>
                         </div>
                     </div>

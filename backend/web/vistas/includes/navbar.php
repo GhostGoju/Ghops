@@ -55,7 +55,6 @@
 
                     <p>
                         <?php print_r($_SESSION['nombre']) ?>
-                        <small><?php print_r($_SESSION['rol']) ?></small>
                     </p>
                 </li>
                 <!-- Menu Footer-->

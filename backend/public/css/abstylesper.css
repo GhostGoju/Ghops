@@ -1,4 +1,9 @@
 /* LOGIN - REGISTRO - RECUPERACION */
+.content {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
 .login-page {
     background-image: url(alt/img/noche.jpg);
     background-size: cover;
@@ -110,6 +115,10 @@
 
 /* LISTADOS GENERALES */
 
+.card {
+    border: none;
+}
+
 .listado-header {
     background-color: transparent;
     text-align: center;
@@ -123,17 +132,69 @@
 }
 
 .lista-gen-header {
-    margin-bottom: 50px;
-    backdrop-filter: blur(7px);
-    text-align: left;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 60px;
 }
 
+/* BOTON DE AGREGAR*/
 .btn-agregar {
-    padding: 0.6em 1em;
-    background-color: #0F2C59;
-    color: white;
-    font-size: 16px;
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: black;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
 }
+
+.btn-agregar span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 2px solid black;
+}
+
+.btn-agregar span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: var(--lightgray);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+}
+
+.btn-agregar:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: black;
+}
+
+.btn-agregar:hover {
+    color: white;
+}
+
+.btn-agregar:active span::before {
+    background: black;
+}
+
+/*BOTON DE AGREGAR */
+
 
 .lista-gen {
     background-color: #ad8b73b0;
@@ -179,8 +240,8 @@
 /* BOTON DE VENTAS */
 
 .conten-btn-compra {
-    background-color: lightblue;
-    align-content: end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .btn-compra {
@@ -231,4 +292,10 @@
 .btn-compra:active {
     transform: translate(5px, 5px);
     transition-duration: .3s;
+}
+
+.contenido-perfil {
+    padding-top: 50px;
+    height: 100vh;
+    background-color: #F8F0E5;
 }

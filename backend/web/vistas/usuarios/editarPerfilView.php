@@ -14,13 +14,13 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Perfil</title>
+    <title>Editar-Perfil</title>
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="container-general">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <div class="content h-100">
+        <div class="contenido-perfil">
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -29,19 +29,17 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <div class="card-body box-profile">
                                     <div class="text-center">
                                         <img class="profile-user-img img-fluid img-circle" src="public/img/img-decoracion/maniqui.png" alt="User profile picture">
-                                    </div>
-                                    <center>
                                         <h3> <?php print_r($_SESSION['nombre']) ?></h3>
-                                    </center>
+                                    </div>
                                     <a href="<?php echo URL; ?>web/cmdDefaultPerfilUsuarios" class="btn btn-default btn-block">Perfil</a>
                                     <a href="<?php echo URL; ?>web/cmdCerrarSesion" class="btn btn-danger btn-block">Salir</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-8">
-                            <div class="card">
-                                <div class="card-header p-1">
+                        <div class="col-md-9">
+                            <div class="card-perfil">
+                                <div class="card-header p-2">
                                     <ul class="nav nav-pills">
                                         <li class="nav-item"><a class="nav-link" href="#datosPersonales" data-toggle="tab"> <i class="fa fa-user"></i> Datos Personales</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#seguridad" data-toggle="tab"> <i class="fa fa-key"></i> Contraseñas y Seguridad</a></li>
@@ -123,10 +121,8 @@ if (session_status() == PHP_SESSION_NONE) {
                                         <div class="tab-pane" id="MetodosPago">
                                             <h3>Metodos de pago almacenados</h3>
                                         </div>
-
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

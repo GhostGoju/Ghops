@@ -13,19 +13,25 @@ if (session_status() == PHP_SESSION_NONE) {
 <html lang="en">
 
 <head>
-    <?php require_once INCLUDES_TEMPLADE . "header.php"; ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos</title>
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
         <div class="h-100">
-            <section class="content-header">
-                <H5>Favoritos</H5>
+            <section class="listado-header">
+                <p>Favoritos</p>
             </section>
         </div>
-        <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php>
+
+
+
+
+
+
     </div>
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
 </body>

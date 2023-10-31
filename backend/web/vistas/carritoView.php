@@ -18,7 +18,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <title>Carrito</title>
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="container-general">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
         <div class="h-100">
@@ -30,11 +30,11 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-10">
-                            <div class="invoice p-3 mb-3">
+                            <div class=" p-3 mb-3">
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>
-                                            <img src="public/img/logos/marca (4)"></img> GHOPS - Digital Store
+                                            <img src="public/img/logos/pic.png" alt="Logo" width="70"></img> GHOPS - Digital Store
                                             <small class="float-right" span id="currentDate"></span></small>
                                         </h4>
                                     </div>

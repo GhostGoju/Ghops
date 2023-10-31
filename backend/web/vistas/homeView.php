@@ -23,10 +23,37 @@ if (session_status() == PHP_SESSION_NONE) {
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
         <div class="h-100">
 
-            <section class="content-header">
-                <h5>Home</h5>
+            <section class="listado-header">
+                <p>Home</p>
             </section>
 
+
+            <!-- CONTENIDO GENERAL -->
+            <script>
+                function cargarImagenDeUsuario(idElementoImagen) {
+                    const imgElement = document.querySelector(`#${idElementoImagen}`);
+                    const urlDeLaImagen = "ruta_a_la_imagen_del_usuario.jpg"; // Debes obtener esta URL desde tu base de datos o servidor
+                    imgElement.src = urlDeLaImagen;
+                }
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Llama a la función para cargar la imagen del usuario
+                    cargarImagenDeUsuario("imagen-usuario");
+                });
+            </script>
+
+            <?php
+            cargarImagenDeUsuario("otro-elemento-imagen");
+            ?>
+
+
+
+
+
+            <!-- CONTENIDO GENERAL -->
+
+
+            <!-- CONTENEDOR DE DATOS (PRUEBA) -->
             <!-- <?php
                     echo "Rol: " . $_SESSION['rol'];
                     echo "Nombre: " . $_SESSION['nombre'];
@@ -38,8 +65,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     echo "Municipio: " . $_SESSION['municipio'];
                     echo "Direccion: " . $_SESSION['direccion'];
                     ?> -->
-
-
+            <!-- /CONTENEDOR DE DATOS (PRUEBA) -->
         </div>
         <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>
     </div>

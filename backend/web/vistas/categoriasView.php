@@ -1,5 +1,4 @@
 <?php session_start();
-
 if (!isset($_SESSION['rol'])) {
     header("Location: cmdDefaultLogin");
     exit;
@@ -8,27 +7,31 @@ require_once INCLUDES_TEMPLADE . "header.php";
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-?></php>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require_once INCLUDES_TEMPLADE . "header.php"; ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="contenido">
     <div class="wrapper">
-        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
-        <div class="content h-100">
-            <section class="content-header">
-                <H5>Categorias</H5>
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
+        <div class="h-100">
+
+            <section class="listado-header">
+                <p>Categorias</p>
             </section>
+
+
         </div>
-        <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php>
+        <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>
     </div>
-    <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
+    <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?>
 </body>
 
 </html>

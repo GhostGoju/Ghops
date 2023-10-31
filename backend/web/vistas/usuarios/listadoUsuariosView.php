@@ -21,7 +21,11 @@ if (session_status() == PHP_SESSION_NONE) {
             <section class="content">
                 <div class="card">
                     <div class="lista-gen-header">
-                        <a href="web/cmdDefaultCrearUsuarios" class="btn-agregar">Agregar</a>
+                        <a href="web/cmdDefaultCrearUsuarios">
+                            <button class="btn-agregar"> AGREGAR
+                                <span></span>
+                            </button>
+                        </a>
                     </div>
                     <div class="lista-gen">
                         <table id="example1" class="table table-bordered table-striped">

@@ -26,11 +26,14 @@ if (session_status() == PHP_SESSION_NONE) {
 
             <!-- Main content -->
             <section class="content">
-
                 <!-- Default box -->
                 <div class="card">
                     <div class="lista-gen-header">
-                        <a href="web/cmdDefaultCrearCategorias" class="btn-agregar">Agregar</a>
+                        <a href="web/cmdDefaultCrearCategorias">
+                            <button class="btn-agregar"> AGREGAR
+                                <span></span>
+                            </button>
+                        </a>
                     </div>
 
                     <div class="lista-gen">
