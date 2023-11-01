@@ -4,27 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>
     <?php require_once INCLUDES_TEMPLADE . "header.php"; ?>
+    <title>Error</title>
 </head>
 
-<body class="container-error">
-    <!-- Main content -->
-    <section class="content">
+<body>
+
+    <section class="content-error">
         <div class="error-page">
-            <h2 class="headline text-danger">500</h2>
+            <h2 class="headline text-warning">404</h2>
 
             <div class="error-content">
-                <h3><i class="fas fa-exclamation-triangle text-danger"></i> Error en los pits</h3>
+                <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! parece que algo salio mal</h3>
+
                 <p>
-                    <?php echo $d->message; ?>
+                    Parece que hay un problema con tu cuenta.
+                    <br>
+                    Puedes <b><a href="web/cmdDefaultLogin">reintentar</a></b> o contactar con <b><a href="#">Servicio tecnico</a></b>
                 </p>
             </div>
         </div>
-        <!-- /.error-page -->
     </section>
-    <!-- /.content -->
-    <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
+    <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?>
 </body>
 
 </html>

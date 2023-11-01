@@ -8,7 +8,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline">
             <div class="card-header text-center">
-                <img src="public/img/logos/marca (4).png" class="logo-login"> <a class="h1"><b>GH</b>OPS</a>
+                <img src="public/img/logos/pic.png" class="logo-login"> <a class="h1"><b>GH</b>OPS</a>
             </div>
 
             <div class="card-body">

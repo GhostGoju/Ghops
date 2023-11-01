@@ -99,18 +99,33 @@
 }
 
 /* FOOTER */
-.main-footer {
+.footer {
     background-color: #DAC0A3;
-    color: #0F2C59;
+    width: 100%;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
 }
 
-.main-footer a {
-    color: #0F2C59;
+.header-footer {
+    text-align: center;
+    padding-top: 15px;
+    border-bottom: 1px solid black;
+}
+
+.links-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.links-footer a {
+    color: black;
     text-decoration: underline;
+}
+
+.version-page {
+    padding: 10px 0;
+    text-align: center;
 }
 
 /* LISTADOS GENERALES */
@@ -217,28 +232,24 @@
     -o-border-radius: 6px;
 }
 
+
 /* PAGINA DE CONTACTO */
-
-.form-contact {
-    width: 100%;
-}
-
 .card-contact {
-    width: 90%;
-    height: 95vh;
+    height: 100vh;
 }
 
-.content-wrapper {
-    margin-top: 40px;
+.card-contact2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card-body h3 {
-    color: #0F2C59;
-}
+/* /PAGINA DE CONTACTO */
 
 
 /* BOTON DE VENTAS */
-
 .conten-btn-compra {
     display: flex;
     justify-content: flex-end;
@@ -298,4 +309,20 @@
     padding-top: 50px;
     height: 100vh;
     background-color: #F8F0E5;
+}
+
+/* ERROR 404 */
+.content-error {
+    background-image: url(../css/alt/img/noche.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.error-content {
+    background-color: rgba(0, 0, 0, 0.664);
+    padding: 20px;
 }

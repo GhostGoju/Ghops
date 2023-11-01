@@ -1,16 +1,21 @@
-<footer class="main-footer">
-    <strong>Proyecto SENA</strong>
+<footer class="footer">
+    <div class="header-footer">
+        <img src="public/img/logos/pic.png" alt="Logo" width="70"></img> GHOPS - Digital Store
+    </div>
 
-    <p>
-        <b>Version</b><?php echo APP_VERSION; ?>
-    </p>
+    <div class="body-footer">
 
-    <a href="<?php echo URL; ?>web/cmdFAQ" class="nav-link">
-        <p>FAQ</p>
-    </a>
-    <a href="<?php echo URL; ?>web/cmdPaginaContacto" class="nav-link">
-        <p>Contactanos</p>
-    </a>
+        <div class="links-footer">
+            <a href="<?php echo URL; ?>web/cmdFAQ" class="nav-link">
+                <b>FAQ</b>
+            </a>
+            <a href="<?php echo URL; ?>web/cmdPaginaContacto" class="nav-link">
+                <b>Pagina de Contacto</b>
+            </a>
+        </div>
 
-
+        <div class="version-page">
+            <b>Version </b><?php echo APP_VERSION; ?>
+        </div>
+    </div>
 </footer>
