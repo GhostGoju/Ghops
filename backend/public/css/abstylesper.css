@@ -2,6 +2,12 @@
 .content {
     padding-right: 100px;
     padding-left: 100px;
+    height: min-content;
+}
+
+.text-login {
+    color: white;
+    text-align: center;
 }
 
 .login-page {
@@ -49,6 +55,7 @@
 
 .mb-0 a {
     color: white;
+    text-decoration: underline;
 }
 
 /* HOME DE LA PAGINA */
@@ -59,6 +66,16 @@
 
 .wrapper {
     background-color: #F8F0E5;
+}
+
+.public-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.public-content .listado-header {
+    width: 100%;
 }
 
 .content-header h5 {
@@ -309,6 +326,28 @@
     padding-top: 50px;
     height: 100vh;
     background-color: #F8F0E5;
+}
+
+
+/* FAQ */
+.faq-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.contenedor-d-faq {
+    width: 80%;
+}
+
+.card-header-faq {
+    background-color: #dac0a356;
+    color: #0F2C59;
+    backdrop-filter: blur(5px);
+}
+
+.card-body {
+    color: #0F2C59;
 }
 
 /* ERROR 404 */

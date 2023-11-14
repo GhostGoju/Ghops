@@ -113,11 +113,11 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
 
 
     //? (FUNCION DE INSERTAR NUEVO USUARIO)
-    public function insertar($email, $password, $nombre, $estado, $rol)
+    public function insertar($nombre, $apellidos, $email, $password,  $estado, $rol)
     {
         $sql = "INSERT
         INTO usuarios
-        VALUES (null, '$email','$password','$nombre',$estado, $rol)";           //* SI EMAIL ES UN VARCHAR ENTONES DEBE ESTAR DENTRO DE COMILLAS
+        VALUES (null, '$nombre','$apellidos','$email','$password', null,null,null,null,null,$rol, $estado, null)";           //* SI EMAIL ES UN VARCHAR ENTONES DEBE ESTAR DENTRO DE COMILLAS
         $result = $this->conexion->query($sql);
         return $result;
     }
@@ -128,7 +128,7 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     {
         $sql = "INSERT
         INTO usuarios
-        VALUES (null,'$nombre','$apellidos','$email','$password',null, null,null,null,'$rol','$estado')";
+        VALUES (null,'$nombre','$apellidos','$email','$password',null, null,null,null,null,'$rol','$estado', null)";
         $result = $this->conexion->query($sql);
         return $result;
     }
@@ -139,7 +139,7 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     {
         $sql = "INSERT
         INTO productos
-        VALUES (null, '$nombre', '$descripcion', $precio, $categoria, $estado_producto,'$imagen')";
+        VALUES (null, '$nombre', '$descripcion', $precio, $categoria, $estado_producto, '$imagen')";
         $result = $this->conexion->query($sql);
         return $result;
     }
@@ -171,14 +171,16 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
     //? (FUNCION DE ACTUALIZAR DATOS DEL producto)
-    public function actualizarProductos($id, $nombre, $descripcion, $precio, $categoria)
+    public function actualizarProductos($id, $nombre, $descripcion, $precio, $categoria, $estado_producto, $imagen)
     {
         $sql = "UPDATE productos
-    SET nombre = '$nombre',
-    descripcion = '$descripcion',
-    precio= $precio,
-    categoria = $categoria
-    WHERE id = $id";
+                SET nombre = '$nombre',
+                    descripcion = '$descripcion',
+                    precio = $precio,
+                    categoria = $categoria,
+                    estado_producto = $estado_producto,
+                    imagen = '$imagen'
+                WHERE id = $id";
 
         $result = $this->conexion->query($sql);
         return $result;

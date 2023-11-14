@@ -10,7 +10,7 @@
                 <b>FAQ</b>
             </a>
             <a href="<?php echo URL; ?>web/cmdPaginaContacto" class="nav-link">
-                <b>Pagina de Contacto</b>
+                <b>Contacto</b>
             </a>
         </div>
 

@@ -27,7 +27,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <div class="col-md-2">
                             <div class="card card-primary">
                                 <div class="card-body box-profile">
-                                    <div class="text-center">
+                                    <div class="text-center" style="color: #0F2C59;">
                                         <img class="profile-user-img img-fluid img-circle" src="public/img/img-decoracion/maniqui.png" alt="User profile picture">
                                         <h3> <?php print_r($_SESSION['nombre']) ?></h3>
                                     </div>
@@ -53,42 +53,46 @@ if (session_status() == PHP_SESSION_NONE) {
 
                                         <!-- DATOS PERSONALES -->
                                         <div class="tab-pane" id="datosPersonales">
+                                            <h4>Informacion Personal</h4>
+                                            <hr>
                                             <b>
-                                                <P>Correo</P>
+                                                <P>Correo:</P>
                                             </b>
                                             <?php print_r($_SESSION['email']) ?>
                                             <hr>
 
                                             <b>
-                                                <P>Nombre</P>
+                                                <P>Nombre:</P>
                                             </b>
                                             <?php print_r($_SESSION['nombre']) ?> <br>
                                             <hr>
 
                                             <b>
-                                                <P>Apellidos</P>
+                                                <P>Apellidos:</P>
                                             </b>
                                             <?php print_r($_SESSION['apellidos']) ?> <br>
                                             <hr>
 
+                                            <b>
+                                                <P>Telefono:</P>
+                                            </b>
+                                            <?php print_r($_SESSION['telefono']) ?><i class='nav-icon fas fa-edit' style='color:#0F2C59; margin:10px;'></i><br>
+                                            <hr>
                                         </div>
 
                                         <!-- CAMBIAR PASSWORD -->
                                         <div class="tab-pane" id="seguridad">
-                                            <h3>Cambiar Contraseña</h3>
-                                            <b>
-                                                <p>Contraseña Actual</p>
-                                                <input type="password" name="" id="">
-                                            </b>
-                                            <hr>
-                                            <b>
-                                                <p>Contraseña Nueva</p>
-                                                <input type="password" name="" id="">
-                                            </b>
-                                            <hr>
-                                            <button>
-                                                Actualizar
-                                            </button>
+                                            <input type="password" name="password" class="password-form-perfil" placeholder="Password">
+                                            <div class="input-group-append">
+                                                <span class="fas fa-lock"></span>
+                                            </div>
+                                            <div class="lista-gen-header">
+                                                <a href="#">
+                                                    <button class="btn-agregar"> Actualizar
+                                                        <span></span>
+                                                    </button>
+                                                </a>
+                                            </div>
                                         </div>
 
                                         <!-- DATOS DE ENVIO -->
@@ -112,14 +116,21 @@ if (session_status() == PHP_SESSION_NONE) {
                                             <p>Telefono</p>
                                             <?php print_r($_SESSION['telefono']) ?><i class='nav-icon fas fa-edit' style='color:#0F2C59; margin:10px;'></i>
                                             <hr>
-                                            <button>Guardar</button>
+                                            <div class="lista-gen-header">
+                                                <a href="web/cmdDefaultCrearProductos">
+                                                    <button class="btn-agregar"> Guardar
+                                                        <span></span>
+                                                    </button>
+                                                </a>
+                                            </div>
                                             <p><small><i class='nav-icon fas fa-info' style='color:#0F2C59;'></i>La informacion guardada se utilizara para futuras compras.</small></p>
                                         </div>
 
 
                                         <!-- METODOS DE PAGO -->
                                         <div class="tab-pane" id="MetodosPago">
-                                            <h3>Metodos de pago almacenados</h3>
+                                            <h4>Metodos de pago almacenados</h4>
+                                            <hr>
                                         </div>
                                     </div>
                                 </div>

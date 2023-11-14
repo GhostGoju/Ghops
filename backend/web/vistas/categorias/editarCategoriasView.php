@@ -60,8 +60,12 @@ if (session_status() == PHP_SESSION_NONE) {
                             </div>
                         </div>
 
-                        <div class="card-footer">
-                            <button type="submit" class="btn-actualizar">Actualizar</button>
+                        <div class="lista-gen-header">
+                            <a href="web/cmdDefaultCrearProductos">
+                                <button class="btn-agregar"> ACTUALIZAR
+                                    <span></span>
+                                </button>
+                            </a>
                         </div>
                     </form>
                 </div>

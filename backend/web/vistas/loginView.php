@@ -12,7 +12,9 @@
             </div>
 
             <div class="card-body">
-                <p class="login-box-msg">Iniciar Sesion</p>
+                <div class="text-login">
+                    <p>Iniciar Sesion</p>
+                </div>
 
                 <form action="web/cmdAutenticar" method="POST">
                     <div class="input-group mb-3">
@@ -40,17 +42,14 @@
 
 
                 <p class="mb-0">
-                    <a href="<?php echo URL; ?>web/cmdDefaultRecuperarpassword" class="link-enter"><b>Olvide mi contraseña</b></a>
+                    <a href="<?php echo URL; ?>web/cmdDefaultRecuperarpassword" class="link-enter">Olvide mi contraseña</a>
                 </p>
                 <p class="mb-0">
-                    <a href="<?php echo URL; ?>web/cmdDefaultFormulario" class="link-enter"><b>Registrarse</b></a>
+                    <a href="<?php echo URL; ?>web/cmdDefaultFormulario" class="link-enter">Registrarse</a>
                 </p>
             </div>
-            <!-- /.card-body -->
         </div>
-        <!-- /.card -->
     </div>
-    <!-- /.login-box -->
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
 </body>
 

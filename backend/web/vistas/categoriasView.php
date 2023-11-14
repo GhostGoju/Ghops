@@ -28,6 +28,11 @@ if (session_status() == PHP_SESSION_NONE) {
             </section>
 
 
+
+
+
+
+
         </div>
         <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>
     </div>

@@ -21,36 +21,32 @@ if (session_status() == PHP_SESSION_NONE) {
 <body class="contenido">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
-        <div class="h-100">
-
+        <div class="public-content">
             <section class="listado-header">
                 <p>Home</p>
             </section>
 
 
+            <div class="product-card" id="product1">
+                <img src="imagen_camiseta.jpg" alt="Camiseta">
+                <h2>Camiseta</h2>
+                <p>Descripción</p>
+                <p>Precio: $19.99</p>
+                <button class="add-to-cart" data-product-id="product1">Añadir al carrito</button>
+            </div>
+
+            <div class="product-card" id="product2">
+                <img src="imagen_pantalon.jpg" alt="Pantalón">
+                <h2>Pantalón</h2>
+                <p>Descripción</p>
+                <p>Precio: $29.99</p>
+                <button class="add-to-cart" data-product-id="product2">Añadir al carrito</button>
+            </div>
 
 
-
-
-
-
-
-            <!-- CONTENEDOR DE DATOS (PRUEBA) -->
-            <!-- <?php
-                    echo "Rol: " . $_SESSION['rol'];
-                    echo "Nombre: " . $_SESSION['nombre'];
-                    echo "Apellidos: " . $_SESSION['apellidos'];
-                    echo "Email: " . $_SESSION['email'];
-                    echo "Estado: " . $_SESSION['estado'];
-                    echo "Telefono: " . $_SESSION['telefono'];
-                    echo "Pais: " . $_SESSION['pais'];
-                    echo "Municipio: " . $_SESSION['municipio'];
-                    echo "Direccion: " . $_SESSION['direccion'];
-                    ?> -->
-            <!-- /CONTENEDOR DE DATOS (PRUEBA) -->
         </div>
-        <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>
     </div>
+    <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?>
 </body>
 

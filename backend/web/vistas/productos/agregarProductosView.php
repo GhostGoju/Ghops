@@ -48,7 +48,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="nombre">Nombre Producto</label>
+                                <label for="nombre">Nombre</label>
                                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
                             </div>
                             <div class="form-group">
@@ -63,16 +63,18 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <label for="categoria">Categoria</label>
                                 <input type="number" class="form-control" name="categoria" id="categoria" placeholder="Categoria">
                             </div>
-
-                            <input type="hidden" class="form-control" name="estado_producto" id="estado_producto" value="2">
-
                             <div class="form-group">
-                                <label for="imagen">Imagen</label>
-                                <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen">
+                                <label for="categoria">Imagen</label>
+                                <input type="file" class="form-control" name="imagen" id="imagen" placeholder="imagen">
                             </div>
+                            <input type="hidden" class="form-control" name="estado_producto" id="estado_producto" value="1">
                         </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn-actualizar">Crear</button>
+                        <div class="lista-gen-header">
+                            <a href="web/cmdDefaultCrearProductos">
+                                <button class="btn-agregar"> CREAR
+                                    <span></span>
+                                </button>
+                            </a>
                         </div>
                     </form>
                 </div>

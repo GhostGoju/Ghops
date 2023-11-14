@@ -27,7 +27,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <div class="col-md-2">
                             <div class="card card-primary ">
                                 <div class="card-body box-profile">
-                                    <div class="text-center">
+                                    <div class="text-center" style="color: #0F2C59;">
                                         <img class="profile-user-img img-fluid img-circle" src="public/img/img-decoracion/maniqui.png" alt="User profile picture">
                                         <h3> <?php print_r($_SESSION['nombre']) ?></h3>
                                     </div>

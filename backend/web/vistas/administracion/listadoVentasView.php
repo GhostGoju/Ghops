@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favoritos</title>
+    <title>Ventas</title>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -23,16 +23,10 @@ if (session_status() == PHP_SESSION_NONE) {
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <div class="h-100">
             <section class="listado-header">
-                <p>Favoritos</p>
+                <p>Ventas Realizadas</p>
             </section>
         </div>
 
-
-        <div id="cart-container">
-            <h2>Carrito</h2>
-            <ul id="cart-items"></ul>
-            <button id="clear-cart">Vaciar</button>
-        </div>
 
 
 

@@ -12,30 +12,21 @@ if (session_status() == PHP_SESSION_NONE) {
 <html lang="en">
 
 <body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
     <div class="wrapper">
-        <!-- Main Sidebar Container -->
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <!-- Content Wrapper. Contains page content -->
         <div class="h-100">
-            <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <!-- <h3>Gestion Usuarios</h3> -->
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Blank Page</li> -->
                             </ol>
                         </div>
                     </div>
-                </div><!-- /.container-fluid -->
+                </div>
             </section>
-
-            <!-- Main content -->
             <section class="listado-header">
                 <p>Crear Categorias</p>
             </section>
@@ -56,27 +47,23 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion">
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn-actualizar">Crear</button>
+                        <div class="lista-gen-header">
+                            <a href="web/cmdDefaultCrearProductos">
+                                <button class="btn-agregar"> CREAR
+                                    <span></span>
+                                </button>
+                            </a>
                         </div>
                     </form>
                 </div>
             </section>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
 
-
-        <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
         </aside>
-        <!-- /.control-sidebar -->
     </div>
 
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
-
-
 </body>
 
 </html>

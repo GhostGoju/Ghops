@@ -52,9 +52,12 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <input type="number" class="form-control" readonly="false" value="<?php print_r($d->data[0]->id); ?>" name="id" id="nombre" placeholder="Id usuario">
                             </div>
                             <div class="form-group">
-                                <label for="nombre">Nombre Usuario</label>
+                                <label for="nombre">Nombre</label>
                                 <input type="text" readonly="false" class="form-control" value="<?php print_r($d->data[0]->nombre); ?>" name="nombre" id="nombre" placeholder="Nombre">
-
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre">Apellido</label>
+                                <input type="text" readonly="false" class="form-control" value="<?php print_r($d->data[0]->apellidos); ?>" name="nombre" id="nombre" placeholder="Nombre">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
@@ -70,8 +73,12 @@ if (session_status() == PHP_SESSION_NONE) {
                             </div>
                         </div>
 
-                        <div class="card-footer">
-                            <button type="submit" class="btn-actualizar">Actualizar</button>
+                        <div class="lista-gen-header">
+                            <a href="web/cmdDefaultCrearProductos">
+                                <button class="btn-agregar"> Actualizar
+                                    <span></span>
+                                </button>
+                            </a>
                         </div>
                     </form>
                 </div>

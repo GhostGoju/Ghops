@@ -111,18 +111,19 @@ class usuariosControl
 
 
     //? (FUNCION DE INSERTAR NUEVO USUARIO)
-    public function registrar($email, $password, $nombre, $estado, $rol)
+    public function registrar($nombre, $apellidos, $email, $password, $rol, $estado)
     {
         if (
+            !empty($nombre) && $nombre != "" && $nombre != null &&
+            !empty($apellidos) && $apellidos != "" && $apellidos != null &&
             !empty($email) && $email != "" && $email != null &&
             !empty($password) && $password != "" && $password != null &&
-            !empty($nombre) && $nombre != "" && $nombre != null &&
             !empty($estado) && $estado != "" && $estado != null &&
             !empty($rol) && $rol != "" && $rol != null
         ) {
             $result = $this->modelo->getByEmail($email);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) == 0) {
-                $result = $this->modelo->insertar($email, $apellido, md5($password), $nombre, $estado, $rol);
+                $result = $this->modelo->insertar($nombre, $apellidos, $email, md5($password), $rol, $estado);
                 if ($result) {
                     return 3;
                 }           //*USUARIO CREADO
@@ -139,7 +140,7 @@ class usuariosControl
 
 
     //? (FORMULARIO PARA USUARIOS NUEVOS)
-    public function formularioNuevosUsuarios($nombre, $apellidos, $email, $password, $rol, $estado)
+    public function formularioNuevosUsuarios($nombre, $apellidos, $email, $password,  $rol, $estado)
     {
         if (
             !empty($nombre) && $nombre != "" && $nombre != null &&
@@ -250,7 +251,7 @@ class usuariosControl
 
 
     //? (CASO DE USO DE ACTUALIZAR USUARIOS)
-    public function modificarProductos($id, $nombre, $descripcion, $precio, $categoria, $imagen)
+    public function modificarProductos($id, $nombre, $descripcion, $precio, $categoria, $estado_producto, $imagen)
     {
         if (
             !empty($id) && $id != "" && $id != null &&
@@ -258,11 +259,12 @@ class usuariosControl
             !empty($descripcion) && $descripcion != "" && $descripcion != null &&
             !empty($precio) && $precio != "" && $precio != null &&
             !empty($categoria) && $categoria != "" && $categoria != null &&
+            !empty($estado_producto) && $estado_producto != "" && $estado_producto != null &&
             !empty($imagen) && $imagen != "" && $imagen != null
         ) {
             $result = $this->modelo->getByIdProductos($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
             if (is_array($result) && count($result) > 0) {
-                $result = $this->modelo->actualizarProductos($id, $nombre, $descripcion, $precio, $categoria, $imagen);
+                $result = $this->modelo->actualizarProductos($id, $nombre, $descripcion, $precio, $categoria, $estado_producto, $imagen);
                 if ($result) {
                     return 3;
                 }           //*USUARIO ACTUALIZADO

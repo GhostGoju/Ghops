@@ -51,6 +51,10 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
                             </div>
                             <div class="form-group">
+                                <label for="nombre">Apellido</label>
+                                <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Apellido">
+                            </div>
+                            <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                             </div>
@@ -67,8 +71,12 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <input type="number" class="form-control" name="rol" id="rol" placeholder="Rol">
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn-actualizar">Crear</button>
+                        <div class="lista-gen-header">
+                            <a href="web/cmdDefaultCrearProductos">
+                                <button class="btn-agregar"> CREAR
+                                    <span></span>
+                                </button>
+                            </a>
                         </div>
                     </form>
                 </div>

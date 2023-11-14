@@ -25,13 +25,23 @@
                 <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarCategorias">Categorias</a>
             </div>
         </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="sr-only"></span>
+                Administracion
+            </button>
+            <div class="dropdown-menu" role="menu">
+                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarPedidos">Pedidos</a>
+                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarVentas">Ventas</a>
+                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarInventario">Inventario</a>
+            </div>
+        </div>
     <?php endif; ?>
     <!-- ESPACIO DE GESTION -->
 
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
         <li class="nav-item">
             <a href="<?php echo URL; ?>web/cmdDefaultFavoritos" class="nav-link">
                 <i class="fa fa-heart nav-icon"></i>
@@ -42,8 +52,9 @@
                 <i class="fa fa-cart-arrow-down nav-icon"></i>
             </a>
         </li>
-        </li>
-        <li class="nav-item dropdown user-menu">
+
+
+        <li class="nav-item user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <img src="public/img/img-decoracion/maniqui.png" class="user-image img-circle elevation-2" alt="User Image">
                 <span class="d-none d-md-inline"><?php print_r($_SESSION['nombre']) ?></span>
@@ -52,7 +63,6 @@
                 <!-- User image -->
                 <li class="user-header bg-primary">
                     <img src="public/img/img-decoracion/maniqui.png" class="img-circle elevation-2" alt="User Image">
-
                     <p>
                         <?php print_r($_SESSION['nombre']) ?>
                     </p>

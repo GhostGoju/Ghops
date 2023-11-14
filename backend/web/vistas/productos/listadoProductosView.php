@@ -39,7 +39,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                     <th>Precio</th>
                                     <th>categoria</th>
                                     <th>Estado</th>
-                                    <th>imagen</th>
+                                    <th>Img</th>
                                 </tr>
                             </thead>
 
@@ -64,6 +64,8 @@ if (session_status() == PHP_SESSION_NONE) {
                             </tbody>
                         </table>
                     </div>
+
+
                     <div class="card-footer">
                     </div>
                 </div>

@@ -17,7 +17,9 @@
             </div>
 
             <div class="card-body">
-                <p class="login-box-msg">Crear Usuario</p>
+                <div class="text-login">
+                    <p>Crear una Cuenta</p>
+                </div>
                 <form action="web/cmdFormularioNuevosUsuarios" method="POST">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="nombre" placeholder="Nombre">
@@ -28,7 +30,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+                        <input type="text" class="form-control" name="apellidos" placeholder="Apellido">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -51,19 +53,16 @@
                             </div>
                         </div>
                     </div>
-
                     <input type="hidden" class="form-control" name="rol" id="rol" value="2">
                     <input type="hidden" class="form-control" name="estado" id="estado" value="1">
-
                     <div class="row">
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
                         </div>
                     </div>
                 </form>
-
                 <p class="mb-0">
-                    <a href="web/cmdDefaultLogin" class="link-enter"><b>Ya tengo una cuenta</b></a>
+                    <a href="web/cmdDefaultLogin">Ya tengo una cuenta</a>
                 </p>
             </div>
         </div>

@@ -9,7 +9,7 @@ class cmdCrearUsuarios
 
         extract($_REQUEST);
         $u = new usuariosControl();
-        $result = $u->registrar($email, $password, $nombre, $estado, $rol);
+        $result = $u->registrar($nombre, $apellidos, $email, $password,  $estado, $rol);
         $datos = $u->listarUsurios();
 
         switch ($result) {

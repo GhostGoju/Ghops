@@ -21,7 +21,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <body class="container-general">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
-        <div class="h-100">
+        <div class="">
             <section class="listado-header">
                 <p>Carrito</p>
             </section>
@@ -97,7 +97,6 @@ if (session_status() == PHP_SESSION_NONE) {
                                         Selecciona tu metodo de pago preferido.
                                     </p>
                                 </div>
-
                                 <div class="col-6">
                                     <div class="table-responsive">
                                         <table class="table">
@@ -134,9 +133,13 @@ if (session_status() == PHP_SESSION_NONE) {
                         </div>
                     </div>
                 </div>
+            </section>
         </div>
-        </section>
     </div>
+
+
+
+
 
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?>
 </body>

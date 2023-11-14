@@ -52,7 +52,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <input type="number" readonly="false" class="form-control" value="<?php print_r($d->data[0]->id); ?>" name="id" id="id" placeholder="id">
                             </div>
                             <div class="form-group">
-                                <label for="nombre">Nombre Producto</label>
+                                <label for="nombre">Nombre</label>
                                 <input type="text" class="form-control" value="<?php print_r($d->data[0]->nombre); ?>" name="nombre" id="nombre" placeholder="Nombre">
                             </div>
                             <div class="form-group">
@@ -68,13 +68,21 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <input type="number" class="form-control" value="<?php print_r($d->data[0]->categoria); ?>" name="categoria" id="categoria" placeholder="Categoria">
                             </div>
                             <div class="form-group">
+                                <label for="categoria">Estado</label>
+                                <input type="number" class="form-control" value="<?php print_r($d->data[0]->estado_producto); ?>" name="estado_producto" id="estado_producto" placeholder="Estado">
+                            </div>
+                            <div class="form-group">
                                 <label for="imagen">Imagen</label>
                                 <input type="file" class="form-control" value="<?php print_r($d->data[0]->imagen); ?>" name="imagen" id="imagen" placeholder="imagen">
                             </div>
                         </div>
 
-                        <div class="card-footer">
-                            <button type="submit" class="btn-actualizar">Actualizar</button>
+                        <div class="lista-gen-header">
+                            <a href="web/cmdDefaultCrearProductos">
+                                <button class="btn-agregar"> ACTUALIZAR
+                                    <span></span>
+                                </button>
+                            </a>
                         </div>
                     </form>
                 </div>
