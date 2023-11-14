@@ -28,11 +28,8 @@ if (session_status() == PHP_SESSION_NONE) {
         </div>
 
 
-        <div id="cart-container">
-            <h2>Carrito</h2>
-            <ul id="cart-items"></ul>
-            <button id="clear-cart">Vaciar</button>
-        </div>
+
+
 
 
 
