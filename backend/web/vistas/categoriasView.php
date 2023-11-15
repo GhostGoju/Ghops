@@ -5,7 +5,6 @@ if (!isset($_SESSION['rol'])) {
 }
 require_once INCLUDES_TEMPLADE . "header.php";
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
 }
 ?>
 
@@ -21,8 +20,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <body class="contenido">
     <div class="wrapper">
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
-        <div class="h-100">
-
+        <div class="public-content">
             <section class="listado-header">
                 <p>Categorias</p>
             </section>
@@ -33,9 +31,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 
+
         </div>
-        <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>
     </div>
+    <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?>
 </body>
 

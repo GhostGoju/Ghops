@@ -35,7 +35,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 
-
     </div>
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
 </body>

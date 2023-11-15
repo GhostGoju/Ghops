@@ -48,22 +48,34 @@ if (session_status() == PHP_SESSION_NONE) {
                                 foreach ($d->data as $productos) {
                                     print_r("<tr>");
                                     print_r("<td>
-                                    <a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin-right:20px;'></i></a>
-                                    <a href='web/cmdEliminarProductos/" . $productos->id . "'><i class='nav-icon fas fa-trash'style='color:#CB6462;'></i></a>
-                                    </td>");
+                    <a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin-right:20px;'></i></a>
+                    <a href='web/cmdEliminarProductos/" . $productos->id . "'><i class='nav-icon fas fa-trash'style='color:#CB6462;'></i></a>
+                    </td>");
                                     print_r("<td> $productos->id</td>");
                                     print_r("<td> $productos->nombre</td>");
                                     print_r("<td> $productos->descripcion</td>");
                                     print_r("<td> $productos->precio</td>");
                                     print_r("<td> $productos->categoria</td>");
                                     print_r("<td> $productos->estado_producto</td>");
-                                    print_r("<td> $productos->imagen</td>");
+                                    // Agregar los atributos de datos al botón "Add to Cart"
+                                    print_r("<td><button class='add-to-cart' 
+                    data-id='$productos->id'
+                    data-nombre='$productos->nombre'
+                    data-descripcion='$productos->descripcion'
+                    data-precio='$productos->precio'
+                    data-categoria='$productos->categoria'
+                    data-estado='$productos->estado_producto'
+                    data-imagen='$productos->imagen'
+                    >Add to Cart</button></td>");
                                     print_r("</tr>");
                                 }
                                 ?>
                             </tbody>
                         </table>
                     </div>
+                    <!-- 
+                    <div id="cart-container" class="product-container">
+                    </div> -->
 
 
                     <div class="card-footer">
