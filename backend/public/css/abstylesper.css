@@ -68,10 +68,19 @@
     background-color: #F8F0E5;
 }
 
-.public-content {
+.listado-general {
+    /* background-color: red; */
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+.product-container {
+    /* background-color: orange; */
+    width: 100%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .public-content .listado-header {
@@ -367,39 +376,54 @@
 }
 
 
-
 /* ........................................ */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+/* TARJETAS PRESENTADAS EN EL HOME (PRODUCTOS) */
 
 .product-card {
-    border: 1px solid #ccc;
+    background-color: white;
+    color: #0F2C59;
+    box-shadow: 2px 2px 5px black;
+    height: min-content;
+    width: 20%;
+    border: none;
     border-radius: 5px;
     padding: 15px;
     margin: 20px;
-    background-color: #fff;
     text-align: center;
 }
 
-.product-card img {
-    max-width: 100%;
-    height: auto;
+.categoria-card {
+    background-color: white;
+    color: #0F2C59;
+    box-shadow: 2px 2px 5px black;
+    height: min-content;
+    width: 20%;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px;
+    text-align: center;
 }
 
-button {
-    padding: 10px;
-    margin: 5px;
+.pie-tarjeta {
+    display: flex;
+    justify-content: flex-end;
+    height: 3%;
+}
+
+.pie-tarjeta button {
+    background-color: transparent;
+    margin-left: 10px;
+    border: none;
     cursor: pointer;
+    color: black;
+    height: auto;
 }
 
 #cart {
     max-width: 600px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: purple;
     padding: 15px;
     border-radius: 5px;
 }

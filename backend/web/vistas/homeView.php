@@ -24,20 +24,16 @@ if (session_status() == PHP_SESSION_NONE) {
             <section class="listado-header">
                 <p>Home</p>
             </section>
+            <div class="listado-general">
 
-            <div id="cart-container" class="product-container">
-                <!-- Aquí se mostrarán las tarjetas de productos -->
-            </div>
-
-
+                <div id="cart-container" class="product-container">
+                </div>
 
 
 
 
 
-
-
-            <!-- <div class="product-card" data-product-id="1">
+                <!-- <div class="product-card" data-product-id="1">
                 <img src="product_image.jpg" alt="Product Image">
                 <h3>Product Name</h3>
                 <p>Description of the product goes here.</p>
@@ -56,12 +52,9 @@ if (session_status() == PHP_SESSION_NONE) {
                     <button id="clear-cart">Clear Cart</button>
                     <ul id="cart-list"></ul>
                 </div>
+            </div>-->
+
             </div>
-
- -->
-
-
-
         </div>
     </div>
     <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?>

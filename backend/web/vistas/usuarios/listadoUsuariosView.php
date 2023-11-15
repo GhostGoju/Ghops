@@ -5,16 +5,16 @@ if (!isset($_SESSION['rol'])) {
 }
 require_once INCLUDES_TEMPLADE . "header.php";
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
 }
-?></php>
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <div class="content h-100">
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
+        <div class="">
             <section class="listado-header">
                 <p>Gestion Usuarios</p>
             </section>
@@ -27,9 +27,9 @@ if (session_status() == PHP_SESSION_NONE) {
                             </button>
                         </a>
                     </div>
+
                     <div class="lista-gen">
                         <table id="example1" class="table table-bordered table-striped">
-
                             <thead>
                                 <tr>
                                     <th>Acciones</th>
@@ -66,6 +66,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                 }
                                 ?>
                             </tbody>
+                        </table>
                     </div>
                     <div class="card-footer">
                     </div>

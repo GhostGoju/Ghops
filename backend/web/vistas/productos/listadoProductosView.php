@@ -5,16 +5,15 @@ if (!isset($_SESSION['rol'])) {
 }
 require_once INCLUDES_TEMPLADE . "header.php";
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
 }
-?></php>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <div class="h-100">
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
+        <div class="">
             <section class="listado-header">
                 <p>Gestion Productos</p>
             </section>
@@ -40,44 +39,36 @@ if (session_status() == PHP_SESSION_NONE) {
                                     <th>categoria</th>
                                     <th>Estado</th>
                                     <th>Img</th>
+                                    <th>Pulbicar</th>
                                 </tr>
                             </thead>
-
                             <tbody>
                                 <?php
                                 foreach ($d->data as $productos) {
                                     print_r("<tr>");
-                                    print_r("<td>
-                    <a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin-right:20px;'></i></a>
-                    <a href='web/cmdEliminarProductos/" . $productos->id . "'><i class='nav-icon fas fa-trash'style='color:#CB6462;'></i></a>
-                    </td>");
+                                    print_r("<td><a href='web/cmdDefaultEditarProductos/" . $productos->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin-right:20px;'></i></a>
+                                    <a href='web/cmdEliminarProductos/" . $productos->id . "'><i class='nav-icon fas fa-trash'style='color:#CB6462;'></i></a></td>");
                                     print_r("<td> $productos->id</td>");
                                     print_r("<td> $productos->nombre</td>");
                                     print_r("<td> $productos->descripcion</td>");
                                     print_r("<td> $productos->precio</td>");
                                     print_r("<td> $productos->categoria</td>");
                                     print_r("<td> $productos->estado_producto</td>");
-                                    // Agregar los atributos de datos al botón "Add to Cart"
-                                    print_r("<td><button class='add-to-cart' 
-                    data-id='$productos->id'
-                    data-nombre='$productos->nombre'
-                    data-descripcion='$productos->descripcion'
-                    data-precio='$productos->precio'
-                    data-categoria='$productos->categoria'
-                    data-estado='$productos->estado_producto'
-                    data-imagen='$productos->imagen'
-                    >Add to Cart</button></td>");
+                                    print_r("<td> $productos->imagen</td>");
+                                    print_r("<td><button class='publicar-producto'
+                                    data-id='$productos->id'
+                                    data-nombre='$productos->nombre'
+                                    data-descripcion='$productos->descripcion'
+                                    data-precio='$productos->precio'
+                                    data-categoria='$productos->categoria'
+                                    data-estado='$productos->estado_producto'
+                                    >Publicar</button></td>");
                                     print_r("</tr>");
                                 }
                                 ?>
                             </tbody>
                         </table>
                     </div>
-                    <!-- 
-                    <div id="cart-container" class="product-container">
-                    </div> -->
-
-
                     <div class="card-footer">
                     </div>
                 </div>

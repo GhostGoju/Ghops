@@ -173,67 +173,67 @@
     }
 </script> -->
 
-
+<!-- ////////////////////////////////////////// -->
 <!-- ENVIO DE PRODUCTOS AL HOME -->
 
 <script>
     $(document).ready(function() {
-        // ... (Tu código existente) ...
 
-        // Manejar el clic en el botón "Add to Cart" en la tabla
-        $('.add-to-cart').on('click', function() {
-            // Obtener los datos del producto desde los atributos de datos del botón
+        //* CONTROL DE CLICK DEL BOTON
+        $('.publicar-producto').on('click', function() {
+            //* VARIABLES PARA ALMCENAR LA INFORMACION OBTENIDA DE LA TABLA
             var productId = $(this).data('id');
             var productName = $(this).data('nombre');
             var productDescription = $(this).data('descripcion');
             var productPrice = $(this).data('precio');
             var productCategory = $(this).data('categoria');
             var productStatus = $(this).data('estado');
-            var productImage = $(this).data('imagen');
 
-            // Crear el nuevo elemento de la tarjeta con los datos del producto
+            //* CREACION DE LA TARJETA CON LOS DATOS OBTENIDOSM
             var productCard = `
-                <div class="product-card" data-product-id="${productId}">
-                    <img src="${productImage}" alt="${productName} Image">
-                    <h3>${productName}</h3>
-                    <p>${productDescription}</p>
-                    <p>Price: ${productPrice}</p>
-                    <button class="add-to-favorites">Add to Favorites</button>
-                    <button class="remove-from-cart">Remove from Cart</button>
-                    <button class="delete-product">Delete</button>
-                </div>
-            `;
+            <div class="product-card" data-product-id="${productId}">
+                <h3>${productName}</h3>
+                <p>${productDescription}</p>
+                <p>Price: ${productPrice}</p>
+                <p>Category: ${productCategory}</p>
+                <p>Status: ${productStatus}</p>
+                <button class="add-to-favorites">Add to Favorites</button>
+            </div>`;
 
-            // Agregar el nuevo elemento de la tarjeta al contenedor en el home
+            //* AGREGA LA TARJETA AL APARTADO DEFINIDO
             $('#cart-container').append(productCard);
 
-            // Almacenar el producto en localStorage
-            storeProductInLocalStorage(productId, productName, productDescription, productPrice, productCategory, productStatus, productImage);
+            //*CONTROL DE ALAMCENAMIENTO EN LOCALSTORAGE
+            storeProductInLocalStorage(productId, productName, productDescription, productPrice, productCategory, productStatus, );
         });
 
-        // Manejar el clic en el botón "Delete" en la tarjeta
+        //*  CONTROL DE BORRADO DE LA TARJETA
         $('#cart-container').on('click', '.delete-product', function() {
-            // Obtener el ID del producto desde el atributo de datos de la tarjeta
+            //* OBTIENE EL ID DEL PRODUCTO
             var productId = $(this).closest('.product-card').data('product-id');
 
-            // Eliminar la tarjeta
+            //* ACCION PARA BORRAR LA TARJETA
             $(this).closest('.product-card').remove();
 
-            // Eliminar el producto del almacenamiento local
+            //* ELIMINA LA INFORMACION DEL ALMACENAMIENTO LOCAL
             removeProductFromStorage(productId);
         });
 
-        // Cargar productos almacenados en localStorage al cargar la página
+        //* CARGA LA INFORMACION ALMACENADA EN EL LOCALSTORAGE
         loadProductsFromStorage();
     });
 
     function storeProductInLocalStorage(id, name, description, price, category, status, image) {
         var storedProducts = JSON.parse(localStorage.getItem('cart-products')) || [];
 
-        // Verificar si el producto ya está en el almacenamiento local
+        //* VERIFICA SI EL ARTICULO YA ESTA EN EL LOALSTORAGE MEDIANTE EL ID
         var existingProductIndex = storedProducts.findIndex(product => product.id === id);
 
-        if (existingProductIndex === -1) {
+        if (existingProductIndex !== -1) {
+            //* SI EL PRODUCTO EXISTE LO ELIMINA DEL APARTADO
+            storedProducts.splice(existingProductIndex, 1);
+        } else {
+            //* DE LO CONTRARIO LO AGREGA
             storedProducts.push({
                 id: id,
                 name: name,
@@ -241,43 +241,139 @@
                 price: price,
                 category: category,
                 status: status,
-                image: image
             });
-
-            // Actualizar el almacenamiento local
-            localStorage.setItem('cart-products', JSON.stringify(storedProducts));
         }
+
+        //* ACTUALIZA EL ALMACENAMIENTO LOCAL
+        localStorage.setItem('cart-products', JSON.stringify(storedProducts));
     }
 
     function removeProductFromStorage(productId) {
         var storedProducts = JSON.parse(localStorage.getItem('cart-products')) || [];
 
-        // Filtrar los productos para excluir el producto con el ID dado
+        //* Filtrar los productos para excluir el producto con el ID dado
         storedProducts = storedProducts.filter(product => product.id !== productId);
 
-        // Actualizar el almacenamiento local
+        //* ACTUALIZA LA INFORMACION DEL LOCALSTORAGE
         localStorage.setItem('cart-products', JSON.stringify(storedProducts));
     }
 
     function loadProductsFromStorage() {
         var storedProducts = JSON.parse(localStorage.getItem('cart-products')) || [];
 
-        // Iterar sobre los productos almacenados y agregar las tarjetas al contenedor
+        //* ITERA SOBRE LA TABLA Y AGREGA LAS TARJEAS AL CONTENEDOR
         storedProducts.forEach(product => {
             var productCard = `
-                <div class="product-card" data-product-id="${product.id}">
-                    <img src="${product.image}" alt="${product.name} Image">
-                    <h3>${product.name}</h3>
-                    <p>${product.description}</p>
-                    <p>Price: ${product.price}</p>
-                    <button class="add-to-favorites">Add to Favorites</button>
-                    <button class="remove-from-cart">Remove from Cart</button>
-                    <button class="delete-product">Delete</button>
+            <div class="product-card" data-product-id="${product.id}">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p>Price: ${product.price}</p>
+                <div class="pie-tarjeta">
+                <a href="web/cmdDefaultEcommerce"><button class="add-to-favorites"><i class="fa fa-eye nav-icon"></i></button></a>
+                    <button class="add-to-favorites"><i class="fa fa-heart nav-icon"></i></button>
                 </div>
-            `;
+            </div>`;
 
-            // Agregar el nuevo elemento de la tarjeta al contenedor en el home
+            //* AGREGAR TARJETA AL CONTENEDOR
             $('#cart-container').append(productCard);
+        });
+    }
+</script>
+
+<!-- ////////////////////////////////////////// -->
+<!-- ENVIO DE CATEGORIAS AL APARTADO DE CATEGORIAS -->
+
+<script>
+    $(document).ready(function() {
+
+        //* CONTROL DE CLICK DEL BOTON
+        $('.publicar-categoria').on('click', function() {
+            //* VARIABLES PARA ALMCENAR LA INFORMACION OBTENIDA DE LA TABLA
+            var categoriaId = $(this).data('id');
+            var categoriaName = $(this).data('nombre');
+            var categoriaDescription = $(this).data('descripcion');
+            var categoriaStatus = $(this).data('estado');
+
+            //* CREACION DE LA TARJETA CON LOS DATOS OBTENIDOS
+            var categoriaCard = `
+            <div class="categoria-card" data-categoria-id="${categoriaId}">
+                <h3>${categoriaName}</h3>
+                <p>${categoriaDescription}</p>
+                <p>Status: ${categoriaStatus}</p>
+                <button class="delete-categoria">Delete</button>
+            </div>`;
+
+            //* AGREGA LA TARJETA AL APARTADO DEFINIDO
+            $('#cart-container').append(categoriaCard);
+
+            //* CONTROL DE ALMACENAMIENTO EN LOCALSTORAGE
+            storeCategoriaInLocalStorage(categoriaId, categoriaName, categoriaDescription, categoriaStatus);
+        });
+
+        //*  CONTROL DE BORRADO DE LA TARJETA
+        $('#cart-container').on('click', '.delete-categoria', function() {
+            //* OBTIENE EL ID DEL PRODUCTO
+            var categoriaId = $(this).closest('.categoria-card').data('categoria-id');
+
+            //* ACCION PARA BORRAR LA TARJETA
+            $(this).closest('.categoria-card').remove();
+
+            //* ELIMINA LA INFORMACION DEL ALMACENAMIENTO LOCAL
+            removeCategoriaFromStorage(categoriaId);
+        });
+
+        //* CARGA LA INFORMACION ALMACENADA EN EL LOCALSTORAGE
+        loadCategoriasFromStorage();
+    });
+
+    function storeCategoriaInLocalStorage(id, name, description, status) {
+        var storedCategorias = JSON.parse(localStorage.getItem('cart-categorias')) || [];
+
+        //* VERIFICA SI LA CATEGORIA YA ESTA EN EL LOALSTORAGE MEDIANTE EL ID
+        var existingCategoriaIndex = storedCategorias.findIndex(categoria => categoria.id === id);
+
+        if (existingCategoriaIndex !== -1) {
+            //* SI LA CATEGORIA EXISTE, LO ELIMINA DEL APARTADO
+            storedCategorias.splice(existingCategoriaIndex, 1);
+        } else {
+            //* AGREGA LA CATEGORIA
+            storedCategorias.push({
+                id: id,
+                name: name,
+                description: description,
+                status: status,
+            });
+        }
+        //* ACTUALIZA EL ALMACENAMIENTO LOCAL
+        localStorage.setItem('cart-categorias', JSON.stringify(storedCategorias));
+    }
+
+    function removeCategoriaFromStorage(categoriaId) {
+        var storedCategorias = JSON.parse(localStorage.getItem('cart-categorias')) || [];
+
+        //* FILTRA LAS CATEGORIAS EXCLUYENDO LA CATEGORIA CON EL ID DADO
+        storedCategorias = storedCategorias.filter(categoria => categoria.id !== categoriaId);
+
+        //* ACTUALIZA LA INFORMACION DEL LOCALSTORAGE
+        localStorage.setItem('cart-categorias', JSON.stringify(storedCategorias));
+    }
+
+    function loadCategoriasFromStorage() {
+        var storedCategorias = JSON.parse(localStorage.getItem('cart-categorias')) || [];
+
+        //* ITERA SOBRE LAS CATEGORIAS Y AGREGA LAS TARJETAS AL CONTENEDOR
+        storedCategorias.forEach(categoria => {
+            var categoriaCard = `
+            <div class="categoria-card" data-categoria-id="${categoria.id}">
+                <h3>${categoria.name}</h3>
+                <p>${categoria.description}</p>
+                <div class="pie-tarjeta">
+                <button></button>
+                </div>
+            </div>`;
+
+            //* AGREGAR TARJETA AL CONTENEDOR
+            $('#cart-container').append(categoriaCard);
         });
     }
 </script>

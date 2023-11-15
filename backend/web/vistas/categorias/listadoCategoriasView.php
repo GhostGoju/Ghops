@@ -12,21 +12,13 @@ if (session_status() == PHP_SESSION_NONE) {
 <html lang="en">
 
 <body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
     <div class="wrapper">
-        <!-- Main Sidebar Container -->
-        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <?php require_once INCLUDES_TEMPLADE . "aside.php"; ?></php>
-        <!-- Content Wrapper. Contains page content -->
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
         <div class="h-100">
-            <!-- Content Header (Page header) -->
             <section class="listado-header">
                 <p>Gestion Categorias</p>
             </section>
-
-            <!-- Main content -->
             <section class="content">
-                <!-- Default box -->
                 <div class="card">
                     <div class="lista-gen-header">
                         <a href="web/cmdDefaultCrearCategorias">
@@ -43,6 +35,8 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
+                                <th>Estado</th>
+                                <th>Publicar</th>
                             </thead>
 
                             <tbody>
@@ -56,6 +50,12 @@ if (session_status() == PHP_SESSION_NONE) {
                                     print_r("<td> $categorias->id</td>");
                                     print_r("<td> $categorias->nombre</td>");
                                     print_r("<td> $categorias->descripcion</td>");
+                                    print_r("<td> $categorias->estado</td>");
+                                    print_r("<td><button class='publicar-categoria'
+                                    data-id='$categorias->id'
+                                    data-nombre='$categorias->nombre'
+                                    data-descripcion='$categorias->descripcion'
+                                    >Publicar</button></td>");
                                     print_r("</tr>");
                                 }
                                 ?>
