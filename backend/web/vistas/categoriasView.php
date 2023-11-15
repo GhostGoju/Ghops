@@ -27,7 +27,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <div class="listado-general">
 
 
-                <div id="cart-container" class="categoria-container">
+                <div id="cart-container-categorias" class="categoria-container">
                 </div>
 
 

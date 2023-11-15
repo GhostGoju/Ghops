@@ -300,18 +300,17 @@
                 <h3>${categoriaName}</h3>
                 <p>${categoriaDescription}</p>
                 <p>Status: ${categoriaStatus}</p>
-                <button class="delete-categoria">Delete</button>
             </div>`;
 
             //* AGREGA LA TARJETA AL APARTADO DEFINIDO
-            $('#cart-container').append(categoriaCard);
+            $('#cart-container-categorias').append(categoriaCard);
 
             //* CONTROL DE ALMACENAMIENTO EN LOCALSTORAGE
             storeCategoriaInLocalStorage(categoriaId, categoriaName, categoriaDescription, categoriaStatus);
         });
 
         //*  CONTROL DE BORRADO DE LA TARJETA
-        $('#cart-container').on('click', '.delete-categoria', function() {
+        $('#cart-container-categorias').on('click', '.delete-categoria', function() {
             //* OBTIENE EL ID DEL PRODUCTO
             var categoriaId = $(this).closest('.categoria-card').data('categoria-id');
 
@@ -368,12 +367,12 @@
                 <h3>${categoria.name}</h3>
                 <p>${categoria.description}</p>
                 <div class="pie-tarjeta">
-                <button></button>
+                <button class="add-to-favorites"><i class="fa fa-arrow-right nav-icon"></i></button>
                 </div>
             </div>`;
 
             //* AGREGAR TARJETA AL CONTENEDOR
-            $('#cart-container').append(categoriaCard);
+            $('#cart-container-categorias').append(categoriaCard);
         });
     }
 </script>

@@ -5,7 +5,6 @@ if (!isset($_SESSION['rol'])) {
 }
 require_once INCLUDES_TEMPLADE . "header.php";
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
 }
 ?></php>
 <!DOCTYPE html>

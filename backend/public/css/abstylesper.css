@@ -83,6 +83,14 @@
     flex-wrap: wrap;
 }
 
+.categoria-container {
+    /* background-color: orange; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .public-content .listado-header {
     width: 100%;
 }
@@ -382,8 +390,6 @@
 .product-card {
     background-color: white;
     color: #0F2C59;
-    box-shadow: 2px 2px 5px black;
-    height: min-content;
     width: 20%;
     border: none;
     border-radius: 5px;
@@ -395,8 +401,6 @@
 .categoria-card {
     background-color: white;
     color: #0F2C59;
-    box-shadow: 2px 2px 5px black;
-    height: min-content;
     width: 20%;
     border: none;
     border-radius: 5px;

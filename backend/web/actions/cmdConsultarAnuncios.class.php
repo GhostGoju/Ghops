@@ -1,13 +1,12 @@
-
 <?php
 
-class cmdConsultarVentas
+class cmdConsultarAnuncios
 {
     private $default_request_method = "GET";
     public function execute()
     {
-        $u = new usuariosControl();
-        $result = $u->listarUsurios();
+        $u = new usuariosControl();                            //* CREA UN OBJETO DEL CONTROL DE USUARIOS
+        $result = $u->listarProductos();                     //* EJECUTA EL METODO DEL OBJETO (LISTARUSUARIOS)
 
         valid_method($this->default_request_method);
 
@@ -17,10 +16,7 @@ class cmdConsultarVentas
             "message" => "Listado generado"
         ];
         if (!CALL_API == true)
-            $response["view"] = "administracion/listadoVentas";
+            $response["view"] = "administracion/listadoAnuncios";
         return $response;
     }
 }
-
-
-// ADMINISTRAR LAS ACCCIONES A REALIZAR DESDE EL MODELO Y EL CONTROL

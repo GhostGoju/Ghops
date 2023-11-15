@@ -23,6 +23,7 @@
                 <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarUsuarios">Usuarios</a>
                 <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarProductos">Productos</a>
                 <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarCategorias">Categorias</a>
+                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarAnuncios">Anuncios</a>
             </div>
         </div>
         <div class="btn-group">
@@ -32,7 +33,6 @@
             </button>
             <div class="dropdown-menu" role="menu">
                 <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarPedidos">Pedidos</a>
-                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarVentas">Ventas</a>
                 <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarInventario">Inventario</a>
             </div>
         </div>
