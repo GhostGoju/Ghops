@@ -18,9 +18,9 @@
                 <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! parece que algo salio mal</h3>
 
                 <p>
-                    Parece que hay un problema con tu cuenta.
+                    Parece que ha habido un problema.
                     <br>
-                    Puedes <b><a href="web/cmdDefaultLogin">reintentar</a></b> o contactar con <b><a href="#">Servicio tecnico</a></b>
+                    <b><a href="web/cmdDefaultLogin">Reintentar</a></b>
                 </p>
             </div>
         </div>

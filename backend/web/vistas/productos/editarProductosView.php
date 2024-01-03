@@ -87,17 +87,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     </form>
                 </div>
             </section>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-
-        <!-- <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php> -->
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
     </div>
 
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>

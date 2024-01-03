@@ -26,33 +26,13 @@ if (session_status() == PHP_SESSION_NONE) {
             </section>
             <div class="listado-general">
 
+
+
+                <div id="cart-container-anuncios" class="anuncio-container">
+                </div>
+
                 <div id="cart-container" class="product-container">
                 </div>
-
-
-
-
-
-                <!-- <div class="product-card" data-product-id="1">
-                <img src="product_image.jpg" alt="Product Image">
-                <h3>Product Name</h3>
-                <p>Description of the product goes here.</p>
-                <button class="add-to-favorites">Add to Favorites</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-
-            <div id="other-section">
-                <div id="favorites">
-                    <h2>Favorites</h2>
-                    <ul id="favorites-list"></ul>
-                </div>
-
-                <div id="cart">
-                    <h2>Shopping Cart</h2>
-                    <button id="clear-cart">Clear Cart</button>
-                    <ul id="cart-list"></ul>
-                </div>
-            </div>-->
 
             </div>
         </div>

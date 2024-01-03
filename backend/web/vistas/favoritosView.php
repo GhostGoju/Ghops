@@ -25,6 +25,13 @@ if (session_status() == PHP_SESSION_NONE) {
                 <p>Favoritos</p>
             </section>
         </div>
+        <div class="listado-general">
+
+
+
+            <!-- INFORMACION ENVIADA DESDE LAS TARJETAS DE FAVORITOS -->
+            <div id="favorites-container">
+            </div>
 
 
 
@@ -33,7 +40,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 
-
+        </div>
     </div>
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
 </body>

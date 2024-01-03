@@ -5,37 +5,28 @@ if (!isset($_SESSION['rol'])) {
 }
 require_once INCLUDES_TEMPLADE . "header.php";
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
 }
 ?></php>
 <!DOCTYPE html>
 <html lang="en">
 
 <body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
     <div class="wrapper">
-        <!-- Main Sidebar Container -->
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="h-100">
-            <!-- Content Header (Page header) -->
+        <div class="">
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <!-- <h3>Gestion Usuarios</h3> -->
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Blank Page</li> -->
                             </ol>
                         </div>
                     </div>
-                </div><!-- /.container-fluid -->
+                </div>
             </section>
 
-            <!-- Main content -->
             <section class="listado-header">
                 <p>Crear productos</p>
             </section>
@@ -44,8 +35,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="lista-gen">
                     <h1></h1>
 
-                    <form action="web/cmdCrearProductos" method="POST">
-
+                    <form action="web/cmdCrearProductos" method="POST" enctype="multipart/form-data">
+                        <!-- <form action="web/cmdCrearProductos" method="POST"> -->
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
@@ -64,7 +55,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <input type="number" class="form-control" name="categoria" id="categoria" placeholder="Categoria">
                             </div>
                             <div class="form-group">
-                                <label for="categoria">Imagen</label>
+                                <label for="imagen">Imagen</label>
                                 <input type="file" class="form-control" name="imagen" id="imagen" placeholder="imagen">
                             </div>
                             <input type="hidden" class="form-control" name="estado_producto" id="estado_producto" value="1">
@@ -79,22 +70,12 @@ if (session_status() == PHP_SESSION_NONE) {
                     </form>
                 </div>
             </section>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
 
-        <!-- <?php require_once INCLUDES_TEMPLADE . "footer.php"; ?></php> -->
-
-        <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
         </aside>
-        <!-- /.control-sidebar -->
     </div>
-
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
-
-
 </body>
 
 </html>

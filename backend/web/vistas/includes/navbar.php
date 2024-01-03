@@ -26,16 +26,6 @@
                 <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarAnuncios">Anuncios</a>
             </div>
         </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                <span class="sr-only"></span>
-                Administracion
-            </button>
-            <div class="dropdown-menu" role="menu">
-                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarPedidos">Pedidos</a>
-                <a class="dropdown-item" href="<?php echo URL; ?>web/cmdConsultarInventario">Inventario</a>
-            </div>
-        </div>
     <?php endif; ?>
     <!-- ESPACIO DE GESTION -->
 
@@ -56,7 +46,7 @@
 
         <li class="nav-item user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="public/img/img-decoracion/maniqui.png" class="user-image img-circle elevation-2" alt="User Image">
+                <img src="public/img/img-decoracion/maniqui.png" class="user-image img-circle elevation-0" alt="User Image">
                 <span class="d-none d-md-inline"><?php print_r($_SESSION['nombre']) ?></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">

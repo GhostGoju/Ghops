@@ -6,7 +6,7 @@ class cmdConsultarAnuncios
     public function execute()
     {
         $u = new usuariosControl();                            //* CREA UN OBJETO DEL CONTROL DE USUARIOS
-        $result = $u->listarProductos();                     //* EJECUTA EL METODO DEL OBJETO (LISTARUSUARIOS)
+        $result = $u->listarAnuncios();                     //* EJECUTA EL METODO DEL OBJETO (LISTARUSUARIOS)
 
         valid_method($this->default_request_method);
 

@@ -62,6 +62,13 @@ class usuariosControl
     }
 
 
+    //? (FUNCION DE TRAER TODA LA LISTA DE ANUNCIOS)
+    public function listarAnuncios()
+    {
+        return $this->modelo->getAllAnuncios();
+    }
+
+
     //? (FUNCION DE BUSCAR UN USUARIO MEDIANTE SU ID)
     public function buscarUsuarios($id)
     {
@@ -99,6 +106,22 @@ class usuariosControl
     {
         if (!empty($id) && $id != "" && $id != null) {
             $result = $this->modelo->getByIdCategorias($id);
+            if (is_array($result) && count($result) > 0) {
+                return $result;
+            } else {
+                return 1;
+            }
+        } else {
+            return 0;
+        }
+    }
+
+
+    //? (FUNCION DE BUSCAR UN ANUNCIOS MEDIANTE SU ID)
+    public function buscarAnuncios($id)
+    {
+        if (!empty($id) && $id != "" && $id != null) {
+            $result = $this->modelo->getByIdAnuncios($id);
             if (is_array($result) && count($result) > 0) {
                 return $result;
             } else {
@@ -222,6 +245,32 @@ class usuariosControl
     }
 
 
+    //? (FUNCION DE INSERTAR NUEVA CATEGORIA)
+    public function registrarAnuncios($nombre, $descripcion, $estado)
+    {
+        if (
+            !empty($nombre) && $nombre != "" && $nombre != null &&
+            !empty($descripcion) && $descripcion != "" && $descripcion != null &&
+            !empty($estado) && $estado != "" && $estado != null
+        ) {
+            $result = $this->modelo->getByNombreAnuncios($nombre);
+            if (is_array($result) && count($result) == 0) {
+                $result = $this->modelo->insertarAnuncios($nombre, $descripcion, $estado);
+                if ($result) {
+                    return 3;
+                }           //*PREDUCTO CREADO
+                else {
+                    return 2;
+                }               //* PRODUCTO NO CREADO
+            } else {
+                return 1;
+            }            //*PRODUCTO YA EXISTENTE CON EL MISMO ID
+        } else {
+            return 0;
+        }                //* FALTAN DATOS
+    }
+
+
     //? (CASO DE USO DE ACTUALIZAR USUARIOS)
     public function modificarUsuarios($id, $email, $nombre, $estado, $rol)
     {
@@ -306,6 +355,33 @@ class usuariosControl
     }
 
 
+    //? (CASO DE USO DE ACTUALIZAR CATEGORIAS)
+    public function modificarAnuncios($id, $nombre, $descripcion, $estado)
+    {
+        if (
+            !empty($id) && $id != "" && $id != null &&
+            !empty($nombre) && $nombre != "" && $nombre != null &&
+            !empty($descripcion) && $descripcion != "" && $descripcion != null &&
+            !empty($estado) && $estado != "" && $estado != null
+        ) {
+            $result = $this->modelo->getByIdAnuncios($id);                                          //* AQUI SE GARNTIZA DE QUE EL EMAIL NO SE REPITA
+            if (is_array($result) && count($result) > 0) {
+                $result = $this->modelo->actualizarAnuncios($id, $nombre, $descripcion, $estado);
+                if ($result) {
+                    return 3;
+                }           //*USUARIO ACTUALIZADO
+                else {
+                    return 2;
+                }               //* USUARIO NO ACTUALIZADO
+            } else {
+                return 1;
+            }            //*USUARIO NO EXISTENTE CON ESE ID
+        } else {
+            return 0;
+        }                //* FALTAN DATOS
+    }
+
+
     //? (ELIMINAR USUARIOS DE LA BASE DE DATOS)
     public function eliminar($id)
     {
@@ -363,6 +439,30 @@ class usuariosControl
             $result = $this->modelo->getByIdCategorias($id);
             if (is_array($result) && count($result) > 0) {
                 $result = $this->modelo->eliminarCategorias($id);
+                if ($result) {
+                    return 3;
+                } // Usuario eliminado
+                else {
+                    return 2;
+                } //Usuario no eliminado
+            } else {
+                return 1;
+            } //Usuario No existe con ese Id
+        } else {
+            return  0;
+        } //Falta Datos
+    }
+
+
+    //? (ELIMINAR CATEGORIAS DE LA BASE DE DATOS)
+    public function eliminarAnuncios($id)
+    {
+        if (
+            !empty($id) && $id != "" && $id != null
+        ) {
+            $result = $this->modelo->getByIdAnuncios($id);
+            if (is_array($result) && count($result) > 0) {
+                $result = $this->modelo->eliminarAnuncios($id);
                 if ($result) {
                     return 3;
                 } // Usuario eliminado

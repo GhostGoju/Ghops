@@ -6,67 +6,91 @@ if (!isset($_SESSION['rol'])) {
 require_once INCLUDES_TEMPLADE . "header.php";
 if (session_status() == PHP_SESSION_NONE) {
 }
-?></php>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuncios</title>
-</head>
-
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
-        <div class="h-100">
+        <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?>
+        <div class="">
             <section class="listado-header">
-                <p>Publicacion Anuncios</p>
+                <p>Gestion Anuncios</p>
+            </section>
+            <section class="content">
+                <div class="card">
+                    <div class="lista-gen-header">
+                        <a href="web/cmdDefaultCrearAnuncios">
+                            <button class="btn-agregar"> AGREGAR
+                                <span></span>
+                            </button>
+                        </a>
+                    </div>
+
+                    <div class="lista-gen">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <th>Acciones</th>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Estado</th>
+                                <th>Publicar</th>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($d->data as $anuncios) {
+                                    print_r("<tr>");
+                                    print_r("<td>
+                                    <a href='web/cmdDefaultEditarAnuncios/" . $anuncios->id . "'><i class='nav-icon fas fa-edit'style='color:#9cd1f2; margin-right:20px;'></i></a>
+                                    <a href='web/cmdEliminarAnuncios/" . $anuncios->id . "'><i class='nav-icon fas fa-trash'style='color:#CB6462;'></i></a>
+                                    </td>");
+                                    print_r("<td> $anuncios->id</td>");
+                                    print_r("<td> $anuncios->nombre</td>");
+                                    print_r("<td> $anuncios->descripcion</td>");
+                                    print_r("<td> $anuncios->estado</td>");
+                                    print_r("<td><button class='publicar-anuncio'
+                                    data-id='$anuncios->id'
+                                    data-nombre='$anuncios->nombre'
+                                    data-descripcion='$anuncios->descripcion'
+                                    data-descripcion='$anuncios->estado's
+                                    >Publicar</button></td>");
+                                    print_r("</tr>");
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                </div>
             </section>
         </div>
-
-
-
-        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-            <div class="card bg-light d-flex flex-fill">
-                <div class="card-header text-muted border-bottom-0">
-                    Digital Strategist
-                </div>
-                <div class="card-body pt-0">
-                    <div class="row">
-                        <div class="col-7">
-                            <h2 class="lead"><b>Nicole Pearson</b></h2>
-                            <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                            <ul class="ml-4 mb-0 fa-ul text-muted">
-                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
-                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
-                            </ul>
-                        </div>
-                        <div class="col-5 text-center">
-                            <img src="../../dist/img/user1-128x128.jpg" alt="user-avatar" class="img-circle img-fluid">
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="text-right">
-                        <a href="#" class="btn btn-sm bg-teal">
-                            <i class="fas fa-comments"></i>
-                        </a>
-                        <a href="#" class="btn btn-sm btn-primary">
-                            <i class="fas fa-user"></i> View Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
+        <aside class="control-sidebar control-sidebar-dark">
+        </aside>
     </div>
+
     <?php require_once INCLUDES_TEMPLADE . "scripts.php"; ?></php>
+
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
 </body>
 
 </html>

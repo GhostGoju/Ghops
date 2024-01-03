@@ -2,7 +2,6 @@
 .content {
     padding-right: 100px;
     padding-left: 100px;
-    height: min-content;
 }
 
 .text-login {
@@ -66,25 +65,32 @@
 
 .wrapper {
     background-color: #F8F0E5;
+    height: min-content;
 }
 
 .listado-general {
     /* background-color: red; */
-    height: auto;
+    height: min-content;
     width: 100%;
-    display: flex;
 }
 
 .product-container {
-    /* background-color: orange; */
+    /* background-color: blue; */
+    border-top: 1px solid #0F2C59;
     width: 100%;
     height: auto;
     display: flex;
-    flex-wrap: wrap;
+}
+
+.anuncio-container {
+    /* background-color: palegreen; */
+    width: 100%;
+    height: auto;
 }
 
 .categoria-container {
     /* background-color: orange; */
+    border-top: 1px solid #0F2C59;
     width: 100%;
     height: auto;
     display: flex;
@@ -351,6 +357,7 @@
     display: flex;
     justify-content: center;
     margin-top: 40px;
+    min-height: 80vh;
 }
 
 .contenedor-d-faq {
@@ -407,6 +414,19 @@
     padding: 15px;
     margin: 20px;
     text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.anuncio-card {
+    background-color: rgb(243, 189, 124);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
 }
 
 .pie-tarjeta {
@@ -441,4 +461,44 @@
     border-bottom: 1px solid #ccc;
     padding: 10px;
     margin: 5px 0;
+}
+
+
+/* LOGOS DE CONTACTO */
+.col-6 {
+    /* background-color: orange; */
+    display: flex;
+    user-select: none;
+    padding-left: 200px;
+}
+
+.redes-contacto {
+    /* background-color: blue; */
+    display: inline-block;
+    margin-left: 100px;
+}
+
+.redes-contacto img {
+    /* background-color: red; */
+    height: 100px;
+    width: 100px;
+}
+
+.contacto-mensaje {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto-mensaje h1 {
+    font-size: medium;
+    color: black;
+    text-transform: uppercase;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.contacto-mensaje h1 a {
+    color: black;
 }

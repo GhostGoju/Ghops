@@ -71,7 +71,6 @@ if (session_status() == PHP_SESSION_NONE) {
                             <div class="col-12 col-sm-6">
                                 <h3 class="my-3">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
                                 <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
-
                                 <hr>
                                 <h4>Available Colors</h4>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -196,7 +195,6 @@ if (session_status() == PHP_SESSION_NONE) {
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-
 
 
 

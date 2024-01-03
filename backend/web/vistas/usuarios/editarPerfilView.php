@@ -78,6 +78,13 @@ if (session_status() == PHP_SESSION_NONE) {
                                             </b>
                                             <?php print_r($_SESSION['telefono']) ?><i class='nav-icon fas fa-edit' style='color:#0F2C59; margin:10px;'></i><br>
                                             <hr>
+                                            <div class="lista-gen-header">
+                                                <a href="#">
+                                                    <button class="btn-agregar"> Actualizar
+                                                        <span></span>
+                                                    </button>
+                                                </a>
+                                            </div>
                                         </div>
 
                                         <!-- CAMBIAR PASSWORD -->
@@ -117,8 +124,8 @@ if (session_status() == PHP_SESSION_NONE) {
                                             <?php print_r($_SESSION['telefono']) ?><i class='nav-icon fas fa-edit' style='color:#0F2C59; margin:10px;'></i>
                                             <hr>
                                             <div class="lista-gen-header">
-                                                <a href="web/cmdDefaultCrearProductos">
-                                                    <button class="btn-agregar"> Guardar
+                                                <a href="#">
+                                                    <button class="btn-agregar"> Actualizar
                                                         <span></span>
                                                     </button>
                                                 </a>

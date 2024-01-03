@@ -18,6 +18,7 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         //* LA NUEVA CONEXION GUARDADA EN LA LINEA 15, SE ALMACENA DENTRO DEL ATRIBUTO CONEXION DE LA CLASE USUARIOS MODELO
     }
 
+
     //? (FUNCION DE TRAER TODA LA LISTA DE USUARIOS)
     public function getAllUsuarios()                          //*PUBLIC FUNCTION ES UN METODO EL CUAL PUEDE SER LLAMADO DENTRO DE LA FUNCION (EJE) USUARIOSMODELO.
     {
@@ -35,10 +36,20 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+
     //? (FUNCION DE TRAER TODA LA LISTA DE CATEGORIAS)
     public function getAllCategorias()
     {
         $sql = "SELECT * FROM categorias";
+        $result = $this->conexion->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+    //? (FUNCION DE TRAER TODA LA LISTA DE ANUNCIOS)
+    public function getAllAnuncios()
+    {
+        $sql = "SELECT * FROM anuncios";
         $result = $this->conexion->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -61,10 +72,20 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+
     //? (FUNCION DE BUSCAR UNA CATEGORIA MEDIANTE SU ID)
     public function getByIdCategorias($id)
     {
         $sql = "SELECT * FROM categorias WHERE id = $id";
+        $result = $this->conexion->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+    //? (FUNCION DE BUSCAR UN ANUNCIO MEDIANTE SU ID)
+    public function getByIdAnuncios($id)
+    {
+        $sql = "SELECT * FROM anuncios WHERE id = $id";
         $result = $this->conexion->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -94,19 +115,28 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
-    //? (FUNCION DE BUSCAR USUARIOS MEDIANTE SU EMAIL)
-    public function getByNombreProductos($nombre)                              //* ESTE ES EL METODO DEL MODELO QUE REVISA SI EL CORREO ESTA CORRECTO
+    //? (FUNCION DE BUSCAR PRODUCTOS MEDIANTE SU NOMBRE)
+    public function getByNombreProductos($nombre)
     {
-        $sql = "SELECT * FROM productos WHERE nombre = '$nombre'";           //* SI EMAIL ES UN VARCHAR ENTONES DEBE ESTAR DENTRO DE COMILLAS
+        $sql = "SELECT * FROM productos WHERE nombre = '$nombre'";
         $result = $this->conexion->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 
-    //? (FUNCION DE BUSCAR USUARIOS MEDIANTE SU EMAIL)
-    public function getByNombreCategorias($nombre)                              //* ESTE ES EL METODO DEL MODELO QUE REVISA SI EL CORREO ESTA CORRECTO
+    //? (FUNCION DE BUSCAR CATEGORIAS MEDIANTE SU NOMBRE)
+    public function getByNombreCategorias($nombre)
     {
-        $sql = "SELECT * FROM categorias WHERE nombre = '$nombre'";           //* SI EMAIL ES UN VARCHAR ENTONES DEBE ESTAR DENTRO DE COMILLAS
+        $sql = "SELECT * FROM categorias WHERE nombre = '$nombre'";
+        $result = $this->conexion->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+    //? (FUNCION DE BUSCAR ANUNCIOS MEDIANTE SU NOMBRE)
+    public function getByNombreAnuncios($nombre)
+    {
+        $sql = "SELECT * FROM anuncios WHERE nombre = '$nombre'";
         $result = $this->conexion->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -156,6 +186,17 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
+    //? (FUNCION DE INSERTAR UN NUEVO ANUNCIO)
+    public function insertarAnuncios($nombre, $descripcion, $estado)
+    {
+        $sql = "INSERT
+        INTO anuncios
+        VALUES (null, '$nombre', '$descripcion', $estado)";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
     //? (FUNCION DE ACTUALIZAR DATOS DEL USUARIO)
     public function actualizar($id, $email, $nombre, $estado, $rol)
     {
@@ -169,6 +210,7 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         $result = $this->conexion->query($sql);
         return $result;
     }
+
 
     //? (FUNCION DE ACTUALIZAR DATOS DEL producto)
     public function actualizarProductos($id, $nombre, $descripcion, $precio, $categoria, $estado_producto, $imagen)
@@ -200,6 +242,20 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
     }
 
 
+    //? (FUNCION DE ACTUALIZAR CATEGORIAS)
+    public function actualizarAnuncios($id, $nombre, $descripcion, $estado)
+    {
+        $sql = "UPDATE anuncios
+                SET nombre = '$nombre',
+                    descripcion = '$descripcion',
+                    estado = $estado
+                WHERE id = $id";
+
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
     //? (FUNCION DE ELIMINAR USUARIOS)
     public function eliminar($id)
     {
@@ -225,4 +281,19 @@ class usuariosModelo                 //* ESTO ES UN PLANO DE UN NUEVO OBJETO
         $result = $this->conexion->query($sql);
         return $result;
     }
+
+
+    //? (FUNCION DE ELIMINAR ANUNCIOS)
+    public function eliminarAnuncios($id)
+    {
+        $sql = "DELETE FROM anuncios WHERE id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
+    //? (FUNCION DE TRAER IMAGENES DE LA BASE DE DATOS)
+
+
+
 }

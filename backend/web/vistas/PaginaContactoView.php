@@ -22,6 +22,12 @@ if (session_status() == PHP_SESSION_NONE) {
         <?php require_once INCLUDES_TEMPLADE . "navbar.php"; ?></php>
         <div class="">
             <div class="card-contact">
+                <div class="contacto-mensaje">
+                    <h1>Si tienes algna duda sobre nuestro servicio pedes consultar<a href="<?php echo URL; ?>web/cmdFAQ" class="nav-link"><b>Preguntas frecuentes</b></a>
+                        <br>
+                        <h4>¡O contactanos por medio de nuestras redes sociales! :)</h4>
+                    </h1>
+                </div>
                 <div class="card-contact2">
                     <div class="col-3 text-center d-flex align-items-center justify-content-center">
                         <div class="">
@@ -35,28 +41,11 @@ if (session_status() == PHP_SESSION_NONE) {
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="form-contact">
-                            <label for="inputName">Nombre</label>
-                            <input type="text" id="inputName" class="form-control" />
+                        <div class="redes-contacto">
+                            <a href="https://www.instagram.com/ghops_ing/?hl=es-es"><img src="public/img/logos/instagram.png" alt="Ghops_ing"></a>
                         </div>
-                        <div class="form-contact">
-                            <label for="inputEmail">E-Mail</label>
-                            <input type="email" id="inputEmail" class="form-control" />
-                        </div>
-                        <div class="form-contact">
-                            <label for="inputSubject">Asunto</label>
-                            <input type="text" id="inputSubject" class="form-control" />
-                        </div>
-                        <div class="form-contact">
-                            <label for="inputMessage">Mensaje</label>
-                            <textarea id="inputMessage" class="form-control" rows="4"></textarea>
-                        </div>
-                        <div class="lista-gen-header">
-                            <a href="#">
-                                <button class="btn-agregar"> ENVIAR
-                                    <span></span>
-                                </button>
-                            </a>
+                        <div class="redes-contacto">
+                            <a href="https://www.tiktok.com/@ghops_ongs?is_from_webapp=1&sender_device=pc"><img src="public/img/logos/tik-tok.png" alt="Ghops_ongs"></a>
                         </div>
                     </div>
                 </div>
